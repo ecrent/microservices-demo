@@ -17,6 +17,7 @@ package main
 import (
 	"context"
 	"net/http"
+	"strings"
 	"time"
 	"os"
 
@@ -106,6 +107,65 @@ func ensureSessionID(next http.Handler) http.HandlerFunc {
 		}
 		ctx := context.WithValue(r.Context(), ctxKeySessionID{}, sessionID)
 		r = r.WithContext(ctx)
+		next.ServeHTTP(w, r)
+	}
+}
+
+// ensureJWT middleware validates JWT token or creates a new one
+// It extracts JWT from Authorization header or generates a new token
+func ensureJWT(next http.Handler) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		var sessionID string
+		var jwtToken string
+		
+		// Try to get JWT from Authorization header
+		authHeader := r.Header.Get("Authorization")
+		if authHeader != "" && strings.HasPrefix(authHeader, "Bearer ") {
+			jwtToken = strings.TrimPrefix(authHeader, "Bearer ")
+			
+			// Validate the JWT token
+			claims, err := validateJWT(jwtToken)
+			if err == nil && claims != nil {
+				// Valid JWT token found
+				sessionID = claims.SessionID
+				ctx := context.WithValue(r.Context(), ctxKeySessionID{}, sessionID)
+				r = r.WithContext(ctx)
+				
+				// Add JWT token to response header for client to reuse
+				w.Header().Set("X-JWT-Token", jwtToken)
+				next.ServeHTTP(w, r)
+				return
+			}
+			// Invalid or expired token, continue to generate new one
+		}
+		
+		// No valid JWT found, generate new session ID and JWT
+		if os.Getenv("ENABLE_SINGLE_SHARED_SESSION") == "true" {
+			sessionID = "12345678-1234-1234-1234-123456789123"
+		} else {
+			u, _ := uuid.NewRandom()
+			sessionID = u.String()
+		}
+		
+		// Generate new JWT token
+		newToken, err := generateJWT(sessionID)
+		if err != nil {
+			log := r.Context().Value(ctxKeyLog{})
+			if log != nil {
+				log.(logrus.FieldLogger).WithError(err).Error("failed to generate JWT token")
+			}
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+		
+		// Set session ID in context
+		ctx := context.WithValue(r.Context(), ctxKeySessionID{}, sessionID)
+		r = r.WithContext(ctx)
+		
+		// Return JWT token in response header
+		w.Header().Set("X-JWT-Token", newToken)
+		w.Header().Set("Authorization", "Bearer "+newToken)
+		
 		next.ServeHTTP(w, r)
 	}
 }

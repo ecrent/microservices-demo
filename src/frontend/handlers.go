@@ -351,15 +351,19 @@ func (fe *frontendServer) placeOrderHandler(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	// Add user metadata to context for checkout service
+	ctx := r.Context()
+	userID := sessionID(r)
+	
 	order, err := pb.NewCheckoutServiceClient(fe.checkoutSvcConn).
-		PlaceOrder(r.Context(), &pb.PlaceOrderRequest{
+		PlaceOrder(ctx, &pb.PlaceOrderRequest{
 			Email: payload.Email,
 			CreditCard: &pb.CreditCardInfo{
 				CreditCardNumber:          payload.CcNumber,
 				CreditCardExpirationMonth: int32(payload.CcMonth),
 				CreditCardExpirationYear:  int32(payload.CcYear),
 				CreditCardCvv:             int32(payload.CcCVV)},
-			UserId:       sessionID(r),
+			UserId:       userID,
 			UserCurrency: currentCurrency(r),
 			Address: &pb.Address{
 				StreetAddress: payload.StreetAddress,

@@ -109,6 +109,19 @@ func main() {
 
 	baseUrl = os.Getenv("BASE_URL")
 
+	// Initialize JWT
+	if err := initJWT(); err != nil {
+		log.Fatalf("failed to initialize JWT: %v", err)
+	}
+	log.Info("JWT initialized successfully.")
+
+	// Log JWT splitting status
+	if jwtSplittingEnabled() {
+		log.Info("JWT header splitting ENABLED for HPACK optimization.")
+	} else {
+		log.Info("JWT header splitting DISABLED. Set ENABLE_JWT_SPLITTING=true to enable.")
+	}
+
 	if os.Getenv("ENABLE_TRACING") == "1" {
 		log.Info("Tracing enabled.")
 		initTracing(log, ctx, svc)
@@ -163,7 +176,7 @@ func main() {
 
 	var handler http.Handler = r
 	handler = &logHandler{log: log, next: handler}     // add logging
-	handler = ensureSessionID(handler)                 // add session ID
+	handler = ensureJWT(handler)                       // add JWT authentication (replaces ensureSessionID)
 	handler = otelhttp.NewHandler(handler, "frontend") // add OTel tracing
 
 	log.Infof("starting server on " + addr + ":" + srvPort)
@@ -225,9 +238,14 @@ func mustConnGRPC(ctx context.Context, conn **grpc.ClientConn, addr string) {
 	var err error
 	ctx, cancel := context.WithTimeout(ctx, time.Second*3)
 	defer cancel()
+	
+	// Chain multiple interceptors: OTel tracing + JWT splitting
 	*conn, err = grpc.DialContext(ctx, addr,
 		grpc.WithInsecure(),
-		grpc.WithUnaryInterceptor(otelgrpc.UnaryClientInterceptor()),
+		grpc.WithChainUnaryInterceptor(
+			otelgrpc.UnaryClientInterceptor(),
+			UnaryClientInterceptorJWTSplitter(log),
+		),
 		grpc.WithStreamInterceptor(otelgrpc.StreamClientInterceptor()))
 	if err != nil {
 		panic(errors.Wrapf(err, "grpc: failed to connect %s", addr))
