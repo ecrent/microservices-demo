@@ -82,10 +82,16 @@ func main() {
 	var srv *grpc.Server
 	if os.Getenv("DISABLE_STATS") == "" {
 		log.Info("Stats enabled, but temporarily unavailable")
-		srv = grpc.NewServer()
+		srv = grpc.NewServer(
+			grpc.ChainUnaryInterceptor(jwtUnaryServerInterceptor),
+			grpc.ChainStreamInterceptor(jwtStreamServerInterceptor),
+		)
 	} else {
 		log.Info("Stats disabled.")
-		srv = grpc.NewServer()
+		srv = grpc.NewServer(
+			grpc.ChainUnaryInterceptor(jwtUnaryServerInterceptor),
+			grpc.ChainStreamInterceptor(jwtStreamServerInterceptor),
+		)
 	}
 	svc := &server{}
 	pb.RegisterShippingServiceServer(srv, svc)

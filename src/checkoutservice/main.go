@@ -133,9 +133,17 @@ func main() {
 	otel.SetTextMapPropagator(
 		propagation.NewCompositeTextMapPropagator(
 			propagation.TraceContext{}, propagation.Baggage{}))
+	
+	// Chain interceptors: JWT server (receives/reassembles) -> OpenTelemetry
 	srv = grpc.NewServer(
-		grpc.UnaryInterceptor(otelgrpc.UnaryServerInterceptor()),
-		grpc.StreamInterceptor(otelgrpc.StreamServerInterceptor()),
+		grpc.ChainUnaryInterceptor(
+			jwtUnaryServerInterceptor,
+			otelgrpc.UnaryServerInterceptor(),
+		),
+		grpc.ChainStreamInterceptor(
+			jwtStreamServerInterceptor,
+			otelgrpc.StreamServerInterceptor(),
+		),
 	)
 
 	pb.RegisterCheckoutServiceServer(srv, svc)

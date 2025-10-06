@@ -2,37 +2,88 @@ package main
 
 import (
 	"context"
+	"strings"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 )
 
-// jwtUnaryClientInterceptor forwards JWT from incoming request to outgoing gRPC calls
-func jwtUnaryClientInterceptor(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
-	// Extract JWT from incoming metadata
+// jwtUnaryServerInterceptor extracts and reassembles JWT from incoming metadata
+func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
 	md, ok := metadata.FromIncomingContext(ctx)
-	if ok {
-		authHeaders := md.Get("authorization")
-		if len(authHeaders) > 0 {
-			// Forward the JWT to the outgoing request
-			ctx = metadata.AppendToOutgoingContext(ctx, "authorization", authHeaders[0])
-		}
+	if !ok {
+		// No metadata, continue without JWT
+		return handler(ctx, req)
 	}
 
-	return invoker(ctx, method, req, reply, cc, opts...)
+	var jwtToken string
+
+	// Check for compressed JWT format (x-jwt-* headers)
+	if staticHeaders := md.Get("x-jwt-static"); len(staticHeaders) > 0 {
+		// Compressed format detected
+		components := &JWTComponents{
+			Static:    md.Get("x-jwt-static")[0],
+			Session:   md.Get("x-jwt-session")[0],
+			Dynamic:   md.Get("x-jwt-dynamic")[0],
+			Signature: md.Get("x-jwt-sig")[0],
+		}
+
+		// Reassemble JWT from components
+		reassembled, err := ReassembleJWT(components)
+		if err != nil {
+			log.Warnf("Failed to reassemble JWT: %v", err)
+			return handler(ctx, req) // Continue without JWT
+		}
+		jwtToken = reassembled
+		log.Debugf("JWT reassembled from compressed headers (%d bytes)", len(jwtToken))
+
+	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
+		// Standard format: "Bearer <token>"
+		jwtToken = strings.TrimPrefix(authHeaders[0], "Bearer ")
+		log.Debugf("JWT extracted from authorization header (%d bytes)", len(jwtToken))
+	}
+
+	// JWT received and reassembled (no forwarding needed for shippingservice)
+	if jwtToken != "" {
+		log.Infof("JWT received for %s (compressed=%v)", info.FullMethod, len(md.Get("x-jwt-static")) > 0)
+	}
+
+	return handler(ctx, req)
 }
 
-// jwtStreamClientInterceptor forwards JWT from incoming request to outgoing gRPC stream calls
-func jwtStreamClientInterceptor(ctx context.Context, desc *grpc.StreamDesc, cc *grpc.ClientConn, method string, streamer grpc.Streamer, opts ...grpc.CallOption) (grpc.ClientStream, error) {
-	// Extract JWT from incoming metadata
+// jwtStreamServerInterceptor extracts and reassembles JWT from incoming stream metadata
+func jwtStreamServerInterceptor(srv interface{}, ss grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
+	ctx := ss.Context()
 	md, ok := metadata.FromIncomingContext(ctx)
-	if ok {
-		authHeaders := md.Get("authorization")
-		if len(authHeaders) > 0 {
-			// Forward the JWT to the outgoing request
-			ctx = metadata.AppendToOutgoingContext(ctx, "authorization", authHeaders[0])
-		}
+	if !ok {
+		return handler(srv, ss)
 	}
 
-	return streamer(ctx, desc, cc, method, opts...)
+	var jwtToken string
+
+	// Check for compressed JWT format
+	if staticHeaders := md.Get("x-jwt-static"); len(staticHeaders) > 0 {
+		components := &JWTComponents{
+			Static:    md.Get("x-jwt-static")[0],
+			Session:   md.Get("x-jwt-session")[0],
+			Dynamic:   md.Get("x-jwt-dynamic")[0],
+			Signature: md.Get("x-jwt-sig")[0],
+		}
+
+		reassembled, err := ReassembleJWT(components)
+		if err != nil {
+			log.Warnf("Failed to reassemble JWT in stream: %v", err)
+			return handler(srv, ss)
+		}
+		jwtToken = reassembled
+
+	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
+		jwtToken = strings.TrimPrefix(authHeaders[0], "Bearer ")
+	}
+
+	if jwtToken != "" {
+		log.Infof("JWT received for stream %s (compressed=%v)", info.FullMethod, len(md.Get("x-jwt-static")) > 0)
+	}
+
+	return handler(srv, ss)
 }

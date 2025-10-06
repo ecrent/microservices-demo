@@ -39,6 +39,8 @@ from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExport
 import googlecloudprofiler
 
 from logger import getJSONLogger
+from jwt_compression import reassemble_jwt
+
 logger = getJSONLogger('emailservice-server')
 
 # Loads confirmation email template from file
@@ -106,6 +108,14 @@ class EmailService(BaseEmailService):
 
 class DummyEmailService(BaseEmailService):
   def SendOrderConfirmation(self, request, context):
+    # Extract and log JWT
+    metadata = context.invocation_metadata()
+    jwt = reassemble_jwt(metadata)
+    if jwt:
+      logger.debug(f'[JWT] Received JWT in EmailService.SendOrderConfirmation ({len(jwt)} bytes)')
+    else:
+      logger.debug('[JWT] No JWT received in EmailService.SendOrderConfirmation')
+    
     logger.info('A request to send order confirmation email to {} has been received.'.format(request.email))
     return demo_pb2.Empty()
 
