@@ -9,6 +9,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using cartservice.cartstore;
 using cartservice.services;
+using cartservice.interceptors;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
 
 namespace cartservice
@@ -56,7 +57,10 @@ namespace cartservice
             }
 
 
-            services.AddGrpc();
+            services.AddGrpc(options =>
+            {
+                options.Interceptors.Add<JwtLoggingInterceptor>();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
