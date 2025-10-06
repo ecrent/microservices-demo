@@ -137,6 +137,13 @@ func main() {
 	mustMapEnv(&svc.adSvcAddr, "AD_SERVICE_ADDR")
 	mustMapEnv(&svc.shoppingAssistantSvcAddr, "SHOPPING_ASSISTANT_SERVICE_ADDR")
 
+	// Load RSA keys for JWT
+	log.Info("Loading RSA keys for JWT...")
+	if err := loadRSAKeys(); err != nil {
+		log.Fatalf("Failed to load RSA keys: %v", err)
+	}
+	log.Info("RSA keys loaded successfully")
+
 	mustConnGRPC(ctx, &svc.currencySvcConn, svc.currencySvcAddr)
 	mustConnGRPC(ctx, &svc.productCatalogSvcConn, svc.productCatalogSvcAddr)
 	mustConnGRPC(ctx, &svc.cartSvcConn, svc.cartSvcAddr)
@@ -163,7 +170,8 @@ func main() {
 
 	var handler http.Handler = r
 	handler = &logHandler{log: log, next: handler}     // add logging
-	handler = ensureSessionID(handler)                 // add session ID
+	handler = ensureJWT(handler)                       // add JWT (after sessionID)
+	handler = ensureSessionID(handler)                 // add session ID (first)
 	handler = otelhttp.NewHandler(handler, "frontend") // add OTel tracing
 
 	log.Infof("starting server on " + addr + ":" + srvPort)
@@ -225,10 +233,47 @@ func mustConnGRPC(ctx context.Context, conn **grpc.ClientConn, addr string) {
 	var err error
 	ctx, cancel := context.WithTimeout(ctx, time.Second*3)
 	defer cancel()
+	
+	// Chain unary interceptors: JWT first, then OTel
+	unaryChain := func(
+		ctx context.Context,
+		method string,
+		req, reply interface{},
+		cc *grpc.ClientConn,
+		invoker grpc.UnaryInvoker,
+		opts ...grpc.CallOption,
+	) error {
+		// First apply JWT interceptor
+		jwtInterceptor := jwtUnaryClientInterceptor()
+		return jwtInterceptor(ctx, method, req, reply, cc, func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, opts ...grpc.CallOption) error {
+			// Then apply OTel interceptor
+			otelInterceptor := otelgrpc.UnaryClientInterceptor()
+			return otelInterceptor(ctx, method, req, reply, cc, invoker, opts...)
+		}, opts...)
+	}
+	
+	// Chain stream interceptors: JWT first, then OTel
+	streamChain := func(
+		ctx context.Context,
+		desc *grpc.StreamDesc,
+		cc *grpc.ClientConn,
+		method string,
+		streamer grpc.Streamer,
+		opts ...grpc.CallOption,
+	) (grpc.ClientStream, error) {
+		// First apply JWT interceptor
+		jwtInterceptor := jwtStreamClientInterceptor()
+		return jwtInterceptor(ctx, desc, cc, method, func(ctx context.Context, desc *grpc.StreamDesc, cc *grpc.ClientConn, method string, opts ...grpc.CallOption) (grpc.ClientStream, error) {
+			// Then apply OTel interceptor
+			otelInterceptor := otelgrpc.StreamClientInterceptor()
+			return otelInterceptor(ctx, desc, cc, method, streamer, opts...)
+		}, opts...)
+	}
+	
 	*conn, err = grpc.DialContext(ctx, addr,
 		grpc.WithInsecure(),
-		grpc.WithUnaryInterceptor(otelgrpc.UnaryClientInterceptor()),
-		grpc.WithStreamInterceptor(otelgrpc.StreamClientInterceptor()))
+		grpc.WithUnaryInterceptor(unaryChain),
+		grpc.WithStreamInterceptor(streamChain))
 	if err != nil {
 		panic(errors.Wrapf(err, "grpc: failed to connect %s", addr))
 	}

@@ -21,6 +21,7 @@ WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
+COPY jwt_private_key.pem jwt_public_key.pem ./
 
 # Skaffold passes in debug-oriented compiler flags
 ARG SKAFFOLD_GO_GCFLAGS
@@ -29,6 +30,8 @@ RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags="${SKA
 FROM scratch
 WORKDIR /src
 COPY --from=builder /go/bin/frontend /src/server
+COPY --from=builder --chmod=644 /src/jwt_private_key.pem ./jwt_private_key.pem
+COPY --from=builder --chmod=644 /src/jwt_public_key.pem ./jwt_public_key.pem
 COPY ./templates ./templates
 COPY ./static ./static
 
