@@ -35,17 +35,18 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 			return handler(ctx, req) // Continue without JWT
 		}
 		jwtToken = reassembled
-		log.Debugf("JWT reassembled from compressed headers (%d bytes)", len(jwtToken))
+		sizes := GetJWTComponentSizes(components)
+		log.Infof("[JWT-FLOW] Shipping Service ← Checkout: Received compressed JWT (%d bytes) via %s", sizes["total"], info.FullMethod)
 
 	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
 		// Standard format: "Bearer <token>"
 		jwtToken = strings.TrimPrefix(authHeaders[0], "Bearer ")
-		log.Debugf("JWT extracted from authorization header (%d bytes)", len(jwtToken))
+		log.Infof("[JWT-FLOW] Shipping Service ← Checkout: Received full JWT (%d bytes) via %s", len(jwtToken), info.FullMethod)
 	}
 
 	// JWT received and reassembled (no forwarding needed for shippingservice)
-	if jwtToken != "" {
-		log.Infof("JWT received for %s (compressed=%v)", info.FullMethod, len(md.Get("x-jwt-static")) > 0)
+	if jwtToken == "" {
+		log.Infof("[JWT-FLOW] Shipping Service: No JWT received for %s", info.FullMethod)
 	}
 
 	return handler(ctx, req)

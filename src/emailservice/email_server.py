@@ -112,9 +112,9 @@ class DummyEmailService(BaseEmailService):
     metadata = context.invocation_metadata()
     jwt = reassemble_jwt(metadata)
     if jwt:
-      logger.debug(f'[JWT] Received JWT in EmailService.SendOrderConfirmation ({len(jwt)} bytes)')
+      logger.info(f'[JWT-FLOW] Email Service ← Checkout: Received compressed JWT ({len(jwt)} bytes) via EmailService.SendOrderConfirmation')
     else:
-      logger.debug('[JWT] No JWT received in EmailService.SendOrderConfirmation')
+      logger.info('[JWT-FLOW] Email Service: No JWT received in EmailService.SendOrderConfirmation')
     
     logger.info('A request to send order confirmation email to {} has been received.'.format(request.email))
     return demo_pb2.Empty()

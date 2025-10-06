@@ -38,12 +38,12 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 			return handler(ctx, req) // Continue without JWT
 		}
 		jwtToken = reassembled
-		log.Debugf("JWT reassembled from compressed headers (%d bytes)", len(jwtToken))
+		log.Infof("[JWT-FLOW] Checkout Service ← Frontend: Received compressed JWT (%d bytes) via %s", len(jwtToken), info.FullMethod)
 
 	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
 		// Standard format: "Bearer <token>"
 		jwtToken = strings.TrimPrefix(authHeaders[0], "Bearer ")
-		log.Debugf("JWT extracted from authorization header (%d bytes)", len(jwtToken))
+		log.Infof("[JWT-FLOW] Checkout Service ← Frontend: Received full JWT (%d bytes) via %s", len(jwtToken), info.FullMethod)
 	}
 
 	// Store JWT in context for client interceptor to forward
@@ -127,10 +127,11 @@ func jwtUnaryClientInterceptor(ctx context.Context, method string, req, reply in
 				"x-jwt-sig", components.Signature)
 			
 			sizes := GetJWTComponentSizes(components)
-			log.Debugf("Forwarding compressed JWT: total=%db", sizes["total"])
+			log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding compressed JWT (total=%db)", method, sizes["total"])
 		}
 	} else {
 		// Forward as standard authorization header
+		log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding full JWT", method)
 		ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)
 	}
 

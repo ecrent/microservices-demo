@@ -44,9 +44,9 @@ class HipsterShopServer {
       // Extract and log JWT
       const jwt = reassembleJWT(call.metadata);
       if (jwt) {
-        logger.info(`[JWT] Received JWT in PaymentService.Charge (${jwt.length} bytes)`);
+        logger.info(`[JWT-FLOW] Payment Service ← Checkout: Received compressed JWT (${jwt.length} bytes) via PaymentService.Charge`);
       } else {
-        logger.info('[JWT] No JWT received in PaymentService.Charge');
+        logger.info('[JWT-FLOW] Payment Service: No JWT received in PaymentService.Charge');
       }
 
       logger.info(`PaymentService#Charge invoked with request ${JSON.stringify(call.request)}`);

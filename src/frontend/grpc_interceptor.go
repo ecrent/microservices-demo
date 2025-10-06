@@ -16,10 +16,24 @@ package main
 
 import (
 	"context"
+	"strings"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 )
+
+// shouldSkipJWT checks if the method doesn't need JWT (public/anonymous services)
+func shouldSkipJWT(method string) bool {
+	// Product Catalog Service - public product data, no user context needed
+	if strings.Contains(method, "ProductCatalogService") {
+		return true
+	}
+	// Currency Service - pure conversion, no user context needed
+	if strings.Contains(method, "CurrencyService") {
+		return true
+	}
+	return false
+}
 
 // jwtUnaryClientInterceptor adds JWT to outgoing gRPC calls
 func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
@@ -31,6 +45,12 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 		invoker grpc.UnaryInvoker,
 		opts ...grpc.CallOption,
 	) error {
+		// Skip JWT for services that don't need it (performance optimization)
+		if shouldSkipJWT(method) {
+			log.Infof("[JWT-FLOW] Frontend → %s: Skipping JWT (public service)", method)
+			return invoker(ctx, method, req, reply, cc, opts...)
+		}
+		
 		// Get JWT token string from context
 		if tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string); ok && tokenStr != "" {
 			
@@ -53,13 +73,13 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 					)
 					ctx = metadata.NewOutgoingContext(ctx, md)
 					
-					// Log component sizes for monitoring
+					// Log JWT flow
 					sizes := GetJWTComponentSizes(components)
-					log.Debugf("JWT compressed: static=%db session=%db dynamic=%db sig=%db total=%db", 
-						sizes["static"], sizes["session"], sizes["dynamic"], sizes["signature"], sizes["total"])
+					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db)", method, sizes["total"])
 				}
 			} else {
 				// Standard behavior: send full JWT
+				log.Infof("[JWT-FLOW] Frontend → %s: Sending full JWT", method)
 				md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 				ctx = metadata.NewOutgoingContext(ctx, md)
 			}
@@ -87,6 +107,12 @@ func jwtStreamClientInterceptor() grpc.StreamClientInterceptor {
 		streamer grpc.Streamer,
 		opts ...grpc.CallOption,
 	) (grpc.ClientStream, error) {
+		// Skip JWT for services that don't need it (performance optimization)
+		if shouldSkipJWT(method) {
+			log.Debugf("Skipping JWT for public streaming service: %s", method)
+			return streamer(ctx, desc, cc, method, opts...)
+		}
+		
 		// Get JWT token from context
 		if tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string); ok && tokenStr != "" {
 			

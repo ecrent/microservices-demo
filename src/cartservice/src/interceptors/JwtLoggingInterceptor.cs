@@ -34,8 +34,9 @@ namespace cartservice.interceptors
                 jwt = ReassembleJWT(staticHeader.Value, sessionHeader.Value, dynamicHeader.Value, sigHeader.Value);
                 wasCompressed = true;
 
-                Console.WriteLine($"[JWT-COMPRESSION] Reassembled JWT from compressed headers");
-                Console.WriteLine($"[JWT-COMPRESSION] Static: {staticHeader.Value.Length}b, Session: {sessionHeader.Value.Length}b, Dynamic: {dynamicHeader.Value.Length}b, Sig: {sigHeader.Value.Length}b");
+                int totalSize = staticHeader.Value.Length + sessionHeader.Value.Length + dynamicHeader.Value.Length + sigHeader.Value.Length;
+                Console.WriteLine($"[JWT-FLOW] Cart Service ← Frontend/Checkout: Received compressed JWT ({totalSize} bytes) via {context.Method}");
+                Console.WriteLine($"[JWT-COMPRESSION] Component sizes - Static: {staticHeader.Value.Length}b, Session: {sessionHeader.Value.Length}b, Dynamic: {dynamicHeader.Value.Length}b, Sig: {sigHeader.Value.Length}b");
             }
             else
             {
@@ -44,17 +45,18 @@ namespace cartservice.interceptors
                 if (authHeader != null)
                 {
                     jwt = authHeader.Value.Replace("Bearer ", "");
+                    Console.WriteLine($"[JWT-FLOW] Cart Service ← Frontend/Checkout: Received full JWT ({jwt.Length} bytes) via {context.Method}");
                 }
             }
 
-            // Log JWT reception
+            // Log JWT reception (debug)
             if (jwt != null)
             {
-                Console.WriteLine($"[JWT] Received JWT in {context.Method}: {jwt.Substring(0, Math.Min(50, jwt.Length))}... (compressed={wasCompressed}, length={jwt.Length}b)");
+                Console.WriteLine($"[JWT-DEBUG] JWT preview: {jwt.Substring(0, Math.Min(50, jwt.Length))}...");
             }
             else
             {
-                Console.WriteLine($"[JWT] No JWT received in {context.Method}");
+                Console.WriteLine($"[JWT-FLOW] Cart Service: No JWT received in {context.Method}");
             }
 
             return await continuation(request, context);
