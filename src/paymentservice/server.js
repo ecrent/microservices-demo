@@ -18,7 +18,8 @@ const protoLoader = require('@grpc/proto-loader');
 
 const charge = require('./charge');
 
-const logger = require('./logger')
+const logger = require('./logger');
+const { reassembleJWT } = require('./jwt_compression');
 
 class HipsterShopServer {
   constructor(protoRoot, port = HipsterShopServer.PORT) {
@@ -40,6 +41,14 @@ class HipsterShopServer {
    */
   static ChargeServiceHandler(call, callback) {
     try {
+      // Extract and log JWT
+      const jwt = reassembleJWT(call.metadata);
+      if (jwt) {
+        logger.info(`[JWT] Received JWT in PaymentService.Charge (${jwt.length} bytes)`);
+      } else {
+        logger.info('[JWT] No JWT received in PaymentService.Charge');
+      }
+
       logger.info(`PaymentService#Charge invoked with request ${JSON.stringify(call.request)}`);
       const response = charge(call.request);
       callback(null, response);
