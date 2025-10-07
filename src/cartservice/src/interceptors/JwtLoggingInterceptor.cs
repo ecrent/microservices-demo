@@ -56,7 +56,11 @@ namespace cartservice.interceptors
             }
             else
             {
-                Console.WriteLine($"[JWT-FLOW] Cart Service: No JWT received in {context.Method}");
+                // Don't log health checks - they're infrastructure probes
+                if (!context.Method.Contains("Health/Check"))
+                {
+                    Console.WriteLine($"[JWT-FLOW] Cart Service: No JWT received in {context.Method}");
+                }
             }
 
             return await continuation(request, context);

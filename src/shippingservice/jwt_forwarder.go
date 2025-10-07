@@ -46,7 +46,10 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 
 	// JWT received and reassembled (no forwarding needed for shippingservice)
 	if jwtToken == "" {
-		log.Infof("[JWT-FLOW] Shipping Service: No JWT received for %s", info.FullMethod)
+		// Don't log health checks - they're infrastructure probes
+		if !strings.Contains(info.FullMethod, "Health/Check") {
+			log.Infof("[JWT-FLOW] Shipping Service: No JWT received for %s", info.FullMethod)
+		}
 	}
 
 	return handler(ctx, req)

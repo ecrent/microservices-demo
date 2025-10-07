@@ -16,7 +16,9 @@ package main
 
 import (
 	"context"
+	"crypto/rand"
 	"crypto/rsa"
+	"encoding/base64"
 	"fmt"
 	"net/http"
 	"os"
@@ -38,11 +40,12 @@ var (
 )
 
 type JWTClaims struct {
-	SessionID string `json:"session_id"`
-	Name      string `json:"name"`
-	MarketID  string `json:"market_id"`
-	Currency  string `json:"currency"`
-	CartID    string `json:"cart_id"`
+	SessionID   string `json:"session_id"`
+	Name        string `json:"name"`
+	MarketID    string `json:"market_id"`
+	Currency    string `json:"currency"`
+	CartID      string `json:"cart_id"`
+	RandomValue string `json:"random_value"` // Added random value to ensure uniqueness
 	jwt.RegisteredClaims
 }
 
@@ -91,13 +94,22 @@ func generateJWT(sessionID, currency string) (string, error) {
 		cartIDSuffix = sessionID
 		subjectSuffix = sessionID
 	}
+	
+	// Generate a random value to ensure each JWT is unique
+	randomBytes := make([]byte, 16)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		return "", fmt.Errorf("failed to generate random value: %w", err)
+	}
+	randomValue := base64.StdEncoding.EncodeToString(randomBytes)
 
 	claims := JWTClaims{
-		SessionID: sessionID,
-		Name:      "Jane Doe",
-		MarketID:  "US",
-		Currency:  currency,
-		CartID:    fmt.Sprintf("cart-uuid-%s", cartIDSuffix),
+		SessionID:   sessionID,
+		Name:        "Jane Doe",
+		MarketID:    "US",
+		Currency:    currency,
+		CartID:      fmt.Sprintf("cart-uuid-%s", cartIDSuffix),
+		RandomValue: randomValue, // Add random value to ensure uniqueness
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer:    jwtIssuer,
 			Subject:   fmt.Sprintf("urn:hipstershop:user:%s", subjectSuffix),
