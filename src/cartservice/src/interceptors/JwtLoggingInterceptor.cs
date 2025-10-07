@@ -66,52 +66,60 @@ namespace cartservice.interceptors
         {
             try
             {
+                // Configure JsonSerializerOptions for .NET 9.0 AOT compatibility
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    WriteIndented = false
+                };
+
                 // Parse JSON components
                 var staticObj = JsonDocument.Parse(staticJson).RootElement;
                 var sessionObj = JsonDocument.Parse(sessionJson).RootElement;
                 var dynamicObj = JsonDocument.Parse(dynamicJson).RootElement;
 
-                // Rebuild header
-                var header = new
-                {
-                    alg = staticObj.GetProperty("alg").GetString(),
-                    typ = staticObj.GetProperty("typ").GetString()
-                };
+                // Rebuild header using string concatenation to avoid reflection
+                var alg = staticObj.GetProperty("alg").GetString();
+                var typ = staticObj.GetProperty("typ").GetString();
+                string headerJson = $"{{\"alg\":\"{alg}\",\"typ\":\"{typ}\"}}";
 
-                // Rebuild payload by merging all claims
-                var payloadDict = new Dictionary<string, object>();
+                // Rebuild payload by merging all claims using string builder
+                var payloadParts = new List<string>();
 
                 // Add static claims (except alg and typ which go in header)
                 foreach (var prop in staticObj.EnumerateObject())
                 {
                     if (prop.Name != "alg" && prop.Name != "typ")
                     {
-                        payloadDict[prop.Name] = GetJsonValue(prop.Value);
+                        payloadParts.Add(FormatJsonProperty(prop.Name, prop.Value));
                     }
                 }
 
                 // Add session claims
                 foreach (var prop in sessionObj.EnumerateObject())
                 {
-                    payloadDict[prop.Name] = GetJsonValue(prop.Value);
+                    payloadParts.Add(FormatJsonProperty(prop.Name, prop.Value));
                 }
 
                 // Add dynamic claims
                 foreach (var prop in dynamicObj.EnumerateObject())
                 {
-                    payloadDict[prop.Name] = GetJsonValue(prop.Value);
+                    payloadParts.Add(FormatJsonProperty(prop.Name, prop.Value));
                 }
 
-                // Serialize header and payload
-                string headerJson = JsonSerializer.Serialize(header);
-                string payloadJson = JsonSerializer.Serialize(payloadDict);
+                // Build payload JSON
+                string payloadJson = "{" + string.Join(",", payloadParts) + "}";
 
                 // Base64Url encode
                 string headerB64 = Base64UrlEncode(Encoding.UTF8.GetBytes(headerJson));
                 string payloadB64 = Base64UrlEncode(Encoding.UTF8.GetBytes(payloadJson));
 
                 // Reconstruct JWT
-                return $"{headerB64}.{payloadB64}.{signature}";
+                string jwt = $"{headerB64}.{payloadB64}.{signature}";
+                Console.WriteLine($"[JWT-COMPRESSION] JWT reassembled from compressed headers ({jwt.Length} bytes)");
+                Console.WriteLine($"[JWT-COMPRESSION] Component sizes - Static: {staticJson.Length}b, Session: {sessionJson.Length}b, Dynamic: {dynamicJson.Length}b, Sig: {signature.Length}b");
+                
+                return jwt;
             }
             catch (Exception ex)
             {
@@ -120,21 +128,22 @@ namespace cartservice.interceptors
             }
         }
 
-        private object GetJsonValue(JsonElement element)
+        private string FormatJsonProperty(string name, JsonElement value)
         {
-            switch (element.ValueKind)
+            switch (value.ValueKind)
             {
                 case JsonValueKind.String:
-                    return element.GetString();
+                    return $"\"{name}\":\"{value.GetString()}\"";
                 case JsonValueKind.Number:
-                    return element.GetInt64();
+                    return $"\"{name}\":{value.GetRawText()}";
                 case JsonValueKind.True:
+                    return $"\"{name}\":true";
                 case JsonValueKind.False:
-                    return element.GetBoolean();
-                case JsonValueKind.Array:
-                    return element.EnumerateArray().Select(e => GetJsonValue(e)).ToArray();
+                    return $"\"{name}\":false";
+                case JsonValueKind.Null:
+                    return $"\"{name}\":null";
                 default:
-                    return element.ToString();
+                    return $"\"{name}\":{value.GetRawText()}";
             }
         }
 

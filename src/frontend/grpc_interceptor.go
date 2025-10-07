@@ -32,6 +32,14 @@ func shouldSkipJWT(method string) bool {
 	if strings.Contains(method, "CurrencyService") {
 		return true
 	}
+	// Ad Service - public ads, no user-specific targeting needed
+	if strings.Contains(method, "AdService") {
+		return true
+	}
+	// Recommendation Service - can work with anonymous users
+	if strings.Contains(method, "RecommendationService") {
+		return true
+	}
 	return false
 }
 
@@ -47,7 +55,7 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 	) error {
 		// Skip JWT for services that don't need it (performance optimization)
 		if shouldSkipJWT(method) {
-			log.Infof("[JWT-FLOW] Frontend → %s: Skipping JWT (public service)", method)
+			// Silently skip JWT for public services (no logging to reduce noise)
 			return invoker(ctx, method, req, reply, cc, opts...)
 		}
 		
@@ -109,7 +117,7 @@ func jwtStreamClientInterceptor() grpc.StreamClientInterceptor {
 	) (grpc.ClientStream, error) {
 		// Skip JWT for services that don't need it (performance optimization)
 		if shouldSkipJWT(method) {
-			log.Debugf("Skipping JWT for public streaming service: %s", method)
+			// Silently skip JWT for public services (no logging to reduce noise)
 			return streamer(ctx, desc, cc, method, opts...)
 		}
 		

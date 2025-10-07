@@ -31,6 +31,9 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 			Signature: md.Get("x-jwt-sig")[0],
 		}
 
+		// Calculate actual compressed size (the size on the wire)
+		compressedSize := len(components.Static) + len(components.Session) + len(components.Dynamic) + len(components.Signature)
+
 		// Reassemble JWT from components
 		reassembled, err := ReassembleJWT(components)
 		if err != nil {
@@ -38,7 +41,7 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 			return handler(ctx, req) // Continue without JWT
 		}
 		jwtToken = reassembled
-		log.Infof("[JWT-FLOW] Checkout Service ← Frontend: Received compressed JWT (%d bytes) via %s", len(jwtToken), info.FullMethod)
+		log.Infof("[JWT-FLOW] Checkout Service ← Frontend: Received compressed JWT (%d bytes compressed from %d bytes) via %s", compressedSize, len(jwtToken), info.FullMethod)
 
 	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
 		// Standard format: "Bearer <token>"
