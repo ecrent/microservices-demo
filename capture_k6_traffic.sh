@@ -72,8 +72,9 @@ echo "=========================================="
 echo ""
 
 # Run k6 load test
+# Note: Duration and VUs are controlled by the k6-jwt-load-test.js scenarios config
+# Do NOT use --duration or --vus flags here as they override the script config
 k6 run \
-  --duration "$TEST_DURATION" \
   --env BASE_URL="$FRONTEND_URL" \
   --out json="captures/k6-results-${COMPRESSION_MODE}-${TIMESTAMP}.json" \
   --summary-export="captures/k6-summary-${COMPRESSION_MODE}-${TIMESTAMP}.json" \
