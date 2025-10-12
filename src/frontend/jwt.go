@@ -114,7 +114,7 @@ func generateJWT(sessionID, currency string) (string, error) {
 			Issuer:    jwtIssuer,
 			Subject:   fmt.Sprintf("urn:hipstershop:user:%s", subjectSuffix),
 			Audience:  jwt.ClaimStrings{jwtAudience},
-			ExpiresAt: jwt.NewNumericDate(now.Add(5 * time.Minute)),
+			ExpiresAt: jwt.NewNumericDate(now.Add(2 * time.Minute)), // Load test: 2 min expiration
 			IssuedAt:  jwt.NewNumericDate(now),
 			ID:        jti.String(),
 		},
@@ -208,7 +208,7 @@ func ensureJWT(next http.Handler) http.HandlerFunc {
 			http.SetCookie(w, &http.Cookie{
 				Name:     cookieJWT,
 				Value:    tokenString,
-				MaxAge:   300, // 5 minutes (same as JWT expiration)
+				MaxAge:   120, // 2 minutes (same as JWT expiration) - Load test config
 				HttpOnly: true,
 				SameSite: http.SameSiteStrictMode,
 			})
