@@ -18,9 +18,9 @@ def is_jwt_compression_enabled():
 def base64url_decode(data):
     """Decode base64url string"""
     # Add padding if needed
-    padding = 4 - len(data) % 4
-    if padding != 4:
-        data += '=' * padding
+    missing_padding = len(data) % 4
+    if missing_padding:
+        data += '=' * (4 - missing_padding)
     return base64.urlsafe_b64decode(data)
 
 
@@ -127,12 +127,32 @@ def reassemble_jwt(metadata):
     dynamic_header = metadata_dict.get('x-jwt-dynamic')
     signature = metadata_dict.get('x-jwt-sig')
     
+    # Debug: Log what we received
+    logger.info(f'[JWT-DEBUG] Header presence - Static: {static_header is not None}, Session: {session_header is not None}, Dynamic: {dynamic_header is not None}, Sig: {signature is not None}')
+    
     if static_header and session_header and dynamic_header and signature:
+        # Log received header lengths for debugging
+        logger.info(f'[JWT-DEBUG] Received headers - Static: {len(static_header)}b, Session: {len(session_header)}b, Dynamic: {len(dynamic_header)}b, Sig: {len(signature)}b')
+        
         try:
-            # Decode each component
-            static_claims = json.loads(base64url_decode(static_header))
-            session_claims = json.loads(base64url_decode(session_header))
-            dynamic_claims = json.loads(base64url_decode(dynamic_header))
+            # Decode each component with proper error handling
+            try:
+                static_claims = json.loads(base64url_decode(static_header))
+            except Exception as e:
+                logger.error(f'Failed to decode x-jwt-static (len={len(static_header)}): {e}')
+                raise
+            
+            try:
+                session_claims = json.loads(base64url_decode(session_header))
+            except Exception as e:
+                logger.error(f'Failed to decode x-jwt-session (len={len(session_header)}): {e}')
+                raise
+            
+            try:
+                dynamic_claims = json.loads(base64url_decode(dynamic_header))
+            except Exception as e:
+                logger.error(f'Failed to decode x-jwt-dynamic (len={len(dynamic_header)}): {e}')
+                raise
             
             # Separate header from static claims
             header = {
@@ -155,7 +175,7 @@ def reassemble_jwt(metadata):
             header_b64 = base64url_encode(json.dumps(header, separators=(',', ':')))
             payload_b64 = base64url_encode(json.dumps(payload, separators=(',', ':')))
             
-            # Reassemble JWT
+            # Reassemble JWT (signature is already in base64url format)
             jwt = f'{header_b64}.{payload_b64}.{signature}'
             
             logger.debug(f'JWT reassembled from compressed headers ({len(jwt)} bytes)')
