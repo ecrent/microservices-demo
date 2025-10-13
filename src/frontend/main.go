@@ -270,10 +270,19 @@ func mustConnGRPC(ctx context.Context, conn **grpc.ClientConn, addr string) {
 		}, opts...)
 	}
 	
+	// Configure HPACK table size: 64KB (~306 concurrent users)
+	// Default is 4KB (~18 users), increased 16x for high-concurrency scenarios
+	// With JWT shredding + indexing control, 64KB supports:
+	//   - 1 static header (156 bytes, shared by all)
+	//   - 306 session headers (213 bytes each)
+	//   - Dynamic/signature headers are NOT cached (0 bytes in table)
 	*conn, err = grpc.DialContext(ctx, addr,
 		grpc.WithInsecure(),
 		grpc.WithUnaryInterceptor(unaryChain),
-		grpc.WithStreamInterceptor(streamChain))
+		grpc.WithStreamInterceptor(streamChain),
+		grpc.WithInitialWindowSize(65535),
+		grpc.WithInitialConnWindowSize(65535),
+		grpc.WithMaxHeaderListSize(98304)) // 96KB (64KB HPACK table + 32KB overhead)
 	if err != nil {
 		panic(errors.Wrapf(err, "grpc: failed to connect %s", addr))
 	}

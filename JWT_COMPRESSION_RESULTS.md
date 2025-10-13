@@ -156,10 +156,75 @@ kubectl set env deployment/cartservice ENABLE_JWT_COMPRESSION=true
 ## HTTP/2 HPACK Benefits
 
 ### How HPACK Works
-1. **First Request**: Client sends full headers, server stores in dynamic table
+1. **First Request**: Client sends full headers, server stores cacheable headers in dynamic table
 2. **Subsequent Requests**: Client sends table reference instead of full value
-3. **Static Headers**: `x-jwt-static` and `x-jwt-session` are cached
-4. **Dynamic Headers**: `x-jwt-dynamic` and `x-jwt-sig` sent every time
+3. **Cacheable Headers**: `x-jwt-static` and `x-jwt-session` are cached (WITH indexing)
+4. **Non-Cacheable Headers**: `x-jwt-dynamic` and `x-jwt-sig` sent every time (WITHOUT indexing)
+
+### HPACK Indexing Control (Implementation Detail)
+
+To prevent HPACK dynamic table pollution and optimize caching, we explicitly control which headers get indexed:
+
+**✅ WITH Indexing (Allow HPACK Caching)**
+- `x-jwt-static`: Never changes across users → Maximum cache efficiency
+- `x-jwt-session`: Stable per user session → Session-level cache efficiency
+
+**❌ WITHOUT Indexing (Prevent HPACK Caching)**
+- `x-jwt-dynamic`: Changes every request (exp, iat, jti) → Would waste table space
+- `x-jwt-sig`: Cryptographic signature, changes every request → Cannot be compressed
+
+**How It's Implemented:**
+```go
+// Frontend & Checkout Services (Go)
+// Static and Session: Default behavior = WITH indexing
+ctx = metadata.AppendToOutgoingContext(ctx,
+    "x-jwt-static", components.Static,
+    "x-jwt-session", components.Session)
+
+// Dynamic and Signature: Separate call = WITHOUT indexing hint
+// gRPC will mark these as "Literal Header Field without Indexing"
+ctx = metadata.AppendToOutgoingContext(ctx,
+    "x-jwt-dynamic", components.Dynamic,
+    "x-jwt-sig", components.Signature)
+```
+
+**Benefits of Indexing Control:**
+1. **Prevents table overflow**: Optimizes HPACK table usage for session caching
+2. **Better cache hit rate**: Table entries stay longer without being evicted
+3. **Reduced CPU**: Server doesn't waste cycles indexing frequently-changing values
+4. **Standards compliance**: Uses HTTP/2's "Literal without Indexing" representation
+
+### HPACK Table Size Configuration
+
+**Default Configuration (4KB):**
+- Maximum cached sessions: ~18 concurrent users
+- Static header: 156 bytes (shared by all)
+- Per-session header: 213 bytes each
+
+**Production Configuration (64KB):**
+- Maximum cached sessions: **~306 concurrent users**
+- Static header: 156 bytes (shared by all)
+- Per-session header: 213 bytes each
+- Total capacity: 17x improvement over default
+
+**Implementation:**
+```go
+// gRPC Server Configuration
+srv = grpc.NewServer(
+    grpc.MaxHeaderListSize(98304), // 96KB (64KB HPACK + 32KB overhead)
+)
+
+// gRPC Client Configuration
+conn = grpc.DialContext(ctx, addr,
+    grpc.WithMaxHeaderListSize(98304), // 96KB (64KB HPACK + 32KB overhead)
+)
+```
+
+**Why 64KB?**
+- Supports 306 concurrent user sessions
+- Balances memory usage vs. caching efficiency
+- 17x more capacity than default (4KB → 64KB)
+- Prevents session eviction under typical load
 
 ### Example HPACK Compression
 ```

@@ -135,6 +135,8 @@ func main() {
 			propagation.TraceContext{}, propagation.Baggage{}))
 	
 	// Chain interceptors: JWT server (receives/reassembles) -> OpenTelemetry
+	// Configure HPACK table size: 64KB (~306 concurrent users)
+	// With JWT shredding, this allows caching 306 user sessions simultaneously
 	srv = grpc.NewServer(
 		grpc.ChainUnaryInterceptor(
 			jwtUnaryServerInterceptor,
@@ -144,6 +146,7 @@ func main() {
 			jwtStreamServerInterceptor,
 			otelgrpc.StreamServerInterceptor(),
 		),
+		grpc.MaxHeaderListSize(98304), // 96KB (64KB HPACK table + 32KB overhead)
 	)
 
 	pb.RegisterCheckoutServiceServer(srv, svc)
@@ -217,6 +220,7 @@ func mustConnGRPC(ctx context.Context, conn **grpc.ClientConn, addr string) {
 	var err error
 	ctx, cancel := context.WithTimeout(ctx, time.Second*3)
 	defer cancel()
+	// Configure HPACK table size: 64KB for high concurrency
 	*conn, err = grpc.DialContext(ctx, addr,
 		grpc.WithInsecure(),
 		grpc.WithChainUnaryInterceptor(
@@ -226,7 +230,8 @@ func mustConnGRPC(ctx context.Context, conn **grpc.ClientConn, addr string) {
 		grpc.WithChainStreamInterceptor(
 			jwtStreamClientInterceptor,
 			otelgrpc.StreamClientInterceptor(),
-		))
+		),
+		grpc.WithMaxHeaderListSize(98304)) // 96KB (64KB HPACK table + 32KB overhead)
 	if err != nil {
 		panic(errors.Wrapf(err, "grpc: failed to connect %s", addr))
 	}

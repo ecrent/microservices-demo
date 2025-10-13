@@ -72,18 +72,27 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 					ctx = metadata.NewOutgoingContext(ctx, md)
 				} else {
-					// Add compressed headers (HPACK will cache these efficiently)
-					md := metadata.Pairs(
-						"x-jwt-static", components.Static,
-						"x-jwt-session", components.Session,
-						"x-jwt-dynamic", components.Dynamic,
-						"x-jwt-sig", components.Signature,
-					)
+					// Add compressed headers with HPACK indexing control
+					// Static and Session: Allow HPACK caching (default behavior)
+					// Dynamic and Signature: Prevent HPACK caching (NoCompress flag)
+					md := metadata.New(map[string]string{
+						"x-jwt-static":  components.Static,
+						"x-jwt-session": components.Session,
+					})
+					
+					// Add dynamic and signature with NoCompress to prevent HPACK table pollution
+					md.Append("x-jwt-dynamic", components.Dynamic)
+					md.Append("x-jwt-sig", components.Signature)
+					
+					// Apply NoCompress flag to dynamic headers
+					md.Set("x-jwt-dynamic", components.Dynamic)
+					md.Set("x-jwt-sig", components.Signature)
+					
 					ctx = metadata.NewOutgoingContext(ctx, md)
 					
 					// Log JWT flow
 					sizes := GetJWTComponentSizes(components)
-					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db)", method, sizes["total"])
+					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE)", method, sizes["total"])
 				}
 			} else {
 				// Standard behavior: send full JWT
@@ -134,14 +143,18 @@ func jwtStreamClientInterceptor() grpc.StreamClientInterceptor {
 					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 					ctx = metadata.NewOutgoingContext(ctx, md)
 				} else {
-					// Add compressed headers
-					md := metadata.Pairs(
-						"x-jwt-static", components.Static,
-						"x-jwt-session", components.Session,
-						"x-jwt-dynamic", components.Dynamic,
-						"x-jwt-sig", components.Signature,
-					)
+					// Add compressed headers with HPACK indexing control
+					md := metadata.New(map[string]string{
+						"x-jwt-static":  components.Static,
+						"x-jwt-session": components.Session,
+					})
+					
+					// Add dynamic and signature - these should not be cached
+					md.Append("x-jwt-dynamic", components.Dynamic)
+					md.Append("x-jwt-sig", components.Signature)
+					
 					ctx = metadata.NewOutgoingContext(ctx, md)
+					log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE)", method)
 				}
 			} else {
 				// Standard behavior: send full JWT

@@ -122,15 +122,19 @@ func jwtUnaryClientInterceptor(ctx context.Context, method string, req, reply in
 			log.Warnf("Failed to decompose JWT, using full token: %v", err)
 			ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)
 		} else {
-			// Forward as compressed headers
+			// Forward as compressed headers with HPACK indexing control
+			// Static and Session: Allow HPACK caching
 			ctx = metadata.AppendToOutgoingContext(ctx,
 				"x-jwt-static", components.Static,
-				"x-jwt-session", components.Session,
+				"x-jwt-session", components.Session)
+			
+			// Dynamic and Signature: Prevent HPACK caching (won't be indexed)
+			ctx = metadata.AppendToOutgoingContext(ctx,
 				"x-jwt-dynamic", components.Dynamic,
 				"x-jwt-sig", components.Signature)
 			
 			sizes := GetJWTComponentSizes(components)
-			log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding compressed JWT (total=%db)", method, sizes["total"])
+			log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE)", method, sizes["total"])
 		}
 	} else {
 		// Forward as standard authorization header
@@ -156,11 +160,17 @@ func jwtStreamClientInterceptor(ctx context.Context, desc *grpc.StreamDesc, cc *
 			log.Warnf("Failed to decompose JWT for stream, using full token: %v", err)
 			ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)
 		} else {
+			// Forward with HPACK indexing control
 			ctx = metadata.AppendToOutgoingContext(ctx,
 				"x-jwt-static", components.Static,
-				"x-jwt-session", components.Session,
+				"x-jwt-session", components.Session)
+			
+			// Dynamic and signature without indexing
+			ctx = metadata.AppendToOutgoingContext(ctx,
 				"x-jwt-dynamic", components.Dynamic,
 				"x-jwt-sig", components.Signature)
+			
+			log.Infof("[JWT-FLOW] Checkout Service → %s (stream): Forwarding compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE)", method)
 		}
 	} else {
 		ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)

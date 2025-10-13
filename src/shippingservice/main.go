@@ -80,17 +80,20 @@ func main() {
 	}
 
 	var srv *grpc.Server
+	// Configure HPACK table size: 64KB (~306 concurrent users)
 	if os.Getenv("DISABLE_STATS") == "" {
 		log.Info("Stats enabled, but temporarily unavailable")
 		srv = grpc.NewServer(
 			grpc.ChainUnaryInterceptor(jwtUnaryServerInterceptor),
 			grpc.ChainStreamInterceptor(jwtStreamServerInterceptor),
+			grpc.MaxHeaderListSize(98304), // 96KB (64KB HPACK table + 32KB overhead)
 		)
 	} else {
 		log.Info("Stats disabled.")
 		srv = grpc.NewServer(
 			grpc.ChainUnaryInterceptor(jwtUnaryServerInterceptor),
 			grpc.ChainStreamInterceptor(jwtStreamServerInterceptor),
+			grpc.MaxHeaderListSize(98304), // 96KB (64KB HPACK table + 32KB overhead)
 		)
 	}
 	svc := &server{}
