@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ENABLED_DIR="jwt-compression-results-20251013_213824"
-DISABLED_DIR="jwt-compression-results-20251013_214914"
+DISABLED_DIR="jwt-compression-results-20251013_221421"
 
 echo "======================================================================"
 echo "  JWT Compression Performance Comparison"

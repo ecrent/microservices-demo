@@ -137,8 +137,8 @@ func jwtUnaryClientInterceptor(ctx context.Context, method string, req, reply in
 			log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE)", method, sizes["total"])
 		}
 	} else {
-		// Forward as standard authorization header
-		log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding full JWT", method)
+		// JWT COMPRESSION DISABLED: Forward as standard authorization header
+		log.Infof("[JWT-FLOW] Checkout Service → %s: Forwarding full JWT in authorization header (%d bytes)", method, len(jwtToken))
 		ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)
 	}
 
@@ -173,6 +173,8 @@ func jwtStreamClientInterceptor(ctx context.Context, desc *grpc.StreamDesc, cc *
 			log.Infof("[JWT-FLOW] Checkout Service → %s (stream): Forwarding compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE)", method)
 		}
 	} else {
+		// JWT COMPRESSION DISABLED: Forward as standard authorization header
+		log.Infof("[JWT-FLOW] Checkout Service → %s (stream): Forwarding full JWT in authorization header (%d bytes)", method, len(jwtToken))
 		ctx = metadata.AppendToOutgoingContext(ctx, "authorization", "Bearer "+jwtToken)
 	}
 
