@@ -72,27 +72,24 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 					ctx = metadata.NewOutgoingContext(ctx, md)
 				} else {
-					// Add compressed headers with HPACK indexing control
-					// Static and Session: Allow HPACK caching (default behavior)
-					// Dynamic and Signature: Prevent HPACK caching (NoCompress flag)
-					md := metadata.New(map[string]string{
-						"x-jwt-static":  components.Static,
-						"x-jwt-session": components.Session,
-					})
+					// Add compressed JWT headers with -bin suffix for dynamic components
+					// -bin suffix tells gRPC to treat as binary metadata (bypasses HPACK indexing)
+					// Static and Session: Regular headers (will be indexed by HPACK)
+					// Dynamic and Sig: Binary headers (gRPC auto-base64-encodes, won't be indexed)
 					
-					// Add dynamic and signature with NoCompress to prevent HPACK table pollution
-					md.Append("x-jwt-dynamic", components.Dynamic)
-					md.Append("x-jwt-sig", components.Signature)
-					
-					// Apply NoCompress flag to dynamic headers
-					md.Set("x-jwt-dynamic", components.Dynamic)
-					md.Set("x-jwt-sig", components.Signature)
+					// gRPC automatically base64-encodes -bin headers, send raw string
+					md := metadata.Pairs(
+						"x-jwt-static", components.Static,
+						"x-jwt-session", components.Session,
+						"x-jwt-dynamic-bin", components.Dynamic,
+						"x-jwt-sig-bin", components.Signature,
+					)
 					
 					ctx = metadata.NewOutgoingContext(ctx, md)
 					
 					// Log JWT flow
 					sizes := GetJWTComponentSizes(components)
-					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE)", method, sizes["total"])
+					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE via -bin)", method, sizes["total"])
 				}
 			} else {
 				// JWT COMPRESSION DISABLED: Send full JWT in authorization header
@@ -143,18 +140,19 @@ func jwtStreamClientInterceptor() grpc.StreamClientInterceptor {
 					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 					ctx = metadata.NewOutgoingContext(ctx, md)
 				} else {
-					// Add compressed headers with HPACK indexing control
-					md := metadata.New(map[string]string{
-						"x-jwt-static":  components.Static,
-						"x-jwt-session": components.Session,
-					})
+					// Add compressed JWT headers with -bin suffix for dynamic components
+					// -bin suffix tells gRPC to treat as binary metadata (bypasses HPACK indexing)
+					// gRPC automatically base64-encodes -bin headers, send raw string
 					
-					// Add dynamic and signature - these should not be cached
-					md.Append("x-jwt-dynamic", components.Dynamic)
-					md.Append("x-jwt-sig", components.Signature)
+					md := metadata.Pairs(
+						"x-jwt-static", components.Static,
+						"x-jwt-session", components.Session,
+						"x-jwt-dynamic-bin", components.Dynamic,
+						"x-jwt-sig-bin", components.Signature,
+					)
 					
 					ctx = metadata.NewOutgoingContext(ctx, md)
-					log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE)", method)
+					log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE via -bin)", method)
 				}
 			} else {
 				// JWT COMPRESSION DISABLED: Send full JWT in authorization header

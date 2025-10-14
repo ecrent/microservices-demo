@@ -88,12 +88,24 @@ function reassembleJWT(metadata) {
   // Check for compressed JWT components
   const staticHeader = getMetadataValue(metadata, 'x-jwt-static');
   const sessionHeader = getMetadataValue(metadata, 'x-jwt-session');
-  const dynamicHeader = getMetadataValue(metadata, 'x-jwt-dynamic');
-  const signature = getMetadataValue(metadata, 'x-jwt-sig');
+  
+  // Try -bin headers first (gRPC auto-decodes them), fallback to regular headers
+  let dynamicHeader = getMetadataValue(metadata, 'x-jwt-dynamic-bin');
+  let signature = getMetadataValue(metadata, 'x-jwt-sig-bin');
+  
+  if (dynamicHeader && signature) {
+    // gRPC automatically base64-decodes -bin headers, use directly
+    console.log('[JWT-DEBUG] Using -bin headers (auto-decoded by gRPC)');
+  } else {
+    // Fallback to non-bin headers for backward compatibility
+    dynamicHeader = getMetadataValue(metadata, 'x-jwt-dynamic');
+    signature = getMetadataValue(metadata, 'x-jwt-sig');
+    console.log('[JWT-DEBUG] Using legacy non-bin headers');
+  }
 
   if (staticHeader && sessionHeader && dynamicHeader && signature) {
     try {
-      // The headers are already JSON strings from Go service, not base64url encoded
+      // The headers are already JSON strings from Go service
       const staticClaims = JSON.parse(staticHeader);
       const sessionClaims = JSON.parse(sessionHeader);
       const dynamicClaims = JSON.parse(dynamicHeader);

@@ -144,10 +144,6 @@ func validateJWT(tokenString string) (*JWTClaims, error) {
 	}
 
 	if claims, ok := token.Claims.(*JWTClaims); ok && token.Valid {
-		// Check if name is "Jane Doe"
-		if claims.Name != "Jane Doe" {
-			return nil, fmt.Errorf("invalid user name in token")
-		}
 		return claims, nil
 	}
 

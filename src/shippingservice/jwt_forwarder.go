@@ -21,11 +21,28 @@ func jwtUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.
 	// Check for compressed JWT format (x-jwt-* headers)
 	if staticHeaders := md.Get("x-jwt-static"); len(staticHeaders) > 0 {
 		// Compressed format detected
+		var dynamic, signature string
+		
+		// Try to get -bin headers first (gRPC auto-decodes them)
+		if dynamicBinHeaders := md.Get("x-jwt-dynamic-bin"); len(dynamicBinHeaders) > 0 {
+			// gRPC automatically base64-decodes -bin headers
+			dynamic = dynamicBinHeaders[0]
+		} else if dynamicHeaders := md.Get("x-jwt-dynamic"); len(dynamicHeaders) > 0 {
+			dynamic = dynamicHeaders[0]
+		}
+		
+		if sigBinHeaders := md.Get("x-jwt-sig-bin"); len(sigBinHeaders) > 0 {
+			// gRPC automatically base64-decodes -bin headers
+			signature = sigBinHeaders[0]
+		} else if sigHeaders := md.Get("x-jwt-sig"); len(sigHeaders) > 0 {
+			signature = sigHeaders[0]
+		}
+		
 		components := &JWTComponents{
-			Static:    md.Get("x-jwt-static")[0],
+			Static:    staticHeaders[0],
 			Session:   md.Get("x-jwt-session")[0],
-			Dynamic:   md.Get("x-jwt-dynamic")[0],
-			Signature: md.Get("x-jwt-sig")[0],
+			Dynamic:   dynamic,
+			Signature: signature,
 		}
 
 		// Reassemble JWT from components
@@ -67,11 +84,28 @@ func jwtStreamServerInterceptor(srv interface{}, ss grpc.ServerStream, info *grp
 
 	// Check for compressed JWT format
 	if staticHeaders := md.Get("x-jwt-static"); len(staticHeaders) > 0 {
+		var dynamic, signature string
+		
+		// Try to get -bin headers first (gRPC auto-decodes them)
+		if dynamicBinHeaders := md.Get("x-jwt-dynamic-bin"); len(dynamicBinHeaders) > 0 {
+			// gRPC automatically base64-decodes -bin headers
+			dynamic = dynamicBinHeaders[0]
+		} else if dynamicHeaders := md.Get("x-jwt-dynamic"); len(dynamicHeaders) > 0 {
+			dynamic = dynamicHeaders[0]
+		}
+		
+		if sigBinHeaders := md.Get("x-jwt-sig-bin"); len(sigBinHeaders) > 0 {
+			// gRPC automatically base64-decodes -bin headers
+			signature = sigBinHeaders[0]
+		} else if sigHeaders := md.Get("x-jwt-sig"); len(sigHeaders) > 0 {
+			signature = sigHeaders[0]
+		}
+		
 		components := &JWTComponents{
-			Static:    md.Get("x-jwt-static")[0],
+			Static:    staticHeaders[0],
 			Session:   md.Get("x-jwt-session")[0],
-			Dynamic:   md.Get("x-jwt-dynamic")[0],
-			Signature: md.Get("x-jwt-sig")[0],
+			Dynamic:   dynamic,
+			Signature: signature,
 		}
 
 		reassembled, err := ReassembleJWT(components)
@@ -80,7 +114,6 @@ func jwtStreamServerInterceptor(srv interface{}, ss grpc.ServerStream, info *grp
 			return handler(srv, ss)
 		}
 		jwtToken = reassembled
-
 	} else if authHeaders := md.Get("authorization"); len(authHeaders) > 0 {
 		jwtToken = strings.TrimPrefix(authHeaders[0], "Bearer ")
 	}

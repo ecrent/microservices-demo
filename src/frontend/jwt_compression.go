@@ -81,7 +81,7 @@ func DecomposeJWT(jwtToken string) (*JWTComponents, error) {
 
 	// Build dynamic claims (changes frequently, not cacheable)
 	dynamic := make(map[string]interface{})
-	dynamicKeys := []string{"exp", "iat", "jti"}
+	dynamicKeys := []string{"exp", "iat", "jti", "random_value"}
 	for _, key := range dynamicKeys {
 		if val, ok := payload[key]; ok {
 			dynamic[key] = val

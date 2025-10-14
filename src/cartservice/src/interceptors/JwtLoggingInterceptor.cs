@@ -28,15 +28,45 @@ namespace cartservice.interceptors
             {
                 // Compressed format detected - reassemble JWT
                 var sessionHeader = context.RequestHeaders.First(h => h.Key == "x-jwt-session");
-                var dynamicHeader = context.RequestHeaders.First(h => h.Key == "x-jwt-dynamic");
-                var sigHeader = context.RequestHeaders.First(h => h.Key == "x-jwt-sig");
+                
+                // Dynamic and signature use -bin suffix with base64 encoding to prevent HPACK indexing
+                var dynamicHeaderBin = context.RequestHeaders.FirstOrDefault(h => h.Key == "x-jwt-dynamic-bin");
+                var sigHeaderBin = context.RequestHeaders.FirstOrDefault(h => h.Key == "x-jwt-sig-bin");
+                
+                string dynamicValue, sigValue;
+                
+                try
+                {
+                    // Decode binary headers (-bin suffix means gRPC treats them as binary)
+                    if (dynamicHeaderBin != null && sigHeaderBin != null)
+                    {
+                        // gRPC C# automatically base64-decodes -bin headers, access with ValueBytes
+                        dynamicValue = Encoding.UTF8.GetString(dynamicHeaderBin.ValueBytes);
+                        sigValue = Encoding.UTF8.GetString(sigHeaderBin.ValueBytes);
+                        Console.WriteLine($"[JWT-DEBUG] Decoded -bin headers successfully (decoded from binary)");
+                    }
+                    else
+                    {
+                        // Fallback to non-bin headers for backward compatibility
+                        var dynamicHeader = context.RequestHeaders.First(h => h.Key == "x-jwt-dynamic");
+                        var sigHeader = context.RequestHeaders.First(h => h.Key == "x-jwt-sig");
+                        dynamicValue = dynamicHeader.Value;
+                        sigValue = sigHeader.Value;
+                        Console.WriteLine($"[JWT-DEBUG] Using legacy non-bin headers");
+                    }
+                    
+                    jwt = ReassembleJWT(staticHeader.Value, sessionHeader.Value, dynamicValue, sigValue);
+                    wasCompressed = true;
 
-                jwt = ReassembleJWT(staticHeader.Value, sessionHeader.Value, dynamicHeader.Value, sigHeader.Value);
-                wasCompressed = true;
-
-                int totalSize = staticHeader.Value.Length + sessionHeader.Value.Length + dynamicHeader.Value.Length + sigHeader.Value.Length;
-                Console.WriteLine($"[JWT-FLOW] Cart Service ← Frontend/Checkout: Received compressed JWT ({totalSize} bytes) via {context.Method}");
-                Console.WriteLine($"[JWT-COMPRESSION] Component sizes - Static: {staticHeader.Value.Length}b, Session: {sessionHeader.Value.Length}b, Dynamic: {dynamicHeader.Value.Length}b, Sig: {sigHeader.Value.Length}b");
+                    int totalSize = staticHeader.Value.Length + sessionHeader.Value.Length + dynamicValue.Length + sigValue.Length;
+                    Console.WriteLine($"[JWT-FLOW] Cart Service ← Frontend/Checkout: Received compressed JWT ({totalSize} bytes) via {context.Method}");
+                    Console.WriteLine($"[JWT-COMPRESSION] Component sizes - Static: {staticHeader.Value.Length}b, Session: {sessionHeader.Value.Length}b, Dynamic: {dynamicValue.Length}b, Sig: {sigValue.Length}b");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[JWT-ERROR] Failed to decode -bin headers: {ex.Message}");
+                    jwt = null;
+                }
             }
             else
             {

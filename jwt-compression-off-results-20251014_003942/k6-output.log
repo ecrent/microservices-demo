@@ -1,0 +1,2140 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6-user-journey-test.js
+        output: json (./jwt-compression-results-20251014_003942/k6-results.json)
+
+     scenarios: (100.00%) 1 scenario, 100 max VUs, 3m30s max duration (incl. graceful stop):
+              * default: Up to 100 looping VUs for 3m0s over 2 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+time="2025-10-14T00:39:49Z" level=info msg="[VU 3] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:49Z" level=info msg="[VU 3] Phase 1: Received first JWT (session: c78da649...)" source=console
+time="2025-10-14T00:39:49Z" level=info msg="[VU 2] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:49Z" level=info msg="[VU 2] Phase 1: Received first JWT (session: 1ad7f804...)" source=console
+time="2025-10-14T00:39:49Z" level=info msg="[VU 4] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:49Z" level=info msg="[VU 4] Phase 1: Received first JWT (session: 5aa79a60...)" source=console
+time="2025-10-14T00:39:50Z" level=info msg="[VU 5] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:50Z" level=info msg="[VU 5] Phase 1: Received first JWT (session: fffeb026...)" source=console
+
+running (0m01.0s), 004/100 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 004/100 VUs  0m01.0s/3m00.0s
+time="2025-10-14T00:39:50Z" level=info msg="[VU 1] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:50Z" level=info msg="[VU 1] Phase 1: Received first JWT (session: 60bbf271...)" source=console
+time="2025-10-14T00:39:50Z" level=info msg="[VU 6] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:50Z" level=info msg="[VU 6] Phase 1: Received first JWT (session: 81c1fb40...)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 8] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 8] Phase 1: Received first JWT (session: 8e01849e...)" source=console
+
+running (0m02.0s), 007/100 VUs, 0 complete and 0 interrupted iterations
+default   [   1% ] 007/100 VUs  0m02.0s/3m00.0s
+time="2025-10-14T00:39:51Z" level=info msg="[VU 3] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 7] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 7] Phase 1: Received first JWT (session: 07e5fcba...)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 2] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 9] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 9] Phase 1: Received first JWT (session: 68b1845b...)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 4] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 12] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:51Z" level=info msg="[VU 12] Phase 1: Received first JWT (session: faed9fdd...)" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 5] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (0m03.0s), 010/100 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 010/100 VUs  0m03.0s/3m00.0s
+time="2025-10-14T00:39:52Z" level=info msg="[VU 11] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 11] Phase 1: Received first JWT (session: 980c3268...)" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 1] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 10] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 10] Phase 1: Received first JWT (session: 044cfab4...)" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 6] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 13] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:52Z" level=info msg="[VU 13] Phase 1: Received first JWT (session: d4851fb7...)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 8] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 14] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 14] Phase 1: Received first JWT (session: 01cc2713...)" source=console
+
+running (0m04.0s), 014/100 VUs, 0 complete and 0 interrupted iterations
+default   [   2% ] 014/100 VUs  0m04.0s/3m00.0s
+time="2025-10-14T00:39:53Z" level=info msg="[VU 7] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 15] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 15] Phase 1: Received first JWT (session: 01b12c52...)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 9] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 16] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 16] Phase 1: Received first JWT (session: ee1e9791...)" source=console
+time="2025-10-14T00:39:53Z" level=info msg="[VU 12] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 17] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 17] Phase 1: Received first JWT (session: d2717899...)" source=console
+
+running (0m05.0s), 017/100 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 017/100 VUs  0m05.0s/3m00.0s
+time="2025-10-14T00:39:54Z" level=info msg="[VU 11] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 20] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 3] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 20] Phase 1: Received first JWT (session: b041d93d...)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 10] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 2] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 19] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 19] Phase 1: Received first JWT (session: 3089da73...)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 13] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 4] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 21] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:54Z" level=info msg="[VU 21] Phase 1: Received first JWT (session: 5e491a70...)" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 14] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (0m06.0s), 020/100 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 020/100 VUs  0m06.0s/3m00.0s
+time="2025-10-14T00:39:55Z" level=info msg="[VU 5] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 18] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 18] Phase 1: Received first JWT (session: 03d90dca...)" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 15] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 1] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 22] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 22] Phase 1: Received first JWT (session: c5347916...)" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 16] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 6] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 25] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:55Z" level=info msg="[VU 25] Phase 1: Received first JWT (session: 810d18d7...)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 17] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 8] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 24] Phase 1: Initial frontpage visit" source=console
+
+running (0m07.0s), 024/100 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 024/100 VUs  0m07.0s/3m00.0s
+time="2025-10-14T00:39:56Z" level=info msg="[VU 24] Phase 1: Received first JWT (session: 2bf35460...)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 20] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 26] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 7] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 26] Phase 1: Received first JWT (session: ade8e949...)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 19] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 9] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 27] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 27] Phase 1: Received first JWT (session: 5510d3d6...)" source=console
+time="2025-10-14T00:39:56Z" level=info msg="[VU 21] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 28] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 12] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 28] Phase 1: Received first JWT (session: b65a00eb...)" source=console
+
+running (0m08.0s), 027/100 VUs, 0 complete and 0 interrupted iterations
+default   [   4% ] 027/100 VUs  0m08.0s/3m00.0s
+time="2025-10-14T00:39:57Z" level=info msg="[VU 18] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 11] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 29] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 29] Phase 1: Received first JWT (session: a6a9e6f0...)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 22] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 10] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 31] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 31] Phase 1: Received first JWT (session: aee53897...)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 25] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 13] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 32] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:57Z" level=info msg="[VU 32] Phase 1: Received first JWT (session: 1494b445...)" source=console
+
+running (0m09.0s), 030/100 VUs, 0 complete and 0 interrupted iterations
+default   [   5% ] 030/100 VUs  0m09.0s/3m00.0s
+time="2025-10-14T00:39:58Z" level=info msg="[VU 24] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 14] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 23] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 23] Phase 1: Received first JWT (session: bef78e83...)" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 26] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 15] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 33] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 33] Phase 1: Received first JWT (session: 73e9441f...)" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 27] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 16] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 34] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:58Z" level=info msg="[VU 34] Phase 1: Received first JWT (session: b5090d4d...)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 28] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 17] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m10.0s), 033/100 VUs, 0 complete and 0 interrupted iterations
+default   [   6% ] 033/100 VUs  0m10.0s/3m00.0s
+time="2025-10-14T00:39:59Z" level=info msg="[VU 35] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 35] Phase 1: Received first JWT (session: 51961e9a...)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 29] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 37] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 20] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 37] Phase 1: Received first JWT (session: 4cbb7903...)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 31] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 19] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 36] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 36] Phase 1: Received first JWT (session: 8e5015ce...)" source=console
+time="2025-10-14T00:39:59Z" level=info msg="[VU 32] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 21] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 38] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 38] Phase 1: Received first JWT (session: f7c4f8d7...)" source=console
+
+running (0m11.0s), 037/100 VUs, 0 complete and 0 interrupted iterations
+default   [   6% ] 037/100 VUs  0m11.0s/3m00.0s
+time="2025-10-14T00:40:00Z" level=info msg="[VU 23] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 18] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 39] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 39] Phase 1: Received first JWT (session: 463d3455...)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 33] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 22] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 41] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 41] Phase 1: Received first JWT (session: 06c15a2e...)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 34] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:00Z" level=info msg="[VU 25] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 40] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 40] Phase 1: Received first JWT (session: a222abcd...)" source=console
+
+running (0m12.0s), 040/100 VUs, 0 complete and 0 interrupted iterations
+default   [   7% ] 040/100 VUs  0m12.0s/3m00.0s
+time="2025-10-14T00:40:01Z" level=info msg="[VU 35] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 24] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 42] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 42] Phase 1: Received first JWT (session: fba4db82...)" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 37] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 26] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 43] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 43] Phase 1: Received first JWT (session: af535ee3...)" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 36] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 27] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 30] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:01Z" level=info msg="[VU 30] Phase 1: Received first JWT (session: 9fdd4b24...)" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 38] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (0m13.0s), 043/100 VUs, 0 complete and 0 interrupted iterations
+default   [   7% ] 043/100 VUs  0m13.0s/3m00.0s
+time="2025-10-14T00:40:02Z" level=info msg="[VU 44] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 28] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 44] Phase 1: Received first JWT (session: 6e344c0c...)" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 39] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 45] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 29] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 45] Phase 1: Received first JWT (session: 970bb724...)" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 41] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 31] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 46] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:02Z" level=info msg="[VU 46] Phase 1: Received first JWT (session: 5370ba50...)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 40] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 32] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 48] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 48] Phase 1: Received first JWT (session: 2ed39f9c...)" source=console
+
+running (0m14.0s), 047/100 VUs, 0 complete and 0 interrupted iterations
+default   [   8% ] 047/100 VUs  0m14.0s/3m00.0s
+time="2025-10-14T00:40:03Z" level=info msg="[VU 42] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 47] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 47] Phase 1: Received first JWT (session: 0f85cd1c...)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 23] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 43] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 52] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 52] Phase 1: Received first JWT (session: 43e0a80c...)" source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 33] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:03Z" level=info msg="[VU 30] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 51] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 34] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 51] Phase 1: Received first JWT (session: 9a4f1076...)" source=console
+
+running (0m15.0s), 050/100 VUs, 0 complete and 0 interrupted iterations
+default   [   8% ] 050/100 VUs  0m15.0s/3m00.0s
+time="2025-10-14T00:40:04Z" level=info msg="[VU 44] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 35] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 49] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 49] Phase 1: Received first JWT (session: 4af49868...)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 45] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 37] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 50] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 50] Phase 1: Received first JWT (session: b798d72d...)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 46] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 53] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:04Z" level=info msg="[VU 36] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 53] Phase 1: Received first JWT (session: 879ee59c...)" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 48] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (0m16.0s), 053/100 VUs, 0 complete and 0 interrupted iterations
+default   [   9% ] 053/100 VUs  0m16.0s/3m00.0s
+time="2025-10-14T00:40:05Z" level=info msg="[VU 38] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 54] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 54] Phase 1: Received first JWT (session: 0746ec94...)" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 47] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 39] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 55] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 55] Phase 1: Received first JWT (session: b88850b6...)" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 52] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 41] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 56] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:05Z" level=info msg="[VU 56] Phase 1: Received first JWT (session: 8daec7d3...)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 51] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 40] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 57] Phase 1: Initial frontpage visit" source=console
+
+running (0m17.0s), 057/100 VUs, 0 complete and 0 interrupted iterations
+default   [   9% ] 057/100 VUs  0m17.0s/3m00.0s
+time="2025-10-14T00:40:06Z" level=info msg="[VU 57] Phase 1: Received first JWT (session: 32908dd2...)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 49] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 42] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 58] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 58] Phase 1: Received first JWT (session: 2efc188b...)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 50] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 43] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 59] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:06Z" level=info msg="[VU 59] Phase 1: Received first JWT (session: 70332920...)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 60] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 60] Phase 1: Received first JWT (session: 19ec5b95...)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 53] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 30] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m18.0s), 060/100 VUs, 0 complete and 0 interrupted iterations
+default   [  10% ] 060/100 VUs  0m18.0s/3m00.0s
+time="2025-10-14T00:40:07Z" level=info msg="[VU 54] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 44] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 61] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 61] Phase 1: Received first JWT (session: dfa134b0...)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 55] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 45] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 62] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 62] Phase 1: Received first JWT (session: 1e605d11...)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 56] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 46] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 64] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:07Z" level=info msg="[VU 64] Phase 1: Received first JWT (session: 6579a4cc...)" source=console
+
+running (0m19.0s), 063/100 VUs, 0 complete and 0 interrupted iterations
+default   [  11% ] 063/100 VUs  0m19.0s/3m00.0s
+time="2025-10-14T00:40:08Z" level=info msg="[VU 57] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 48] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 65] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 65] Phase 1: Received first JWT (session: 7a0a6024...)" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 58] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 47] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 63] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 63] Phase 1: Received first JWT (session: 26d41ff2...)" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 59] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 52] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 66] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:08Z" level=info msg="[VU 66] Phase 1: Received first JWT (session: f62a672d...)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 60] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 51] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m20.0s), 066/100 VUs, 0 complete and 0 interrupted iterations
+default   [  11% ] 066/100 VUs  0m20.0s/3m00.0s
+time="2025-10-14T00:40:09Z" level=info msg="[VU 67] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 67] Phase 1: Received first JWT (session: b5e9f8c4...)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 61] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 49] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 68] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 68] Phase 1: Received first JWT (session: db7e99ca...)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 62] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 50] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 70] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 70] Phase 1: Received first JWT (session: 3aba945e...)" source=console
+time="2025-10-14T00:40:09Z" level=info msg="[VU 64] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 71] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 71] Phase 1: Received first JWT (session: 93b8f5ac...)" source=console
+
+running (0m21.0s), 070/100 VUs, 0 complete and 0 interrupted iterations
+default   [  12% ] 070/100 VUs  0m21.0s/3m00.0s
+time="2025-10-14T00:40:10Z" level=info msg="[VU 53] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 65] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 54] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 72] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 72] Phase 1: Received first JWT (session: 48af4cc4...)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 63] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 55] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 69] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 69] Phase 1: Received first JWT (session: 98277ea2...)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 66] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:10Z" level=info msg="[VU 56] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 73] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 73] Phase 1: Received first JWT (session: 3d3b9f81...)" source=console
+
+running (0m22.0s), 073/100 VUs, 0 complete and 0 interrupted iterations
+default   [  12% ] 073/100 VUs  0m22.0s/3m00.0s
+time="2025-10-14T00:40:11Z" level=info msg="[VU 67] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 57] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 74] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 74] Phase 1: Received first JWT (session: 1d514eec...)" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 68] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 58] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 75] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 75] Phase 1: Received first JWT (session: d4001fe2...)" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 70] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 59] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 76] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:11Z" level=info msg="[VU 76] Phase 1: Received first JWT (session: 7712d2f3...)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 71] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 60] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m23.0s), 076/100 VUs, 0 complete and 0 interrupted iterations
+default   [  13% ] 076/100 VUs  0m23.0s/3m00.0s
+time="2025-10-14T00:40:12Z" level=info msg="[VU 77] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 77] Phase 1: Received first JWT (session: 5482a3c2...)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 72] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 61] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 78] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 78] Phase 1: Received first JWT (session: bb0011a5...)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 69] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 62] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 79] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:12Z" level=info msg="[VU 79] Phase 1: Received first JWT (session: 1e3d23b4...)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 73] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 64] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 80] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 80] Phase 1: Received first JWT (session: 751a005c...)" source=console
+
+running (0m24.0s), 080/100 VUs, 0 complete and 0 interrupted iterations
+default   [  13% ] 080/100 VUs  0m24.0s/3m00.0s
+time="2025-10-14T00:40:13Z" level=info msg="[VU 74] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 65] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 81] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 81] Phase 1: Received first JWT (session: 04432312...)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 75] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 63] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 82] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 82] Phase 1: Received first JWT (session: 5d7c9aa0...)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 76] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:13Z" level=info msg="[VU 66] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 83] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 83] Phase 1: Received first JWT (session: a39a3acf...)" source=console
+
+running (0m25.0s), 083/100 VUs, 0 complete and 0 interrupted iterations
+default   [  14% ] 083/100 VUs  0m25.0s/3m00.0s
+time="2025-10-14T00:40:14Z" level=info msg="[VU 77] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 67] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 84] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 84] Phase 1: Received first JWT (session: c0e82c89...)" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 78] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 68] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 85] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 85] Phase 1: Received first JWT (session: 03681f4d...)" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 79] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 70] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 86] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:14Z" level=info msg="[VU 86] Phase 1: Received first JWT (session: a727d0ad...)" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 80] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (0m26.0s), 086/100 VUs, 0 complete and 0 interrupted iterations
+default   [  14% ] 086/100 VUs  0m26.0s/3m00.0s
+time="2025-10-14T00:40:15Z" level=info msg="[VU 71] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 89] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 89] Phase 1: Received first JWT (session: a5d54998...)" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 81] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 72] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 90] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 90] Phase 1: Received first JWT (session: 859666b4...)" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 82] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 87] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 69] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:15Z" level=info msg="[VU 87] Phase 1: Received first JWT (session: 39dcf826...)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 83] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 91] Phase 1: Initial frontpage visit" source=console
+
+running (0m27.0s), 090/100 VUs, 0 complete and 0 interrupted iterations
+default   [  15% ] 090/100 VUs  0m27.0s/3m00.0s
+time="2025-10-14T00:40:16Z" level=info msg="[VU 73] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 91] Phase 1: Received first JWT (session: bad91caf...)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 84] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 74] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 92] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 92] Phase 1: Received first JWT (session: d4bd88ad...)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 85] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 75] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 93] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 93] Phase 1: Received first JWT (session: e9da95d0...)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 86] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:16Z" level=info msg="[VU 76] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 88] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 88] Phase 1: Received first JWT (session: 19e13f8d...)" source=console
+
+running (0m28.0s), 093/100 VUs, 0 complete and 0 interrupted iterations
+default   [  16% ] 093/100 VUs  0m28.0s/3m00.0s
+time="2025-10-14T00:40:17Z" level=info msg="[VU 89] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 77] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 95] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 95] Phase 1: Received first JWT (session: f817caf0...)" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 90] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 78] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 96] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 96] Phase 1: Received first JWT (session: 6b0eb5db...)" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 87] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 79] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 94] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:17Z" level=info msg="[VU 94] Phase 1: Received first JWT (session: 543d974d...)" source=console
+
+running (0m29.0s), 096/100 VUs, 0 complete and 0 interrupted iterations
+default   [  16% ] 096/100 VUs  0m29.0s/3m00.0s
+time="2025-10-14T00:40:18Z" level=info msg="[VU 91] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 80] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 97] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 97] Phase 1: Received first JWT (session: 16457631...)" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 92] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 81] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 98] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 98] Phase 1: Received first JWT (session: e90dfb74...)" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 93] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 82] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 99] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:18Z" level=info msg="[VU 99] Phase 1: Received first JWT (session: 76b88843...)" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 88] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 83] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m30.0s), 099/100 VUs, 0 complete and 0 interrupted iterations
+default   [  17% ] 099/100 VUs  0m30.0s/3m00.0s
+time="2025-10-14T00:40:19Z" level=info msg="[VU 100] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 100] Phase 1: Received first JWT (session: 3ce7e551...)" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 95] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 84] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 96] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 85] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:19Z" level=info msg="[VU 94] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 86] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m31.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  17% ] 100/100 VUs  0m31.0s/3m00.0s
+time="2025-10-14T00:40:20Z" level=info msg="[VU 97] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 89] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 98] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 90] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 99] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:20Z" level=info msg="[VU 87] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m32.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  18% ] 100/100 VUs  0m32.0s/3m00.0s
+time="2025-10-14T00:40:21Z" level=info msg="[VU 100] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:40:21Z" level=info msg="[VU 91] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:21Z" level=info msg="[VU 92] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:21Z" level=info msg="[VU 93] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:22Z" level=info msg="[VU 88] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m33.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  18% ] 100/100 VUs  0m33.0s/3m00.0s
+time="2025-10-14T00:40:22Z" level=info msg="[VU 95] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:22Z" level=info msg="[VU 96] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:23Z" level=info msg="[VU 94] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m34.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  19% ] 100/100 VUs  0m34.0s/3m00.0s
+time="2025-10-14T00:40:23Z" level=info msg="[VU 97] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:23Z" level=info msg="[VU 98] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:40:23Z" level=info msg="[VU 99] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m35.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  19% ] 100/100 VUs  0m35.0s/3m00.0s
+time="2025-10-14T00:40:24Z" level=info msg="[VU 100] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (0m36.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 100/100 VUs  0m36.0s/3m00.0s
+
+running (0m37.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  21% ] 100/100 VUs  0m37.0s/3m00.0s
+
+running (0m38.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  21% ] 100/100 VUs  0m38.0s/3m00.0s
+
+running (0m39.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  22% ] 100/100 VUs  0m39.0s/3m00.0s
+
+running (0m40.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  22% ] 100/100 VUs  0m40.0s/3m00.0s
+
+running (0m41.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  23% ] 100/100 VUs  0m41.0s/3m00.0s
+
+running (0m42.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  23% ] 100/100 VUs  0m42.0s/3m00.0s
+
+running (0m43.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  24% ] 100/100 VUs  0m43.0s/3m00.0s
+
+running (0m44.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  24% ] 100/100 VUs  0m44.0s/3m00.0s
+
+running (0m45.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  25% ] 100/100 VUs  0m45.0s/3m00.0s
+
+running (0m46.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  26% ] 100/100 VUs  0m46.0s/3m00.0s
+
+running (0m47.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  26% ] 100/100 VUs  0m47.0s/3m00.0s
+
+running (0m48.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  27% ] 100/100 VUs  0m48.0s/3m00.0s
+
+running (0m49.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  27% ] 100/100 VUs  0m49.0s/3m00.0s
+
+running (0m50.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  28% ] 100/100 VUs  0m50.0s/3m00.0s
+
+running (0m51.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  28% ] 100/100 VUs  0m51.0s/3m00.0s
+
+running (0m52.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  29% ] 100/100 VUs  0m52.0s/3m00.0s
+
+running (0m53.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  29% ] 100/100 VUs  0m53.0s/3m00.0s
+
+running (0m54.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  30% ] 100/100 VUs  0m54.0s/3m00.0s
+
+running (0m55.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  31% ] 100/100 VUs  0m55.0s/3m00.0s
+
+running (0m56.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  31% ] 100/100 VUs  0m56.0s/3m00.0s
+
+running (0m57.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  32% ] 100/100 VUs  0m57.0s/3m00.0s
+
+running (0m58.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  32% ] 100/100 VUs  0m58.0s/3m00.0s
+
+running (0m59.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  33% ] 100/100 VUs  0m59.0s/3m00.0s
+
+running (1m00.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  33% ] 100/100 VUs  1m00.0s/3m00.0s
+
+running (1m01.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  34% ] 100/100 VUs  1m01.0s/3m00.0s
+
+running (1m02.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  34% ] 100/100 VUs  1m02.0s/3m00.0s
+
+running (1m03.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  35% ] 100/100 VUs  1m03.0s/3m00.0s
+
+running (1m04.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  36% ] 100/100 VUs  1m04.0s/3m00.0s
+
+running (1m05.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  36% ] 100/100 VUs  1m05.0s/3m00.0s
+
+running (1m06.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  37% ] 100/100 VUs  1m06.0s/3m00.0s
+
+running (1m07.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  37% ] 100/100 VUs  1m07.0s/3m00.0s
+
+running (1m08.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  38% ] 100/100 VUs  1m08.0s/3m00.0s
+
+running (1m09.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  38% ] 100/100 VUs  1m09.0s/3m00.0s
+
+running (1m10.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  39% ] 100/100 VUs  1m10.0s/3m00.0s
+
+running (1m11.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  39% ] 100/100 VUs  1m11.0s/3m00.0s
+
+running (1m12.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  40% ] 100/100 VUs  1m12.0s/3m00.0s
+
+running (1m13.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  41% ] 100/100 VUs  1m13.0s/3m00.0s
+
+running (1m14.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  41% ] 100/100 VUs  1m14.0s/3m00.0s
+
+running (1m15.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  42% ] 100/100 VUs  1m15.0s/3m00.0s
+
+running (1m16.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  42% ] 100/100 VUs  1m16.0s/3m00.0s
+
+running (1m17.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  43% ] 100/100 VUs  1m17.0s/3m00.0s
+
+running (1m18.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  43% ] 100/100 VUs  1m18.0s/3m00.0s
+
+running (1m19.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  44% ] 100/100 VUs  1m19.0s/3m00.0s
+
+running (1m20.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  44% ] 100/100 VUs  1m20.0s/3m00.0s
+
+running (1m21.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  45% ] 100/100 VUs  1m21.0s/3m00.0s
+
+running (1m22.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  46% ] 100/100 VUs  1m22.0s/3m00.0s
+
+running (1m23.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  46% ] 100/100 VUs  1m23.0s/3m00.0s
+
+running (1m24.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  47% ] 100/100 VUs  1m24.0s/3m00.0s
+
+running (1m25.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  47% ] 100/100 VUs  1m25.0s/3m00.0s
+
+running (1m26.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  48% ] 100/100 VUs  1m26.0s/3m00.0s
+
+running (1m27.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  48% ] 100/100 VUs  1m27.0s/3m00.0s
+
+running (1m28.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  49% ] 100/100 VUs  1m28.0s/3m00.0s
+
+running (1m29.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  49% ] 100/100 VUs  1m29.0s/3m00.0s
+
+running (1m30.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  50% ] 100/100 VUs  1m30.0s/3m00.0s
+
+running (1m31.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  51% ] 100/100 VUs  1m31.0s/3m00.0s
+
+running (1m32.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  51% ] 100/100 VUs  1m32.0s/3m00.0s
+
+running (1m33.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  52% ] 100/100 VUs  1m33.0s/3m00.0s
+
+running (1m34.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  52% ] 100/100 VUs  1m34.0s/3m00.0s
+
+running (1m35.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  53% ] 100/100 VUs  1m35.0s/3m00.0s
+
+running (1m36.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  53% ] 100/100 VUs  1m36.0s/3m00.0s
+
+running (1m37.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  54% ] 100/100 VUs  1m37.0s/3m00.0s
+
+running (1m38.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  54% ] 100/100 VUs  1m38.0s/3m00.0s
+
+running (1m39.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  55% ] 100/100 VUs  1m39.0s/3m00.0s
+
+running (1m40.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  56% ] 100/100 VUs  1m40.0s/3m00.0s
+
+running (1m41.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  56% ] 100/100 VUs  1m41.0s/3m00.0s
+
+running (1m42.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  57% ] 100/100 VUs  1m42.0s/3m00.0s
+
+running (1m43.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  57% ] 100/100 VUs  1m43.0s/3m00.0s
+
+running (1m44.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  58% ] 100/100 VUs  1m44.0s/3m00.0s
+
+running (1m45.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  58% ] 100/100 VUs  1m45.0s/3m00.0s
+
+running (1m46.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  59% ] 100/100 VUs  1m46.0s/3m00.0s
+
+running (1m47.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  59% ] 100/100 VUs  1m47.0s/3m00.0s
+
+running (1m48.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  60% ] 100/100 VUs  1m48.0s/3m00.0s
+
+running (1m49.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  61% ] 100/100 VUs  1m49.0s/3m00.0s
+
+running (1m50.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  61% ] 100/100 VUs  1m50.0s/3m00.0s
+
+running (1m51.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  62% ] 100/100 VUs  1m51.0s/3m00.0s
+
+running (1m52.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  62% ] 100/100 VUs  1m52.0s/3m00.0s
+
+running (1m53.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  63% ] 100/100 VUs  1m53.0s/3m00.0s
+
+running (1m54.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  63% ] 100/100 VUs  1m54.0s/3m00.0s
+
+running (1m55.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  64% ] 100/100 VUs  1m55.0s/3m00.0s
+
+running (1m56.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  64% ] 100/100 VUs  1m56.0s/3m00.0s
+
+running (1m57.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  65% ] 100/100 VUs  1m57.0s/3m00.0s
+
+running (1m58.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  66% ] 100/100 VUs  1m58.0s/3m00.0s
+
+running (1m59.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  66% ] 100/100 VUs  1m59.0s/3m00.0s
+
+running (2m00.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  67% ] 100/100 VUs  2m00.0s/3m00.0s
+
+running (2m01.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  67% ] 100/100 VUs  2m01.0s/3m00.0s
+
+running (2m02.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  68% ] 100/100 VUs  2m02.0s/3m00.0s
+
+running (2m03.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  68% ] 100/100 VUs  2m03.0s/3m00.0s
+
+running (2m04.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  69% ] 100/100 VUs  2m04.0s/3m00.0s
+
+running (2m05.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  69% ] 100/100 VUs  2m05.0s/3m00.0s
+
+running (2m06.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  70% ] 100/100 VUs  2m06.0s/3m00.0s
+
+running (2m07.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  71% ] 100/100 VUs  2m07.0s/3m00.0s
+
+running (2m08.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  71% ] 100/100 VUs  2m08.0s/3m00.0s
+
+running (2m09.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  72% ] 100/100 VUs  2m09.0s/3m00.0s
+
+running (2m10.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  72% ] 100/100 VUs  2m10.0s/3m00.0s
+time="2025-10-14T00:41:59Z" level=info msg="[VU 3] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:41:59Z" level=info msg="[VU 3] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:41:59Z" level=info msg="[VU 2] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:41:59Z" level=info msg="[VU 2] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:41:59Z" level=info msg="[VU 4] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:41:59Z" level=info msg="[VU 4] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m11.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  73% ] 100/100 VUs  2m11.0s/3m00.0s
+time="2025-10-14T00:42:00Z" level=info msg="[VU 5] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:00Z" level=info msg="[VU 5] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:00Z" level=info msg="[VU 1] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:00Z" level=info msg="[VU 1] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:00Z" level=info msg="[VU 6] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:00Z" level=info msg="[VU 6] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 8] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 8] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m12.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  73% ] 100/100 VUs  2m12.0s/3m00.0s
+time="2025-10-14T00:42:01Z" level=info msg="[VU 3] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 7] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 7] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 2] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 9] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 9] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:01Z" level=info msg="[VU 4] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 12] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 12] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m13.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  74% ] 100/100 VUs  2m13.0s/3m00.0s
+time="2025-10-14T00:42:02Z" level=info msg="[VU 5] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 11] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 11] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 1] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 10] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 10] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 6] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 13] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:02Z" level=info msg="[VU 13] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 8] Phase 5: Adding item with new JWT" source=console
+
+running (2m14.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  74% ] 100/100 VUs  2m14.0s/3m00.0s
+time="2025-10-14T00:42:03Z" level=info msg="[VU 14] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 14] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 3] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 7] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 15] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 15] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 2] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 9] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 16] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 16] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:03Z" level=info msg="[VU 4] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 12] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 17] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 17] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m15.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  75% ] 100/100 VUs  2m15.0s/3m00.0s
+time="2025-10-14T00:42:04Z" level=info msg="[VU 5] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 11] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 20] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 1] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 20] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 10] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 19] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 19] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 6] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:04Z" level=info msg="[VU 13] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 21] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 21] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 8] Phase 6: Placing order" source=console
+
+running (2m16.0s), 100/100 VUs, 0 complete and 0 interrupted iterations
+default   [  76% ] 100/100 VUs  2m16.0s/3m00.0s
+time="2025-10-14T00:42:05Z" level=info msg="[VU 14] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 18] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 3] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 3] Journey complete: JWT #1 (c78da649...) → JWT #2 (c78da649...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 18] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 3] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 3] Phase 1: Received first JWT (session: 26090735...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 7] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 15] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 2] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 2] Journey complete: JWT #1 (1ad7f804...) → JWT #2 (1ad7f804...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 2] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 2] Phase 1: Received first JWT (session: ff68aa12...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 22] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 9] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 22] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 16] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 4] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 4] Journey complete: JWT #1 (5aa79a60...) → JWT #2 (5aa79a60...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 4] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 4] Phase 1: Received first JWT (session: 39f9785c...)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 25] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:05Z" level=info msg="[VU 25] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 12] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 17] Phase 5: Adding item with new JWT" source=console
+
+running (2m17.0s), 100/100 VUs, 3 complete and 0 interrupted iterations
+default   [  76% ] 100/100 VUs  2m17.0s/3m00.0s
+time="2025-10-14T00:42:06Z" level=info msg="[VU 5] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 24] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 5] Journey complete: JWT #1 (fffeb026...) → JWT #2 (fffeb026...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 5] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 24] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 5] Phase 1: Received first JWT (session: 268c33db...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 11] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 1] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 1] Journey complete: JWT #1 (60bbf271...) → JWT #2 (60bbf271...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 1] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 20] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 1] Phase 1: Received first JWT (session: b47b7c24...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 26] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 26] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 10] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 19] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 6] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 6] Journey complete: JWT #1 (81c1fb40...) → JWT #2 (81c1fb40...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 6] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 27] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 6] Phase 1: Received first JWT (session: a3d0371f...)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 27] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:06Z" level=info msg="[VU 13] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 21] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 8] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 8] Journey complete: JWT #1 (8e01849e...) → JWT #2 (8e01849e...)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 8] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 8] Phase 1: Received first JWT (session: 888a7854...)" source=console
+
+running (2m18.0s), 100/100 VUs, 7 complete and 0 interrupted iterations
+default   [  77% ] 100/100 VUs  2m18.0s/3m00.0s
+time="2025-10-14T00:42:07Z" level=info msg="[VU 14] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 28] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 28] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 18] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 3] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 7] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 7] Journey complete: JWT #1 (07e5fcba...) → JWT #2 (07e5fcba...)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 7] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 29] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 7] Phase 1: Received first JWT (session: ae22a42c...)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 29] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 15] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 2] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 9] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 22] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 9] Journey complete: JWT #1 (68b1845b...) → JWT #2 (68b1845b...)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 9] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 9] Phase 1: Received first JWT (session: 8e395dd6...)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 31] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 16] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 31] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 4] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:07Z" level=info msg="[VU 25] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 32] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 32] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 12] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 12] Journey complete: JWT #1 (faed9fdd...) → JWT #2 (faed9fdd...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 12] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 17] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 12] Phase 1: Received first JWT (session: bf9d6cb4...)" source=console
+
+running (2m19.0s), 100/100 VUs, 10 complete and 0 interrupted iterations
+default   [  77% ] 100/100 VUs  2m19.0s/3m00.0s
+time="2025-10-14T00:42:08Z" level=info msg="[VU 24] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 5] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 11] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 11] Journey complete: JWT #1 (980c3268...) → JWT #2 (980c3268...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 11] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 11] Phase 1: Received first JWT (session: 933a96d8...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 23] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 23] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 1] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 20] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 26] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 10] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 10] Journey complete: JWT #1 (044cfab4...) → JWT #2 (044cfab4...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 10] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 10] Phase 1: Received first JWT (session: a39e04ee...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 19] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 33] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 33] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 6] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 27] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 13] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 13] Journey complete: JWT #1 (d4851fb7...) → JWT #2 (d4851fb7...)" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 13] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:08Z" level=info msg="[VU 13] Phase 1: Received first JWT (session: a13f4d64...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 34] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 34] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 21] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 8] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (2m20.0s), 100/100 VUs, 13 complete and 0 interrupted iterations
+default   [  78% ] 100/100 VUs  2m20.0s/3m00.0s
+time="2025-10-14T00:42:09Z" level=info msg="[VU 14] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 14] Journey complete: JWT #1 (01cc2713...) → JWT #2 (01cc2713...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 14] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 28] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 14] Phase 1: Received first JWT (session: 412ebf75...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 35] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 35] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 18] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 7] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 29] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 15] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 15] Journey complete: JWT #1 (01b12c52...) → JWT #2 (01b12c52...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 15] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 37] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 15] Phase 1: Received first JWT (session: c42ae126...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 37] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 22] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 9] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 16] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 31] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 16] Journey complete: JWT #1 (ee1e9791...) → JWT #2 (ee1e9791...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 16] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 36] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 16] Phase 1: Received first JWT (session: 9db9a012...)" source=console
+time="2025-10-14T00:42:09Z" level=info msg="[VU 36] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 25] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 32] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 17] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 12] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (2m21.0s), 100/100 VUs, 16 complete and 0 interrupted iterations
+default   [  78% ] 100/100 VUs  2m21.0s/3m00.0s
+time="2025-10-14T00:42:10Z" level=info msg="[VU 17] Journey complete: JWT #1 (d2717899...) → JWT #2 (d2717899...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 17] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 38] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 24] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 17] Phase 1: Received first JWT (session: d1c375cd...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 11] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 38] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 3] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 23] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 39] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 20] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 39] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 20] Journey complete: JWT #1 (b041d93d...) → JWT #2 (b041d93d...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 20] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 26] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 20] Phase 1: Received first JWT (session: 4b47d03b...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 10] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 2] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 19] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 19] Journey complete: JWT #1 (3089da73...) → JWT #2 (3089da73...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 19] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 19] Phase 1: Received first JWT (session: e1515eca...)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 41] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 33] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 41] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 27] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 13] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:10Z" level=info msg="[VU 4] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 34] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 21] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 21] Journey complete: JWT #1 (5e491a70...) → JWT #2 (5e491a70...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 21] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 21] Phase 1: Received first JWT (session: 8c4839c5...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 40] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 40] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m22.0s), 100/100 VUs, 20 complete and 0 interrupted iterations
+default   [  79% ] 100/100 VUs  2m22.0s/3m00.0s
+time="2025-10-14T00:42:11Z" level=info msg="[VU 14] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 28] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 5] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 35] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 42] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 42] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 18] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 18] Journey complete: JWT #1 (03d90dca...) → JWT #2 (03d90dca...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 18] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 18] Phase 1: Received first JWT (session: 0ada8950...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 29] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 1] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 37] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 15] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 43] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 43] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 22] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 22] Journey complete: JWT #1 (c5347916...) → JWT #2 (c5347916...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 22] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 22] Phase 1: Received first JWT (session: 4f72140e...)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 31] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 16] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 36] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:11Z" level=info msg="[VU 6] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 25] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 25] Journey complete: JWT #1 (810d18d7...) → JWT #2 (810d18d7...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 25] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 25] Phase 1: Received first JWT (session: 69b3b076...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 32] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 30] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+
+running (2m23.0s), 100/100 VUs, 23 complete and 0 interrupted iterations
+default   [  79% ] 100/100 VUs  2m23.0s/3m00.0s
+time="2025-10-14T00:42:12Z" level=info msg="[VU 8] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 30] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 24] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 24] Journey complete: JWT #1 (2bf35460...) → JWT #2 (2bf35460...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 24] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 24] Phase 1: Received first JWT (session: 1a12c443...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 44] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 17] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 38] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 44] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 23] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 39] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 7] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 45] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 45] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 26] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 20] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 26] Journey complete: JWT #1 (ade8e949...) → JWT #2 (ade8e949...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 26] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 26] Phase 1: Received first JWT (session: b676cec9...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 19] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 9] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 41] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 33] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 27] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 46] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 27] Journey complete: JWT #1 (5510d3d6...) → JWT #2 (5510d3d6...)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 27] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 46] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:12Z" level=info msg="[VU 27] Phase 1: Received first JWT (session: e4956cb9...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 34] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 21] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 40] Phase 5: Adding item with new JWT" source=console
+
+running (2m24.0s), 100/100 VUs, 26 complete and 0 interrupted iterations
+default   [  80% ] 100/100 VUs  2m24.0s/3m00.0s
+time="2025-10-14T00:42:13Z" level=info msg="[VU 12] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 48] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 48] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 28] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 28] Journey complete: JWT #1 (b65a00eb...) → JWT #2 (b65a00eb...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 28] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 28] Phase 1: Received first JWT (session: ee0b0fb8...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 35] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 42] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 11] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 18] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 47] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 47] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 29] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 29] Journey complete: JWT #1 (a6a9e6f0...) → JWT #2 (a6a9e6f0...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 29] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 29] Phase 1: Received first JWT (session: f86b9456...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 37] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 10] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 43] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 22] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 52] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 52] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 31] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 31] Journey complete: JWT #1 (aee53897...) → JWT #2 (aee53897...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 31] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 31] Phase 1: Received first JWT (session: 126c1f9c...)" source=console
+time="2025-10-14T00:42:13Z" level=info msg="[VU 36] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 13] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 25] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 51] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 32] Phase 7: Continue shopping" source=console
+
+running (2m25.0s), 100/100 VUs, 29 complete and 0 interrupted iterations
+default   [  81% ] 100/100 VUs  2m25.0s/3m00.0s
+time="2025-10-14T00:42:14Z" level=info msg="[VU 32] Journey complete: JWT #1 (1494b445...) → JWT #2 (1494b445...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 32] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 51] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 30] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 32] Phase 1: Received first JWT (session: 12b09e0c...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 14] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 24] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 44] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 49] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 38] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 49] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 23] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 23] Journey complete: JWT #1 (bef78e83...) → JWT #2 (bef78e83...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 23] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 23] Phase 1: Received first JWT (session: 1aaab1cd...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 39] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 45] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 26] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 50] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 50] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 15] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 33] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 41] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 33] Journey complete: JWT #1 (73e9441f...) → JWT #2 (73e9441f...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 33] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 33] Phase 1: Received first JWT (session: 2e1e5d71...)" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 46] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:14Z" level=info msg="[VU 27] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 16] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 34] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 34] Journey complete: JWT #1 (b5090d4d...) → JWT #2 (b5090d4d...)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 34] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 34] Phase 1: Received first JWT (session: 0f1b5d11...)" source=console
+
+running (2m26.0s), 100/100 VUs, 33 complete and 0 interrupted iterations
+default   [  81% ] 100/100 VUs  2m26.0s/3m00.0s
+time="2025-10-14T00:42:15Z" level=info msg="[VU 40] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 53] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 53] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 48] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 28] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 54] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 35] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 54] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 35] Journey complete: JWT #1 (51961e9a...) → JWT #2 (51961e9a...)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 35] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 42] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 35] Phase 1: Received first JWT (session: d6c4966e...)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 17] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 47] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 29] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 55] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 55] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 37] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 20] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 37] Journey complete: JWT #1 (4cbb7903...) → JWT #2 (4cbb7903...)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 37] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 37] Phase 1: Received first JWT (session: 1d603aef...)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 43] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 19] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 52] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 31] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 56] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 56] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:15Z" level=info msg="[VU 36] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 36] Journey complete: JWT #1 (8e5015ce...) → JWT #2 (8e5015ce...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 36] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 36] Phase 1: Received first JWT (session: f4169592...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 21] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m27.0s), 100/100 VUs, 36 complete and 0 interrupted iterations
+default   [  82% ] 100/100 VUs  2m27.0s/3m00.0s
+time="2025-10-14T00:42:16Z" level=info msg="[VU 51] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 57] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 57] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 32] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 30] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 44] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 38] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 49] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 38] Journey complete: JWT #1 (f7c4f8d7...) → JWT #2 (f7c4f8d7...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 38] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 38] Phase 1: Received first JWT (session: 1364949d...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 18] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 58] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 23] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 58] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 39] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 39] Journey complete: JWT #1 (463d3455...) → JWT #2 (463d3455...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 39] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 45] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 39] Phase 1: Received first JWT (session: b75fe75c...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 50] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 59] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 22] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 59] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 41] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 41] Journey complete: JWT #1 (06c15a2e...) → JWT #2 (06c15a2e...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 41] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 33] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 41] Phase 1: Received first JWT (session: 69ed2a8e...)" source=console
+time="2025-10-14T00:42:16Z" level=info msg="[VU 46] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 34] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 25] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 60] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 60] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m28.0s), 100/100 VUs, 39 complete and 0 interrupted iterations
+default   [  82% ] 100/100 VUs  2m28.0s/3m00.0s
+time="2025-10-14T00:42:17Z" level=info msg="[VU 40] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 40] Journey complete: JWT #1 (a222abcd...) → JWT #2 (a222abcd...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 40] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 53] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 40] Phase 1: Received first JWT (session: 174230d5...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 48] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 24] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 54] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 61] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 42] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 35] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 61] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 42] Journey complete: JWT #1 (fba4db82...) → JWT #2 (fba4db82...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 42] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 47] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 42] Phase 1: Received first JWT (session: 9978a40d...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 55] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 26] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 37] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 43] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 43] Journey complete: JWT #1 (af535ee3...) → JWT #2 (af535ee3...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 43] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 62] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 43] Phase 1: Received first JWT (session: c4b76dc4...)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 62] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 52] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:17Z" level=info msg="[VU 56] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 27] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 36] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 64] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 64] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m29.0s), 100/100 VUs, 42 complete and 0 interrupted iterations
+default   [  83% ] 100/100 VUs  2m29.0s/3m00.0s
+time="2025-10-14T00:42:18Z" level=info msg="[VU 51] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 57] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 30] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 30] Journey complete: JWT #1 (9fdd4b24...) → JWT #2 (9fdd4b24...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 30] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 30] Phase 1: Received first JWT (session: b81effbf...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 65] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 28] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 65] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 44] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 44] Journey complete: JWT #1 (6e344c0c...) → JWT #2 (6e344c0c...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 44] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 49] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 38] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 44] Phase 1: Received first JWT (session: 610cbc33...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 58] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 45] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 63] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 45] Journey complete: JWT #1 (970bb724...) → JWT #2 (970bb724...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 45] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 63] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 29] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 39] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 45] Phase 1: Received first JWT (session: fd453c18...)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 50] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 59] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 41] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 66] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 31] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:18Z" level=info msg="[VU 46] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 66] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 46] Journey complete: JWT #1 (5370ba50...) → JWT #2 (5370ba50...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 46] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 46] Phase 1: Received first JWT (session: bea0a2f5...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 60] Phase 5: Adding item with new JWT" source=console
+
+running (2m30.0s), 100/100 VUs, 46 complete and 0 interrupted iterations
+default   [  83% ] 100/100 VUs  2m30.0s/3m00.0s
+time="2025-10-14T00:42:19Z" level=info msg="[VU 40] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 48] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 53] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 67] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 48] Journey complete: JWT #1 (2ed39f9c...) → JWT #2 (2ed39f9c...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 67] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 48] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 48] Phase 1: Received first JWT (session: 8c8a6b59...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 32] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 54] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 61] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 47] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 42] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 47] Journey complete: JWT #1 (0f85cd1c...) → JWT #2 (0f85cd1c...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 47] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 68] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 55] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 23] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 68] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 47] Phase 1: Received first JWT (session: 81e5d728...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 70] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 43] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 62] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 52] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 70] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 52] Journey complete: JWT #1 (43e0a80c...) → JWT #2 (43e0a80c...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 52] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 52] Phase 1: Received first JWT (session: 6ac50fbd...)" source=console
+time="2025-10-14T00:42:19Z" level=info msg="[VU 56] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 33] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 64] Phase 5: Adding item with new JWT" source=console
+
+running (2m31.0s), 100/100 VUs, 49 complete and 0 interrupted iterations
+default   [  84% ] 100/100 VUs  2m31.0s/3m00.0s
+time="2025-10-14T00:42:20Z" level=info msg="[VU 34] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 71] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 71] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 51] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 51] Journey complete: JWT #1 (9a4f1076...) → JWT #2 (9a4f1076...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 51] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 57] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 51] Phase 1: Received first JWT (session: 3b5393dd...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 30] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 65] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 49] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 44] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 49] Journey complete: JWT #1 (4af49868...) → JWT #2 (4af49868...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 49] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 72] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 49] Phase 1: Received first JWT (session: 471d4486...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 72] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 35] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 58] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 63] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 45] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 50] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 50] Journey complete: JWT #1 (b798d72d...) → JWT #2 (b798d72d...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 50] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 50] Phase 1: Received first JWT (session: 03989673...)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 37] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 69] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 59] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:20Z" level=info msg="[VU 69] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 66] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 46] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 36] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m32.0s), 100/100 VUs, 52 complete and 0 interrupted iterations
+default   [  84% ] 100/100 VUs  2m32.0s/3m00.0s
+time="2025-10-14T00:42:21Z" level=info msg="[VU 60] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 73] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 73] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 53] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 67] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 53] Journey complete: JWT #1 (879ee59c...) → JWT #2 (879ee59c...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 53] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 48] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 53] Phase 1: Received first JWT (session: df81f215...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 74] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 74] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 54] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 54] Journey complete: JWT #1 (0746ec94...) → JWT #2 (0746ec94...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 54] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 61] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 54] Phase 1: Received first JWT (session: 1ce2ad6f...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 38] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 55] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 55] Journey complete: JWT #1 (b88850b6...) → JWT #2 (b88850b6...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 55] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 68] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 47] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 75] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 55] Phase 1: Received first JWT (session: 883d8d28...)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 75] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 39] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 70] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 62] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 52] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 76] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 56] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:21Z" level=info msg="[VU 41] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 76] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 56] Journey complete: JWT #1 (8daec7d3...) → JWT #2 (8daec7d3...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 56] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 56] Phase 1: Received first JWT (session: 3b66441f...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 64] Phase 6: Placing order" source=console
+
+running (2m33.0s), 100/100 VUs, 56 complete and 0 interrupted iterations
+default   [  85% ] 100/100 VUs  2m33.0s/3m00.0s
+time="2025-10-14T00:42:22Z" level=info msg="[VU 71] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 57] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 51] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 57] Journey complete: JWT #1 (32908dd2...) → JWT #2 (32908dd2...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 57] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 40] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 57] Phase 1: Received first JWT (session: c629b0b1...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 77] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 77] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 65] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 49] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 72] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 58] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 58] Journey complete: JWT #1 (2efc188b...) → JWT #2 (2efc188b...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 58] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 78] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 42] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 58] Phase 1: Received first JWT (session: dd6a7100...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 78] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 63] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 50] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 59] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 69] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 59] Journey complete: JWT #1 (70332920...) → JWT #2 (70332920...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 59] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 79] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 59] Phase 1: Received first JWT (session: 32fb70d0...)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 79] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:22Z" level=info msg="[VU 43] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 66] Phase 6: Placing order" source=console
+
+running (2m34.0s), 100/100 VUs, 59 complete and 0 interrupted iterations
+default   [  86% ] 100/100 VUs  2m34.0s/3m00.0s
+time="2025-10-14T00:42:23Z" level=info msg="[VU 60] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 73] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 60] Journey complete: JWT #1 (19ec5b95...) → JWT #2 (19ec5b95...)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 60] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 80] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 60] Phase 1: Received first JWT (session: 6ff57433...)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 80] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 67] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 53] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 30] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 74] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 54] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 61] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 61] Journey complete: JWT #1 (dfa134b0...) → JWT #2 (dfa134b0...)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 61] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 81] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 61] Phase 1: Received first JWT (session: 70f12be2...)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 81] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 44] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 68] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 55] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 75] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 82] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 45] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 82] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 70] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 62] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 62] Journey complete: JWT #1 (1e605d11...) → JWT #2 (1e605d11...)" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 62] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:23Z" level=info msg="[VU 62] Phase 1: Received first JWT (session: 2e72190f...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 76] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 56] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 83] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 46] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 64] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 83] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m35.0s), 100/100 VUs, 62 complete and 0 interrupted iterations
+default   [  86% ] 100/100 VUs  2m35.0s/3m00.0s
+time="2025-10-14T00:42:24Z" level=info msg="[VU 64] Journey complete: JWT #1 (6579a4cc...) → JWT #2 (6579a4cc...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 64] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 64] Phase 1: Received first JWT (session: 79da40dc...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 71] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 57] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 77] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 65] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 48] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 65] Journey complete: JWT #1 (7a0a6024...) → JWT #2 (7a0a6024...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 65] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 84] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 65] Phase 1: Received first JWT (session: 1a715cb3...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 84] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 72] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 58] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 78] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 63] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 63] Journey complete: JWT #1 (26d41ff2...) → JWT #2 (26d41ff2...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 63] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 85] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 63] Phase 1: Received first JWT (session: ed3ca97b...)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 85] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 47] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 69] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 59] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:24Z" level=info msg="[VU 79] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 86] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 52] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 66] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 86] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 66] Journey complete: JWT #1 (f62a672d...) → JWT #2 (f62a672d...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 66] Phase 1: Initial frontpage visit" source=console
+
+running (2m36.0s), 100/100 VUs, 66 complete and 0 interrupted iterations
+default   [  87% ] 100/100 VUs  2m36.0s/3m00.0s
+time="2025-10-14T00:42:25Z" level=info msg="[VU 66] Phase 1: Received first JWT (session: 486f111f...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 73] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 60] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 80] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 51] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 89] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 67] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 89] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 67] Journey complete: JWT #1 (b5e9f8c4...) → JWT #2 (b5e9f8c4...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 67] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 67] Phase 1: Received first JWT (session: 158f4298...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 74] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 61] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 81] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 49] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 90] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 90] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 68] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 68] Journey complete: JWT #1 (db7e99ca...) → JWT #2 (db7e99ca...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 68] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 75] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 68] Phase 1: Received first JWT (session: eaef7a87...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 50] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 82] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 70] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 70] Journey complete: JWT #1 (3aba945e...) → JWT #2 (3aba945e...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 70] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 87] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 87] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 70] Phase 1: Received first JWT (session: b7868381...)" source=console
+time="2025-10-14T00:42:25Z" level=info msg="[VU 62] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 76] Phase 6: Placing order" source=console
+
+running (2m37.0s), 100/100 VUs, 69 complete and 0 interrupted iterations
+default   [  87% ] 100/100 VUs  2m37.0s/3m00.0s
+time="2025-10-14T00:42:26Z" level=info msg="[VU 83] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 64] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 71] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 71] Journey complete: JWT #1 (93b8f5ac...) → JWT #2 (93b8f5ac...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 71] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 91] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 91] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 71] Phase 1: Received first JWT (session: 01174d15...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 77] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 53] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 65] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 84] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 72] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 92] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 72] Journey complete: JWT #1 (48af4cc4...) → JWT #2 (48af4cc4...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 72] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 54] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 92] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 72] Phase 1: Received first JWT (session: 44b4bd54...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 78] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 63] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 85] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 93] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 93] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 55] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 69] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 69] Journey complete: JWT #1 (98277ea2...) → JWT #2 (98277ea2...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 69] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 69] Phase 1: Received first JWT (session: 5f9a64cd...)" source=console
+time="2025-10-14T00:42:26Z" level=info msg="[VU 79] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 86] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 88] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 88] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+
+running (2m38.0s), 100/100 VUs, 72 complete and 0 interrupted iterations
+default   [  88% ] 100/100 VUs  2m38.0s/3m00.0s
+time="2025-10-14T00:42:27Z" level=info msg="[VU 66] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 56] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 73] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 73] Journey complete: JWT #1 (3d3b9f81...) → JWT #2 (3d3b9f81...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 73] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 73] Phase 1: Received first JWT (session: 8927df84...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 80] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 57] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 89] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 67] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 74] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 74] Journey complete: JWT #1 (1d514eec...) → JWT #2 (1d514eec...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 74] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 95] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 74] Phase 1: Received first JWT (session: e07c247e...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 95] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 81] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 90] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 58] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 96] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 96] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 75] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 75] Journey complete: JWT #1 (d4001fe2...) → JWT #2 (d4001fe2...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 75] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 68] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 75] Phase 1: Received first JWT (session: 9ed67dbd...)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 82] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 70] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:27Z" level=info msg="[VU 87] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 59] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 94] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 94] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 76] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 76] Journey complete: JWT #1 (7712d2f3...) → JWT #2 (7712d2f3...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 76] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 76] Phase 1: Received first JWT (session: 4a33d8b1...)" source=console
+
+running (2m39.0s), 100/100 VUs, 76 complete and 0 interrupted iterations
+default   [  88% ] 100/100 VUs  2m39.0s/3m00.0s
+time="2025-10-14T00:42:28Z" level=info msg="[VU 83] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 91] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 71] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 60] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 97] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 97] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 77] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 77] Journey complete: JWT #1 (5482a3c2...) → JWT #2 (5482a3c2...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 77] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 77] Phase 1: Received first JWT (session: 638ded1b...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 84] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 98] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 98] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 92] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 72] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 61] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 78] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 78] Journey complete: JWT #1 (bb0011a5...) → JWT #2 (bb0011a5...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 78] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 78] Phase 1: Received first JWT (session: e880e4df...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 85] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 93] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 69] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 99] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 99] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 79] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 79] Journey complete: JWT #1 (1e3d23b4...) → JWT #2 (1e3d23b4...)" source=console
+time="2025-10-14T00:42:28Z" level=info msg="[VU 79] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 79] Phase 1: Received first JWT (session: 36f5ff96...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 86] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 62] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 88] Phase 5: Adding item with new JWT" source=console
+
+running (2m40.0s), 100/100 VUs, 79 complete and 0 interrupted iterations
+default   [  89% ] 100/100 VUs  2m40.0s/3m00.0s
+time="2025-10-14T00:42:29Z" level=info msg="[VU 64] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 100] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 100] Phase 4: No new session cookie received (may still be using old JWT)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 73] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 80] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 80] Journey complete: JWT #1 (751a005c...) → JWT #2 (751a005c...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 80] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 80] Phase 1: Received first JWT (session: 7f95ab92...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 89] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 74] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 95] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 65] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 81] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 81] Journey complete: JWT #1 (04432312...) → JWT #2 (04432312...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 81] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 81] Phase 1: Received first JWT (session: 9d5431d0...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 90] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 96] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 63] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 75] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 82] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 82] Journey complete: JWT #1 (5d7c9aa0...) → JWT #2 (5d7c9aa0...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 82] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 82] Phase 1: Received first JWT (session: d81dd9e3...)" source=console
+time="2025-10-14T00:42:29Z" level=info msg="[VU 87] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 94] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 76] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (2m41.0s), 100/100 VUs, 82 complete and 0 interrupted iterations
+default   [  89% ] 100/100 VUs  2m41.0s/3m00.0s
+time="2025-10-14T00:42:30Z" level=info msg="[VU 83] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 83] Journey complete: JWT #1 (a39a3acf...) → JWT #2 (a39a3acf...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 83] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 66] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 83] Phase 1: Received first JWT (session: 903f2a5f...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 91] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 97] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 77] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 67] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 84] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 84] Journey complete: JWT #1 (c0e82c89...) → JWT #2 (c0e82c89...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 84] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 84] Phase 1: Received first JWT (session: 257a24a8...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 98] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 92] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 78] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 85] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 85] Journey complete: JWT #1 (03681f4d...) → JWT #2 (03681f4d...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 85] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 85] Phase 1: Received first JWT (session: 7db3de45...)" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 93] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 68] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:30Z" level=info msg="[VU 99] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 70] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 79] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 86] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 86] Journey complete: JWT #1 (a727d0ad...) → JWT #2 (a727d0ad...)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 86] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 88] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 86] Phase 1: Received first JWT (session: 744871d8...)" source=console
+
+running (2m42.0s), 100/100 VUs, 86 complete and 0 interrupted iterations
+default   [  90% ] 100/100 VUs  2m42.0s/3m00.0s
+time="2025-10-14T00:42:31Z" level=info msg="[VU 100] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 80] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 71] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 89] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 89] Journey complete: JWT #1 (a5d54998...) → JWT #2 (a5d54998...)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 89] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 89] Phase 1: Received first JWT (session: 2d874f6d...)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 95] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 81] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 90] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 90] Journey complete: JWT #1 (859666b4...) → JWT #2 (859666b4...)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 90] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 90] Phase 1: Received first JWT (session: 3f5f0b21...)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 72] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 96] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 82] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 69] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:31Z" level=info msg="[VU 87] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 87] Journey complete: JWT #1 (39dcf826...) → JWT #2 (39dcf826...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 87] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 87] Phase 1: Received first JWT (session: 1c054397...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 94] Phase 6: Placing order" source=console
+
+running (2m43.0s), 100/100 VUs, 89 complete and 0 interrupted iterations
+default   [  91% ] 100/100 VUs  2m43.0s/3m00.0s
+time="2025-10-14T00:42:32Z" level=info msg="[VU 83] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 91] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 73] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 91] Journey complete: JWT #1 (bad91caf...) → JWT #2 (bad91caf...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 91] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 91] Phase 1: Received first JWT (session: 1e3988e7...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 97] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 74] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 84] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 98] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 92] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 92] Journey complete: JWT #1 (d4bd88ad...) → JWT #2 (d4bd88ad...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 92] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 92] Phase 1: Received first JWT (session: 72022124...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 85] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 93] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 75] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 93] Journey complete: JWT #1 (e9da95d0...) → JWT #2 (e9da95d0...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 93] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 93] Phase 1: Received first JWT (session: 042ba97c...)" source=console
+time="2025-10-14T00:42:32Z" level=info msg="[VU 99] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 86] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 88] Phase 7: Continue shopping" source=console
+
+running (2m44.0s), 100/100 VUs, 92 complete and 0 interrupted iterations
+default   [  91% ] 100/100 VUs  2m44.0s/3m00.0s
+time="2025-10-14T00:42:33Z" level=info msg="[VU 76] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 88] Journey complete: JWT #1 (19e13f8d...) → JWT #2 (19e13f8d...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 88] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 88] Phase 1: Received first JWT (session: 10864c4a...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 100] Phase 6: Placing order" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 89] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 77] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 95] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 95] Journey complete: JWT #1 (f817caf0...) → JWT #2 (f817caf0...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 95] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 95] Phase 1: Received first JWT (session: 870d8dfc...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 90] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 96] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 96] Journey complete: JWT #1 (6b0eb5db...) → JWT #2 (6b0eb5db...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 96] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 96] Phase 1: Received first JWT (session: bdc8ca65...)" source=console
+time="2025-10-14T00:42:33Z" level=info msg="[VU 78] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 87] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 94] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 94] Journey complete: JWT #1 (543d974d...) → JWT #2 (543d974d...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 94] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 94] Phase 1: Received first JWT (session: 2629d9db...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 79] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m45.0s), 100/100 VUs, 96 complete and 0 interrupted iterations
+default   [  92% ] 100/100 VUs  2m45.0s/3m00.0s
+time="2025-10-14T00:42:34Z" level=info msg="[VU 91] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 97] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 97] Journey complete: JWT #1 (16457631...) → JWT #2 (16457631...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 97] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 97] Phase 1: Received first JWT (session: f083f0f4...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 80] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 81] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 98] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 98] Journey complete: JWT #1 (e90dfb74...) → JWT #2 (e90dfb74...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 98] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 98] Phase 1: Received first JWT (session: 5dbb2a02...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 92] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 93] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 82] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 99] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 99] Journey complete: JWT #1 (76b88843...) → JWT #2 (76b88843...)" source=console
+time="2025-10-14T00:42:34Z" level=info msg="[VU 99] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 99] Phase 1: Received first JWT (session: 2e8a41c2...)" source=console
+
+running (2m46.0s), 100/100 VUs, 99 complete and 0 interrupted iterations
+default   [  92% ] 100/100 VUs  2m46.0s/3m00.0s
+time="2025-10-14T00:42:35Z" level=info msg="[VU 88] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 100] Phase 7: Continue shopping" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 83] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 100] Journey complete: JWT #1 (3ce7e551...) → JWT #2 (3ce7e551...)" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 100] Phase 1: Initial frontpage visit" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 100] Phase 1: Received first JWT (session: cd21dfe4...)" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 95] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 84] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 96] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:35Z" level=info msg="[VU 85] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:36Z" level=info msg="[VU 94] Phase 2: Adding items to cart (JWT #1)" source=console
+
+running (2m47.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  93% ] 100/100 VUs  2m47.0s/3m00.0s
+time="2025-10-14T00:42:36Z" level=info msg="[VU 86] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:36Z" level=info msg="[VU 97] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:36Z" level=info msg="[VU 89] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:36Z" level=info msg="[VU 98] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:36Z" level=info msg="[VU 90] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:37Z" level=info msg="[VU 99] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:37Z" level=info msg="[VU 87] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m48.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  93% ] 100/100 VUs  2m48.0s/3m00.0s
+time="2025-10-14T00:42:37Z" level=info msg="[VU 100] Phase 2: Adding items to cart (JWT #1)" source=console
+time="2025-10-14T00:42:37Z" level=info msg="[VU 91] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:37Z" level=info msg="[VU 92] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:37Z" level=info msg="[VU 93] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m49.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  94% ] 100/100 VUs  2m49.0s/3m00.0s
+time="2025-10-14T00:42:38Z" level=info msg="[VU 88] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:38Z" level=info msg="[VU 95] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:38Z" level=info msg="[VU 96] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m50.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  94% ] 100/100 VUs  2m50.0s/3m00.0s
+time="2025-10-14T00:42:39Z" level=info msg="[VU 94] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:39Z" level=info msg="[VU 97] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:39Z" level=info msg="[VU 98] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+time="2025-10-14T00:42:40Z" level=info msg="[VU 99] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m51.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  95% ] 100/100 VUs  2m51.0s/3m00.0s
+time="2025-10-14T00:42:40Z" level=info msg="[VU 100] Phase 3: Waiting 125 seconds for JWT expiration..." source=console
+
+running (2m52.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  96% ] 100/100 VUs  2m52.0s/3m00.0s
+
+running (2m53.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  96% ] 100/100 VUs  2m53.0s/3m00.0s
+
+running (2m54.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  97% ] 100/100 VUs  2m54.0s/3m00.0s
+
+running (2m55.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  97% ] 100/100 VUs  2m55.0s/3m00.0s
+
+running (2m56.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  98% ] 100/100 VUs  2m56.0s/3m00.0s
+
+running (2m57.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  98% ] 100/100 VUs  2m57.0s/3m00.0s
+
+running (2m58.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  99% ] 100/100 VUs  2m58.0s/3m00.0s
+
+running (2m59.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [  99% ] 100/100 VUs  2m59.0s/3m00.0s
+
+running (3m00.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default   [ 100% ] 100/100 VUs  3m00.0s/3m00.0s
+
+running (3m01.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m02.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m03.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m04.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m05.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m06.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m07.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m08.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m09.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m10.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m11.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m12.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m13.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m14.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m15.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m16.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m17.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m18.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m19.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m20.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m21.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m22.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m23.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m24.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m25.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m26.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m27.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m28.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m29.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+
+running (3m30.0s), 100/100 VUs, 100 complete and 0 interrupted iterations
+default ↓ [ 100% ] 100/100 VUs  3m0s
+time="2025-10-14T00:43:19Z" level=info msg="[VU 99] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 13] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 48] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 99] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 48] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 72] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 90] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 63] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 72] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 90] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 90] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 10] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 47] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 10] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 43] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 46] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 70] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 27] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 62] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 46] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 46] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 12] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 13] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 27] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 70] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 53] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 30] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 38] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 54] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 63] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 30] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 53] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 90] Phase 6: Placing order" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 80] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 99] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 32] Phase 4: Return to frontpage (JWT should be expired, expecting new JWT)" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 48] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 72] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 10] Phase 5: Adding item with new JWT" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 47] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+time="2025-10-14T00:43:19Z" level=info msg="[VU 62] Phase 4: ⚠️  No cookies received after JWT expiration" source=console
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<2000' p(95)=61.9ms
+
+    http_req_failed
+    ✗ 'rate<0.05' rate=5.88%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 1200   5.714226/s
+    checks_succeeded...: 91.66% 1100 out of 1200
+    checks_failed......: 8.33%  100 out of 1200
+
+    ✓ initial visit successful
+    ✓ add item 1 successful
+    ✓ add item 2 successful
+    ✓ view cart successful
+    ✓ return to shopping successful
+    ✓ add item 3 with new JWT successful
+    ✗ checkout successful
+      ↳  0% — ✓ 0 / ✗ 100
+    ✓ continue shopping successful
+
+    CUSTOM
+    cart_operations................: 500    2.380927/s
+    jwt_renewals...................: 200    0.952371/s
+    request_size_bytes.............: avg=0       min=0      med=0       max=0        p(90)=0       p(95)=0      
+    response_size_bytes............: avg=10493   min=10493  med=10493   max=10493    p(90)=10493   p(95)=10493  
+
+    HTTP
+    http_req_duration..............: avg=15.71ms min=1.23ms med=10.87ms max=185.31ms p(90)=33.49ms p(95)=61.9ms 
+      { expected_response:true }...: avg=16.48ms min=2.13ms med=11.16ms max=185.31ms p(90)=35.56ms p(95)=63.07ms
+    http_req_failed................: 5.88%  100 out of 1700
+    http_reqs......................: 1700   8.095153/s
+
+    EXECUTION
+    iteration_duration.............: avg=2m16s   min=2m16s  med=2m16s   max=2m16s    p(90)=2m16s   p(95)=2m16s  
+    iterations.....................: 100    0.476185/s
+    vus............................: 100    min=4           max=100
+    vus_max........................: 100    min=100         max=100
+
+    NETWORK
+    data_received..................: 17 MB  83 kB/s
+    data_sent......................: 1.9 MB 9.1 kB/s
+
+
+
+
+running (3m30.0s), 000/100 VUs, 100 complete and 100 interrupted iterations
+default ✓ [ 100% ] 100/100 VUs  3m0s
+time="2025-10-14T00:43:19Z" level=error msg="thresholds on metrics 'http_req_failed' have been crossed"
