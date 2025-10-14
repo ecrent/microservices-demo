@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ENABLED_DIR="jwt-compression-results-20251013_213824"
-DISABLED_DIR="jwt-compression-results-20251013_221421"
+ENABLED_DIR="jwt-compression-on-results-20251014_035853"
+DISABLED_DIR="jwt-compression-off-results-20251014_041345"
 
 echo "======================================================================"
 echo "  JWT Compression Performance Comparison"
@@ -21,8 +21,8 @@ echo "======================================================================"
 echo ""
 
 echo "--- JWT COMPRESSION ENABLED ---"
-if [ -f "${ENABLED_DIR}/k6-summary-enabled.json" ]; then
-    cat "${ENABLED_DIR}/k6-summary-enabled.json" | jq -r '
+if [ -f "${ENABLED_DIR}/k6-summary.json" ]; then
+    cat "${ENABLED_DIR}/k6-summary.json" | jq -r '
         "  Total requests: \(.metrics.http_reqs.values.count // "N/A")",
         "  Failed requests: \(.metrics.http_req_failed.values.passes // 0)",
         "  Success rate: \(100 - ((.metrics.http_req_failed.values.rate // 0) * 100))%",
@@ -67,7 +67,7 @@ if ! command -v tshark &> /dev/null; then
 fi
 
 # Analyze ENABLED capture
-ENABLED_PCAP="${ENABLED_DIR}/frontend-cart-traffic-jwt-compression-enabled.pcap"
+ENABLED_PCAP="${ENABLED_DIR}/frontend-cart-traffic.pcap"
 DISABLED_PCAP="${DISABLED_DIR}/frontend-cart-traffic.pcap"
 
 analyze_pcap() {
