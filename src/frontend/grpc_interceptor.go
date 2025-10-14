@@ -55,55 +55,51 @@ func jwtUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 	) error {
 		// Skip JWT for services that don't need it (performance optimization)
 		if shouldSkipJWT(method) {
-			// Silently skip JWT for public services (no logging to reduce noise)
 			return invoker(ctx, method, req, reply, cc, opts...)
 		}
-		
-		// Get JWT token string from context
-		if tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string); ok && tokenStr != "" {
-			
-			// Check if JWT compression is enabled
-			if IsJWTCompressionEnabled() {
-				// JWT COMPRESSION ENABLED: Decompose JWT into cacheable components
-				components, err := DecomposeJWT(tokenStr)
+
+		tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string)
+		if !ok || tokenStr == "" {
+			// Fallback for safety, though should not happen in normal flow
+			if claims, ok := getJWTFromContext(ctx); ok && claims != nil {
+				var err error
+				tokenStr, err = generateJWTFromClaims(claims)
 				if err != nil {
-					// Fallback to full JWT if decomposition fails
-					log.Warnf("Failed to decompose JWT, using full token: %v", err)
-					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
-					ctx = metadata.NewOutgoingContext(ctx, md)
-				} else {
-					// Add compressed JWT headers with -bin suffix for dynamic components
-					// -bin suffix tells gRPC to treat as binary metadata (bypasses HPACK indexing)
-					// Static and Session: Regular headers (will be indexed by HPACK)
-					// Dynamic and Sig: Binary headers (gRPC auto-base64-encodes, won't be indexed)
-					
-					// gRPC automatically base64-encodes -bin headers, send raw string
-					md := metadata.Pairs(
-						"x-jwt-static", components.Static,
-						"x-jwt-session", components.Session,
-						"x-jwt-dynamic-bin", components.Dynamic,
-						"x-jwt-sig-bin", components.Signature,
-					)
-					
-					ctx = metadata.NewOutgoingContext(ctx, md)
-					
-					// Log JWT flow
-					sizes := GetJWTComponentSizes(components)
-					log.Infof("[JWT-FLOW] Frontend → %s: Sending compressed JWT (total=%db, static/session=CACHED, dynamic/sig=NO-CACHE via -bin)", method, sizes["total"])
+					log.Warnf("No JWT token string in context and failed to regenerate from claims for method %s. Proceeding without JWT.", method)
+					return invoker(ctx, method, req, reply, cc, opts...)
 				}
 			} else {
-				// JWT COMPRESSION DISABLED: Send full JWT in authorization header
-				log.Infof("[JWT-FLOW] Frontend → %s: Sending full JWT in authorization header (%d bytes)", method, len(tokenStr))
+				log.Warnf("No JWT token string or claims in context for method %s. Proceeding without JWT.", method)
+				return invoker(ctx, method, req, reply, cc, opts...)
+			}
+		}
+
+		// Check if JWT compression is enabled.
+		if IsJWTCompressionEnabled() {
+			// JWT COMPRESSION ENABLED: Decompose JWT into cacheable components
+			components, err := DecomposeJWT(tokenStr)
+			if err != nil {
+				// Fallback to full JWT if decomposition fails
+				log.Warnf("Failed to decompose JWT, using full token: %v", err)
 				md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 				ctx = metadata.NewOutgoingContext(ctx, md)
-			}
-		} else if claims, ok := getJWTFromContext(ctx); ok && claims != nil {
-			// Fallback: regenerate token from claims if token string not available
-			tokenStr, err := generateJWTFromClaims(claims)
-			if err == nil {
-				md := metadata.Pairs("authorization", "Bearer "+tokenStr)
+			} else {
+				// Add compressed JWT headers with -bin suffix for dynamic components
+				md := metadata.Pairs(
+					"x-jwt-static", components.Static,
+					"x-jwt-session", components.Session,
+					"x-jwt-dynamic-bin", components.Dynamic,
+					"x-jwt-sig-bin", components.Signature,
+				)
 				ctx = metadata.NewOutgoingContext(ctx, md)
+				sizes := GetJWTComponentSizes(components)
+				log.Infof("[JWT-FLOW] Frontend → %s: Sending DECOMPOSED JWT (total=%db)", method, sizes["total"])
 			}
+		} else {
+			// JWT COMPRESSION DISABLED: Send full JWT in authorization header
+			log.Infof("[JWT-FLOW] Frontend → %s: Sending FULL JWT in authorization header (%d bytes)", method, len(tokenStr))
+			md := metadata.Pairs("authorization", "Bearer "+tokenStr)
+			ctx = metadata.NewOutgoingContext(ctx, md)
 		}
 
 		// Invoke the RPC with the modified context
@@ -121,45 +117,42 @@ func jwtStreamClientInterceptor() grpc.StreamClientInterceptor {
 		streamer grpc.Streamer,
 		opts ...grpc.CallOption,
 	) (grpc.ClientStream, error) {
-		// Skip JWT for services that don't need it (performance optimization)
+		// Skip JWT for services that don't need it
 		if shouldSkipJWT(method) {
-			// Silently skip JWT for public services (no logging to reduce noise)
 			return streamer(ctx, desc, cc, method, opts...)
 		}
-		
-		// Get JWT token from context
-		if tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string); ok && tokenStr != "" {
-			
-			// Check if JWT compression is enabled
-			if IsJWTCompressionEnabled() {
-				// Decompose JWT into cacheable components
-				components, err := DecomposeJWT(tokenStr)
-				if err != nil {
-					// Fallback to full JWT if decomposition fails
-					log.Warnf("Failed to decompose JWT for stream, using full token: %v", err)
-					md := metadata.Pairs("authorization", "Bearer "+tokenStr)
-					ctx = metadata.NewOutgoingContext(ctx, md)
-				} else {
-					// Add compressed JWT headers with -bin suffix for dynamic components
-					// -bin suffix tells gRPC to treat as binary metadata (bypasses HPACK indexing)
-					// gRPC automatically base64-encodes -bin headers, send raw string
-					
-					md := metadata.Pairs(
-						"x-jwt-static", components.Static,
-						"x-jwt-session", components.Session,
-						"x-jwt-dynamic-bin", components.Dynamic,
-						"x-jwt-sig-bin", components.Signature,
-					)
-					
-					ctx = metadata.NewOutgoingContext(ctx, md)
-					log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending compressed JWT (static/session=CACHED, dynamic/sig=NO-CACHE via -bin)", method)
-				}
-			} else {
-				// JWT COMPRESSION DISABLED: Send full JWT in authorization header
-				log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending full JWT in authorization header (%d bytes)", method, len(tokenStr))
+
+		tokenStr, ok := ctx.Value(ctxKeyJWTToken{}).(string)
+		if !ok || tokenStr == "" {
+			log.Warnf("No JWT token string in context for stream method %s. Proceeding without JWT.", method)
+			return streamer(ctx, desc, cc, method, opts...)
+		}
+
+		// Check if JWT compression is enabled
+		if IsJWTCompressionEnabled() {
+			// Decompose JWT into cacheable components
+			components, err := DecomposeJWT(tokenStr)
+			if err != nil {
+				// Fallback to full JWT if decomposition fails
+				log.Warnf("Failed to decompose JWT for stream, using full token: %v", err)
 				md := metadata.Pairs("authorization", "Bearer "+tokenStr)
 				ctx = metadata.NewOutgoingContext(ctx, md)
+			} else {
+				// Add compressed JWT headers
+				md := metadata.Pairs(
+					"x-jwt-static", components.Static,
+					"x-jwt-session", components.Session,
+					"x-jwt-dynamic-bin", components.Dynamic,
+					"x-jwt-sig-bin", components.Signature,
+				)
+				ctx = metadata.NewOutgoingContext(ctx, md)
+				log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending DECOMPOSED JWT", method)
 			}
+		} else {
+			// JWT COMPRESSION DISABLED: Send full JWT in authorization header
+			log.Infof("[JWT-FLOW] Frontend → %s (stream): Sending FULL JWT in authorization header (%d bytes)", method, len(tokenStr))
+			md := metadata.Pairs("authorization", "Bearer "+tokenStr)
+			ctx = metadata.NewOutgoingContext(ctx, md)
 		}
 
 		// Invoke the streaming RPC with the modified context
