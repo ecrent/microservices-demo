@@ -82,12 +82,15 @@ export default function () {
     'initial visit successful': (r) => r.status === 200,
   });
   
-  // Extract cookies (including session ID which triggers JWT creation)
+  // Extract cookies (including JWT and session ID)
   Object.assign(userCookies, extractCookies(response));
   
   if (Object.keys(userCookies).length > 0) {
     firstSessionId = userCookies['shop_session-id'];
-    console.log(`[VU ${__VU}] Phase 1: Received first JWT (session: ${firstSessionId ? firstSessionId.substring(0, 8) + '...' : 'unknown'})`);
+    const firstJWT = userCookies['shop_jwt'];
+    console.log(`[VU ${__VU}] Phase 1: Received first JWT cookie`);
+    console.log(`[VU ${__VU}]   JWT: ${firstJWT ? firstJWT.substring(0, 20) + '...' : 'not found'}`);
+    console.log(`[VU ${__VU}]   Session: ${firstSessionId ? firstSessionId.substring(0, 8) + '...' : 'not found'}`);
     jwtRenewals.add(1);
   }
   
@@ -184,34 +187,42 @@ export default function () {
     'return to shopping successful': (r) => r.status === 200,
   });
   
-  // Check if we got a new JWT by comparing session IDs
+  // Check if we got a new JWT by looking for shop_jwt cookie (not session-id)
   const newCookies = extractCookies(response);
   if (Object.keys(newCookies).length > 0) {
+    // Check for JWT cookie renewal (shop_jwt cookie)
+    const gotNewJWT = newCookies['shop_jwt'] !== undefined;
+    
+    // Also track session IDs for logging (session ID stays the same, JWT changes)
     secondSessionId = newCookies['shop_session-id'] || userCookies['shop_session-id'];
     
-    // Verify JWT renewal by checking if session changed or if Set-Cookie was present
-    const gotNewJWT = newCookies['shop_session-id'] !== undefined;
-    
     if (gotNewJWT) {
-      console.log(`[VU ${__VU}] Phase 4: ✓ JWT RENEWED - New session: ${secondSessionId.substring(0, 8)}... (old: ${firstSessionId.substring(0, 8)}...)`);
+      const firstJWT = userCookies['shop_jwt'];
+      const secondJWT = newCookies['shop_jwt'];
+      
+      console.log(`[VU ${__VU}] Phase 4: ✓ JWT RENEWED - New JWT cookie received`);
+      console.log(`[VU ${__VU}]   First JWT:  ${firstJWT ? firstJWT.substring(0, 20) + '...' : 'unknown'}`);
+      console.log(`[VU ${__VU}]   Second JWT: ${secondJWT ? secondJWT.substring(0, 20) + '...' : 'unknown'}`);
+      console.log(`[VU ${__VU}]   Session ID: ${secondSessionId ? secondSessionId.substring(0, 8) + '... (unchanged)' : 'unknown'}`);
       jwtRenewals.add(1);
       
-      // Verify the session IDs are different
-      const jwtRenewedCorrectly = secondSessionId !== firstSessionId;
+      // Verify the JWTs are different
+      const jwtRenewedCorrectly = firstJWT !== secondJWT;
       check(null, {
-        'JWT renewed with different session ID': () => jwtRenewedCorrectly,
+        'JWT renewed with different token': () => jwtRenewedCorrectly,
       });
       
       if (jwtRenewedCorrectly) {
         jwtRenewalSuccesses.add(1);
       } else {
-        console.log(`[VU ${__VU}] ⚠️  WARNING: Session ID did not change after expiration!`);
+        console.log(`[VU ${__VU}] ⚠️  WARNING: JWT did not change after expiration!`);
         jwtRenewalFailures.add(1);
       }
     } else {
-      console.log(`[VU ${__VU}] Phase 4: No new session cookie received (may still be using old JWT)`);
+      console.log(`[VU ${__VU}] Phase 4: No new JWT cookie received (still using old JWT or JWT not expired yet)`);
     }
     
+    // Update cookies for next requests
     Object.assign(userCookies, newCookies);
   } else {
     console.log(`[VU ${__VU}] Phase 4: ⚠️  No cookies received after JWT expiration`);
@@ -301,9 +312,11 @@ export default function () {
   // ========================================
   // PHASE 8: Summary
   // ========================================
-  if (firstSessionId && secondSessionId) {
-    console.log(`[VU ${__VU}] Journey complete: JWT #1 (${firstSessionId.substring(0, 8)}...) → JWT #2 (${secondSessionId.substring(0, 8)}...)`);
+  const finalJWT = userCookies['shop_jwt'];
+  if (finalJWT) {
+    console.log(`[VU ${__VU}] Journey complete: Using JWT ${finalJWT.substring(0, 20)}...`);
+    console.log(`[VU ${__VU}]   Session ID remained: ${secondSessionId ? secondSessionId.substring(0, 8) + '...' : 'unknown'}`);
   } else {
-    console.log(`[VU ${__VU}] Journey complete (JWT renewal check: ${firstSessionId ? 'partial' : 'failed'})`);
+    console.log(`[VU ${__VU}] Journey complete (JWT check: ${userCookies['shop_jwt'] ? 'success' : 'no JWT found'})`);
   }
 }

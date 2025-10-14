@@ -84,18 +84,18 @@ func generateJWT(sessionID, currency string) (string, error) {
 	now := time.Now()
 	jti, _ := uuid.NewRandom()
 
-	// Handle empty sessionID
-	cartIDSuffix := "unknown"
-	subjectSuffix := "unknown"
-	if len(sessionID) >= 20 {
-		cartIDSuffix = sessionID[:8]
-		subjectSuffix = sessionID[:20]
-	} else if len(sessionID) > 0 {
-		cartIDSuffix = sessionID
-		subjectSuffix = sessionID
-	}
+	// Add randomness for load testing - makes each virtual user unique
+	// This ensures variety in the x-jwt-session header for HPACK testing
+	randomUserBytes := make([]byte, 8)
+	rand.Read(randomUserBytes)
+	randomUserID := base64.RawURLEncoding.EncodeToString(randomUserBytes)
 	
-	// Generate a random value to ensure each JWT is unique
+	// Use random user ID to create unique session-related fields
+	uniqueSessionID := fmt.Sprintf("%s-%s", sessionID, randomUserID)
+	cartIDSuffix := randomUserID[:8]
+	subjectSuffix := randomUserID
+	
+	// Generate a random value to ensure each JWT is unique (for dynamic header)
 	randomBytes := make([]byte, 16)
 	_, err := rand.Read(randomBytes)
 	if err != nil {
@@ -104,11 +104,11 @@ func generateJWT(sessionID, currency string) (string, error) {
 	randomValue := base64.StdEncoding.EncodeToString(randomBytes)
 
 	claims := JWTClaims{
-		SessionID:   sessionID,
+		SessionID:   uniqueSessionID,         // Now unique per request
 		Name:        "Jane Doe",
 		MarketID:    "US",
 		Currency:    currency,
-		CartID:      fmt.Sprintf("cart-uuid-%s", cartIDSuffix),
+		CartID:      fmt.Sprintf("cart-uuid-%s", cartIDSuffix), // Now unique per request
 		RandomValue: randomValue, // Add random value to ensure uniqueness
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer:    jwtIssuer,
