@@ -5,7 +5,7 @@
 #
 
 ENABLED_DIR="jwt-compression-on-results-20251014_045342"
-DISABLED_DIR="jwt-compression-results-20251014_213338"
+DISABLED_DIR="jwt-compression-off-results-20251014_213338"
 
 # Colors for output
 RED='\033[0;31m'
