@@ -273,7 +273,7 @@ export default function () {
       city: 'San Francisco',
       state: 'CA',
       country: 'United States',
-      credit_card_number: '4432-8015-6152-0454',
+      credit_card_number: '4432801561520454',
       credit_card_expiration_month: '12',
       credit_card_expiration_year: '2025',
       credit_card_cvv: '123',

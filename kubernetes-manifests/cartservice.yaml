@@ -49,6 +49,8 @@ spec:
         env:
         - name: REDIS_ADDR
           value: "redis-cart:6379"
+        - name: ENABLE_JWT_COMPRESSION
+          value: "false"
         resources:
           requests:
             cpu: 200m
