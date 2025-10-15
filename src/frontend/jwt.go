@@ -84,18 +84,8 @@ func generateJWT(sessionID, currency string) (string, error) {
 	now := time.Now()
 	jti, _ := uuid.NewRandom()
 
-	// Add randomness for load testing - makes each virtual user unique
-	// This ensures variety in the x-jwt-session header for HPACK testing
-	randomUserBytes := make([]byte, 8)
-	rand.Read(randomUserBytes)
-	randomUserID := base64.RawURLEncoding.EncodeToString(randomUserBytes)
-	
-	// Use random user ID to create unique session-related fields
-	uniqueSessionID := fmt.Sprintf("%s-%s", sessionID, randomUserID)
-	cartIDSuffix := randomUserID[:8]
-	subjectSuffix := randomUserID
-	
 	// Generate a random value to ensure each JWT is unique (for dynamic header)
+	// This goes into x-jwt-dynamic and changes with every JWT renewal
 	randomBytes := make([]byte, 16)
 	_, err := rand.Read(randomBytes)
 	if err != nil {
@@ -103,16 +93,18 @@ func generateJWT(sessionID, currency string) (string, error) {
 	}
 	randomValue := base64.StdEncoding.EncodeToString(randomBytes)
 
+	// Session-related fields remain stable for HPACK caching
+	// These go into x-jwt-session and should NOT change during JWT renewal
 	claims := JWTClaims{
-		SessionID:   uniqueSessionID,         // Now unique per request
+		SessionID:   sessionID,  // Stable: matches shop_session-id cookie
 		Name:        "Jane Doe",
 		MarketID:    "US",
 		Currency:    currency,
-		CartID:      fmt.Sprintf("cart-uuid-%s", cartIDSuffix), // Now unique per request
-		RandomValue: randomValue, // Add random value to ensure uniqueness
+		CartID:      fmt.Sprintf("cart-%s", sessionID), // Stable: derived from session ID
+		RandomValue: randomValue, // Dynamic: changes with each JWT renewal
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer:    jwtIssuer,
-			Subject:   fmt.Sprintf("urn:hipstershop:user:%s", subjectSuffix),
+			Subject:   fmt.Sprintf("urn:hipstershop:user:%s", sessionID), // Stable: based on session ID
 			Audience:  jwt.ClaimStrings{jwtAudience},
 			ExpiresAt: jwt.NewNumericDate(now.Add(2 * time.Minute)), // Load test: 2 min expiration
 			IssuedAt:  jwt.NewNumericDate(now),

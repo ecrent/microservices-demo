@@ -46,7 +46,18 @@ function extractCookies(response) {
   
   if (!setCookieHeaders) return cookies;
   
-  const cookieArray = Array.isArray(setCookieHeaders) ? setCookieHeaders : [setCookieHeaders];
+  // Set-Cookie can be:
+  // 1. An array of strings (multiple Set-Cookie headers)
+  // 2. A single string with cookies separated by ", " (Go HTTP combines them)
+  let cookieArray;
+  if (Array.isArray(setCookieHeaders)) {
+    cookieArray = setCookieHeaders;
+  } else {
+    // Split on ", " but be careful not to split on "; " within cookie attributes
+    // Look for pattern: "name=value; attributes, name=value; attributes"
+    // Split on comma followed by space and a word character (start of cookie name)
+    cookieArray = setCookieHeaders.split(/,\s*(?=[a-zA-Z_]+=)/);
+  }
   
   cookieArray.forEach(cookie => {
     const parts = cookie.split(';')[0].split('=');
