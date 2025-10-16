@@ -55,7 +55,7 @@ spec:
           - name: PORT
             value: "5050"
           - name: ENABLE_JWT_COMPRESSION
-            value: "true"
+            value: "false"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
             value: "productcatalogservice:3550"
           - name: SHIPPING_SERVICE_ADDR

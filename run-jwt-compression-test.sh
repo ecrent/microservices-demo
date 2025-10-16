@@ -49,15 +49,23 @@ cleanup() {
     echo "======================================================================"
     
     # Stop tcpdump capture on minikube node
-    if [ ! -z "${TCPDUMP_PID}" ]; then
-        echo "Stopping tcpdump (PID: ${TCPDUMP_PID})..."
-        kill -INT ${TCPDUMP_PID} 2>/dev/null || true
-        sleep 2
+    if [ "$TCPDUMP_RUNNING" = "yes" ]; then
+        echo "Stopping tcpdump in minikube..."
+        minikube ssh "sudo pkill -INT tcpdump" 2>/dev/null || true
+        sleep 3
     fi
     
     # Copy pcap file from minikube node
     echo "Downloading capture file from minikube..."
-    minikube cp minikube:/tmp/frontend-cart-traffic.pcap "${RESULTS_DIR}/frontend-cart-traffic.pcap" 2>/dev/null || echo "  Warning: Could not copy pcap file"
+    if minikube cp minikube:/tmp/frontend-cart-traffic.pcap "${RESULTS_DIR}/frontend-cart-traffic.pcap" 2>/dev/null; then
+        PCAP_SIZE=$(ls -lh "${RESULTS_DIR}/frontend-cart-traffic.pcap" | awk '{print $5}')
+        echo "  ✓ Captured pcap file: ${PCAP_SIZE}"
+    else
+        echo "  ✗ Warning: Could not copy pcap file"
+    fi
+    
+    # Clean up on minikube
+    minikube ssh "sudo rm -f /tmp/frontend-cart-traffic.pcap /tmp/tcpdump.log" 2>/dev/null || true
     
     # Stop port-forward if we started it
     if [ ! -z "${PORT_FORWARD_PID}" ]; then
@@ -84,13 +92,27 @@ CARTSERVICE_IP=$(kubectl get pod ${CARTSERVICE_POD} -o jsonpath='{.status.podIP}
 echo "Frontend IP: ${FRONTEND_IP}"
 echo "CartService IP: ${CARTSERVICE_IP}"
 
-# Start tcpdump on minikube node
-minikube ssh "sudo tcpdump -i any -s 0 '(host ${FRONTEND_IP} and host ${CARTSERVICE_IP}) and tcp port 7070' -w /tmp/frontend-cart-traffic.pcap" > /dev/null 2>&1 &
-TCPDUMP_PID=$!
+# Clean up any old pcap file
+minikube ssh "sudo rm -f /tmp/frontend-cart-traffic.pcap" 2>/dev/null || true
 
-echo "Traffic capture started on minikube node (PID: ${TCPDUMP_PID})"
+# Start tcpdump on minikube node using nohup to keep it running after SSH disconnects
+minikube ssh "sudo sh -c 'nohup tcpdump -i any -s 0 \"(host ${FRONTEND_IP} and host ${CARTSERVICE_IP}) and tcp port 7070\" -w /tmp/frontend-cart-traffic.pcap > /tmp/tcpdump.log 2>&1 &'" 
+
+# Give tcpdump a moment to start
+sleep 2
+
+# Verify tcpdump is running
+TCPDUMP_CHECK=$(minikube ssh "pgrep tcpdump" 2>/dev/null || echo "")
+if [ ! -z "$TCPDUMP_CHECK" ]; then
+    echo "Traffic capture started successfully (tcpdump PID in minikube: ${TCPDUMP_CHECK})"
+    TCPDUMP_RUNNING="yes"
+else
+    echo "⚠ Warning: tcpdump may not have started properly"
+    TCPDUMP_RUNNING=""
+fi
+
 echo "Capturing traffic between ${FRONTEND_IP} <-> ${CARTSERVICE_IP} on port 7070"
-sleep 3
+sleep 1
 
 # ====================================================================
 # Run k6 load test
