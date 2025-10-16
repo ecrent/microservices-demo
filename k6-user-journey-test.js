@@ -12,8 +12,8 @@ const responseSize = new Trend('response_size_bytes');
 
 export const options = {
   stages: [
-    { duration: '30s', target: 500 },  // Ramp up to 500 users over 30s
-    { duration: '180s', target: 500 }, // Stay at 500 users for 180s (allows for 125s wait + operations)
+    { duration: '40s', target: 400 },  // Ramp up to 400 users over 40s
+    { duration: '160s', target: 400 }, // Stay at 400 users for 1600s (allows for 125s wait + operations)
   ],
   thresholds: {
     http_req_failed: ['rate<0.05'], // Less than 5% errors
