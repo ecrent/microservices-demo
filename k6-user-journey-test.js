@@ -13,7 +13,7 @@ const responseSize = new Trend('response_size_bytes');
 export const options = {
   stages: [
     { duration: '30s', target: 500 },  // Ramp up to 500 users over 30s
-    { duration: '150s', target: 500 }, // Stay at 500 users for 150s (allows for 125s wait + operations)
+    { duration: '180s', target: 500 }, // Stay at 500 users for 180s (allows for 125s wait + operations)
   ],
   thresholds: {
     http_req_failed: ['rate<0.05'], // Less than 5% errors
@@ -21,7 +21,7 @@ export const options = {
   },
 };
 
-const BASE_URL = 'http://localhost';
+const BASE_URL = 'http://localhost:8080'; // Change if needed
 
 // Available products from the catalog
 const PRODUCT_IDS = [
