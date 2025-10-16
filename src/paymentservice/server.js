@@ -30,12 +30,12 @@ class HipsterShopServer {
       health: this.loadProto(path.join(protoRoot, 'grpc/health/v1/health.proto'))
     };
 
-    // Configure HPACK table size: 64KB (~306 concurrent users)
+    // Configure HPACK table size: 256KB total (224KB HPACK table + 32KB overhead)
     // MaxHeaderListSize controls the maximum uncompressed header list size
     this.server = new grpc.Server({
       'grpc.max_receive_message_length': -1,
       'grpc.max_send_message_length': -1,
-      'grpc.max_metadata_size': 98304  // 96KB (64KB HPACK table + 32KB overhead)
+      'grpc.max_metadata_size': 262144  // 256KB (224KB HPACK table + 32KB overhead)
     });
     this.loadAllProtos(protoRoot);
   }

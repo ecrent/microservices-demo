@@ -60,6 +60,16 @@ namespace cartservice
             services.AddGrpc(options =>
             {
                 options.Interceptors.Add<JwtLoggingInterceptor>();
+                // Configure HPACK table size: 256KB total (224KB HPACK table + 32KB overhead)
+                options.MaxReceiveMessageSize = null; // unlimited
+                options.MaxSendMessageSize = null; // unlimited
+            });
+            
+            // Configure Kestrel for larger headers
+            services.Configure<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>(options =>
+            {
+                options.Limits.MaxRequestHeadersTotalSize = 262144; // 256KB
+                options.Limits.MaxRequestHeaderCount = 100;
             });
         }
 
