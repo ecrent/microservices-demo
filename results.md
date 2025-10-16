@@ -3,8 +3,8 @@
 ======================================================================
 
 Comparing:
-  ENABLED:  jwt-compression-on-results-20251014_045342
-  DISABLED: jwt-compression-off-results-20251014_213338
+  ENABLED:  jwt-compression-on-results-20251016_020954
+  DISABLED: jwt-compression-off-results-20251016_020036
 
 ======================================================================
   K6 Load Test Results
@@ -13,69 +13,69 @@ Comparing:
 --- ENABLED ---
   Iterations:        100
   Rate:              0.48 iter/s
-  Data sent:         1865.62 KB (1910392 bytes)
-  Data received:     17046.44 KB (17455558 bytes)
-  Avg response time: 40.02 ms
-  P95 response time: 109.24 ms
+  Data sent:         2595.60 KB (2657892 bytes)
+  Data received:     17287.70 KB (17702601 bytes)
+  Avg response time: 23.16 ms
+  P95 response time: 79.92 ms
   P99 response time: 0.00 ms
-  Failed requests:   100 (5.88%)
-  Passed checks:     1200
-  Failed checks:     100
+  Failed requests:   0 (0.00%)
+  Passed checks:     1300
+  Failed checks:     0
 
 --- DISABLED ---
   Iterations:        100
   Rate:              0.48 iter/s
-  Data sent:         1872.26 KB (1917192 bytes)
-  Data received:     17017.99 KB (17426426 bytes)
-  Avg response time: 36.66 ms
-  P95 response time: 107.63 ms
+  Data sent:         2595.60 KB (2657892 bytes)
+  Data received:     17289.27 KB (17704211 bytes)
+  Avg response time: 25.52 ms
+  P95 response time: 92.07 ms
   P99 response time: 0.00 ms
-  Failed requests:   100 (5.88%)
-  Passed checks:     1200
-  Failed checks:     100
+  Failed requests:   0 (0.00%)
+  Passed checks:     1300
+  Failed checks:     0
 
 ======================================================================
   Performance Improvements
 ======================================================================
 
 Data Sent (Upload):
-  Compression OFF:   1917192 bytes
-  Compression ON:    1910392 bytes
-  Bytes saved:       6800 bytes (6.64 KB)
-  Bandwidth savings: 0.35%
+  Compression OFF:   2657892 bytes
+  Compression ON:    2657892 bytes
+  Bytes difference:  0 bytes
 
 Data Received (Download):
-  Compression OFF:   17426426 bytes
-  Compression ON:    17455558 bytes
-  Bytes difference:  -29132 bytes
+  Compression OFF:   17704211 bytes
+  Compression ON:    17702601 bytes
+  Bytes saved:       1610 bytes (1.57 KB)
+  Bandwidth savings: 0.01%
 
 Response Time:
-  Compression OFF:   36.66 ms (avg), 107.63 ms (p95)
-  Compression ON:    40.02 ms (avg), 109.24 ms (p95)
-  Avg difference:    3.36 ms slower
-  P95 difference:    1.61 ms slower
+  Compression OFF:   25.52 ms (avg), 92.07 ms (p95)
+  Compression ON:    23.16 ms (avg), 79.92 ms (p95)
+  Avg improvement:   2.36 ms faster
+  P95 improvement:   12.15 ms faster
 
 ======================================================================
   Network Traffic Analysis (PCAP)
 ======================================================================
 
 --- ENABLED ---
-  Total packets:     4296
-  HTTP/2 packets:    3174
-  Total traffic:     1327124 bytes (1296.02 KB)
-  JWT header frames: 1578
+  Total packets:     4350
+  HTTP/2 packets:    3169
+  Total traffic:     1355202 bytes (1323.44 KB)
+  JWT header frames: 1585
   Auth header frames: 0
 
 --- DISABLED ---
-  Total packets:     4300
-  HTTP/2 packets:    3142
-  Total traffic:     1376535 bytes (1344.27 KB)
+  Total packets:     4334
+  HTTP/2 packets:    3143
+  Total traffic:     1416816 bytes (1383.61 KB)
   JWT header frames: 0
-  Auth header frames: 1577
+  Auth header frames: 1582
 
 Network Traffic Comparison:
-  Traffic saved:     49411 bytes (48.25 KB)
-  Reduction:         3.59%
+  Traffic saved:     61614 bytes (60.17 KB)
+  Reduction:         4.35%
 
 ======================================================================
   JWT Header Analysis
@@ -97,8 +97,8 @@ JWT Compression OFF:
   No HPACK caching benefit (JWT changes every request)
 
 Header Usage Verification:
-  Compression ON:  1578 frames with x-jwt-* headers
-  Compression OFF: 1577 frames with authorization header
+  Compression ON:  1585 frames with x-jwt-* headers
+  Compression OFF: 1582 frames with authorization header
 
 ======================================================================
   Summary
@@ -107,13 +107,13 @@ Header Usage Verification:
 ✓ JWT Compression Results:
 
   📊 Data Transfer:
-     • Upload bandwidth saved:   0.35%
-     • Download bandwidth saved: -0.17%
-     • Total network reduction:  3.59%
+     • Upload bandwidth saved:   0.00%
+     • Download bandwidth saved: 0.01%
+     • Total network reduction:  4.35%
 
   ⚡ Performance:
-     • Average response time:    3.36 ms slower
-     • P95 response time:        1.61 ms slower
+     • Average response time:    2.36 ms faster
+     • P95 response time:        12.15 ms faster
 
   🎯 Key Benefits:
      • Reduced header size per request
@@ -122,7 +122,5 @@ Header Usage Verification:
      • Scalable to 300+ concurrent users
 
 For detailed packet analysis:
-  wireshark jwt-compression-on-results-20251014_045342/frontend-cart-traffic.pcap &
-  wireshark jwt-compression-off-results-20251014_213338/frontend-cart-traffic.pcap &
-
-======================================================================
+  wireshark jwt-compression-on-results-20251016_020954/frontend-cart-traffic.pcap &
+  wireshark jwt-compression-off-results-20251016_020036/frontend-cart-traffic.pcap &
