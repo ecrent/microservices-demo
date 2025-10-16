@@ -27,7 +27,10 @@ COPY jwt_private_key.pem jwt_public_key.pem ./
 ARG SKAFFOLD_GO_GCFLAGS
 RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /go/bin/frontend .
 
-FROM scratch
+FROM alpine:3.19
+RUN apk add --no-cache ca-certificates tcpdump libcap && \
+    setcap cap_net_raw,cap_net_admin=eip /usr/bin/tcpdump
+
 WORKDIR /src
 COPY --from=builder /go/bin/frontend /src/server
 COPY --from=builder --chmod=644 /src/jwt_private_key.pem ./jwt_private_key.pem
