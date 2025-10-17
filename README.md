@@ -30,11 +30,10 @@ The following tools should already be available in your Codespace:
 The complete test involves 5 main steps:
 
 ```
-1. Enable JWT Compression → Deploy → Test → Capture Results
-2. Verify pods are healthy
-3. Disable JWT Compression → Deploy → Test → Capture Results  
-4. Verify pods are healthy
-5. Compare results from both tests
+1. Enable JWT Compression → Deploy → Verify pods are healthy → Test → Capture Results
+2. Disable JWT Compression → Deploy → Verify pods are healthy → Test → Capture Results  
+3. Compare results from both tests
+
 ```
 
 ---
@@ -54,29 +53,6 @@ First, enable JWT compression across all services:
 - Deploys changes using `skaffold run`
 - Rebuilds and restarts all affected pods
 
-**Expected output:**
-```
-==========================================
-ENABLING JWT COMPRESSION
-==========================================
-
-Step 1: Updating YAML manifests...
-  ✓ Updated frontend: ENABLE_JWT_COMPRESSION = true
-  ✓ Updated checkoutservice: ENABLE_JWT_COMPRESSION = true
-  ...
-
-Step 2: Verifying changes...
-  frontend                 : true
-  checkoutservice          : true
-  ...
-
-Step 3: Deploying changes with Skaffold...
-[Skaffold deployment output]
-...
-==========================================
-✓ JWT COMPRESSION ENABLED
-==========================================
-```
 
 ### Step 2: Verify Pods are Running
 
@@ -119,22 +95,6 @@ Run the load test with JWT compression enabled:
 - Captures performance metrics
 - Saves results to a timestamped directory
 
-**Expected output:**
-```
-Starting JWT compression test...
-Timestamp: 20251017_143022
-Results directory: jwt-compression-on-results-20251017_143022
-
-Starting packet capture...
-Running k6 load test...
-[k6 test output with metrics]
-...
-
-Test complete!
-Results saved to: jwt-compression-on-results-20251017_143022
-```
-
-**📝 Note the directory name** - you'll need it for comparison later!
 
 ### Step 4: Disable JWT Compression and Run Test
 
@@ -142,28 +102,6 @@ Now disable JWT compression:
 
 ```bash
 ./disable_jwt_compression.sh
-```
-
-**Expected output:**
-```
-==========================================
-DISABLING JWT COMPRESSION
-==========================================
-
-Step 1: Updating YAML manifests...
-  ✓ Updated frontend: ENABLE_JWT_COMPRESSION = false
-  ...
-
-Step 2: Verifying changes...
-  frontend                 : false
-  ...
-
-Step 3: Deploying changes with Skaffold...
-[Skaffold deployment output]
-...
-==========================================
-✓ JWT COMPRESSION DISABLED
-==========================================
 ```
 
 ### Step 5: Verify Pods are Running (Again)
@@ -184,21 +122,6 @@ Run the load test again with JWT compression disabled:
 ./run-jwt-compression-test.sh
 ```
 
-**📝 Note this directory name too** - you'll need both for comparison!
-
-**Example output:**
-```
-Starting JWT compression test...
-Timestamp: 20251017_144530
-Results directory: jwt-compression-off-results-20251017_144530
-
-Starting packet capture...
-Running k6 load test...
-...
-
-Test complete!
-Results saved to: jwt-compression-off-results-20251017_144530
-```
 
 ### Step 7: Compare Results
 
