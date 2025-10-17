@@ -43,32 +43,8 @@ for service in $SERVICES; do
 done
 
 echo ""
-echo "Step 3: Applying changes to Kubernetes..."
-for service in $SERVICES; do
-    yaml_file="$MANIFEST_DIR/${service}.yaml"
-    
-    if [ -f "$yaml_file" ]; then
-        if kubectl apply -f "$yaml_file" 2>&1 | grep -q "configured\|created\|unchanged"; then
-            echo "  ✓ Applied $service"
-        else
-            echo "  ⚠️  Issue applying $service (may not exist)"
-        fi
-    fi
-done
-
-echo ""
-echo "Step 4: Waiting for pods to restart..."
-sleep 5
-
-echo ""
-echo "Step 5: Checking pod status..."
-for service in $SERVICES; do
-    if kubectl get deployment "$service" &>/dev/null; then
-        ready=$(kubectl get deployment "$service" -o jsonpath='{.status.readyReplicas}' 2>/dev/null || echo "0")
-        desired=$(kubectl get deployment "$service" -o jsonpath='{.status.replicas}' 2>/dev/null || echo "0")
-        printf "  %-25s: %s/%s ready\n" "$service" "$ready" "$desired"
-    fi
-done
+echo "Step 3: Deploying changes with Skaffold..."
+skaffold run
 
 echo ""
 echo "=========================================="
