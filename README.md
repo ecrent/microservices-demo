@@ -24,6 +24,7 @@ The following tools should already be available in your Codespace:
 - `jq` - JSON processor
 - `tshark` - Network analysis
 - `git` - Version control
+- `minikube` - Kubernetes
 
 ## Test Workflow
 
@@ -42,7 +43,11 @@ The complete test involves 5 main steps:
 
 ### Step 1: Enable JWT Compression and Run Test
 
-First, enable JWT compression across all services:
+```bash
+minikube start
+```
+
+Enable JWT compression across all services:
 
 ```bash
 ./enable_jwt_compression.sh
@@ -83,6 +88,11 @@ If pods are not ready, wait a few more minutes and check again.
 
 ### Step 3: Run JWT Compression Test (Enabled)
 
+
+```bash
+nohup kubectl port-forward service/frontend 8080:80 > /tmp/port-forward.log 2>&1 &
+```
+
 Run the load test with JWT compression enabled:
 
 ```bash
@@ -117,6 +127,10 @@ Wait for all pods to be `Running` with `1/1` ready.
 ### Step 6: Run JWT Compression Test (Disabled)
 
 Run the load test again with JWT compression disabled:
+
+```bash
+nohup kubectl port-forward service/frontend 8080:80 > /tmp/port-forward.log 2>&1 &
+```
 
 ```bash
 ./run-jwt-compression-test.sh
