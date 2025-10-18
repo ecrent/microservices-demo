@@ -1,13 +1,3 @@
-# JWT Compression in Microservices - Master's Thesis Project# JWT Compression in Microservices - Master's Thesis Project
-
-
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)> **Note**: This is a modified version of [Google's microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 
-
-[![Based on Google's microservices-demo](https://img.shields.io/badge/Based%20on-Google%20microservices--demo-orange.svg)](https://github.com/GoogleCloudPlatform/microservices-demo)> extended for academic research on JWT compression optimization. See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
-
-
-
 # JWT Compression in Microservices - Master's Thesis Project
 
 > **Note**: This is a modified version of [Google's microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 
@@ -28,62 +18,17 @@ This project investigates the performance impact of JWT compression in microserv
 - Latency improvements under high concurrent load
 - Scalability characteristics with compressed vs. uncompressed tokens
 
-## Quick Start
-
-For detailed testing instructions, see [JWT-COMPRESSION-TEST-GUIDE.md](JWT-COMPRESSION-TEST-GUIDE.md).
-
 ### Prerequisites
 
-The following tools should already be available in your Codespace:
+The following tools should already be available in your Github Codespace:
 - `kubectl` - Kubernetes CLI
 - `skaffold` - Kubernetes development tool
 - `k6` - Load testing tool
 - `jq` - JSON processor
 - `tshark` - Network analysis
 - `git` - Version control
+- `minikube` - Lightweight Kubernetes
 
-### Quick Test Workflow
-
-```bash
-# 1. Enable JWT compression and deploy
-./enable_jwt_compression.sh
-
-# 2. Verify pods are healthy
-kubectl get pods
-
-# 3. Run performance test
-./run-jwt-compression-test.sh
-
-# 4. Disable JWT compression and deploy
-./disable_jwt_compression.sh
-
-# 5. Verify pods again
-kubectl get pods
-
-# 6. Run comparison test
-./run-jwt-compression-test.sh
-
-# 7. Compare results
-./compare-jwt-compression-enhanced.sh
-```
-
-## License and Attribution
-
-This project is based on Google's microservices-demo and is licensed under the Apache License 2.0.
-
-- **Original Work**: Copyright Google LLC - https://github.com/GoogleCloudPlatform/microservices-demo
-- **Modifications**: Master's Thesis Research - See [ATTRIBUTION.md](ATTRIBUTION.md)
-- **License**: [Apache License 2.0](LICENSE)
-
-All modifications are clearly documented in the [NOTICE](NOTICE) file as required by the Apache License.
-
----
-
-## Original Project Information
-
-Below is information from the original Google microservices-demo project:
-
----
 
 ## Step-by-Step Instructions
 
