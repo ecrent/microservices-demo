@@ -1,0 +1,77 @@
+NOTICE
+
+This project is based on the Google Cloud Platform microservices-demo repository.
+
+================================================================================
+
+Original Work:
+  Project: microservices-demo
+  Source: https://github.com/GoogleCloudPlatform/microservices-demo
+  Copyright: Google LLC
+  License: Apache License 2.0
+
+================================================================================
+
+  
+  Purpose: 
+    This repository has been extended as part of a master's thesis research project
+    studying JWT (JSON Web Token) compression and optimization in microservices
+    architectures.
+
+  Key Modifications:
+    1. Added JWT authentication system across all microservices
+    2. Implemented JWT compression feature using split headers for HTTP/2 HPACK optimization
+    3. Added ENABLE_JWT_COMPRESSION environment variable to services:
+       - frontend
+       - cartservice
+       - checkoutservice
+       - shippingservice
+       - paymentservice
+       - emailservice
+    
+    4. Created testing and comparison tools:
+       - enable_jwt_compression.sh
+       - disable_jwt_compression.sh
+       - run-jwt-compression-test.sh
+       - wsl-run-jwt-compression-test.sh
+       - compare-jwt-compression-enhanced.sh
+       - k6-user-journey-test.js
+    
+    5. Added comprehensive test documentation:
+       - JWT-COMPRESSION-TEST-GUIDE.md
+       - results.md
+       - forme.md
+    
+    6. Modified service implementations to support:
+       - JWT compression using x-jwt-static, x-jwt-session, x-jwt-dynamic-bin, x-jwt-sig-bin headers
+       - Traditional JWT using Authorization: Bearer header
+       - Performance comparison and metrics collection
+
+  Areas of Original Code Preserved:
+    - Core microservices architecture
+    - gRPC communication patterns
+    - Kubernetes deployment manifests (extended with new environment variables)
+    - Frontend UI and user experience
+    - Product catalog, cart, checkout, and payment logic
+    - Original service dependencies and interactions
+
+================================================================================
+
+Third-Party Components:
+  This project continues to use all third-party components from the original
+  microservices-demo project. Please refer to the original repository for
+  complete dependency information.
+
+================================================================================
+
+Academic Use Notice:
+  This modified version is intended for academic research purposes as part of
+  a master's thesis. The modifications demonstrate the application of JWT
+  compression techniques in a realistic microservices environment.
+
+  The research findings and implementations are provided "AS IS" without warranty
+  of any kind, as permitted under the Apache License 2.0.
+
+================================================================================
+
+For the complete license terms, see the LICENSE file in this repository.

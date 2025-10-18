@@ -1,21 +1,38 @@
-# JWT Compression Test Guide
+# JWT Compression in Microservices - Master's Thesis Project# JWT Compression in Microservices - Master's Thesis Project
 
-This guide walks you through testing JWT compression performance in the microservices demo application using GitHub Codespaces.
+
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)> **Note**: This is a modified version of [Google's microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 
+
+[![Based on Google's microservices-demo](https://img.shields.io/badge/Based%20on-Google%20microservices--demo-orange.svg)](https://github.com/GoogleCloudPlatform/microservices-demo)> extended for academic research on JWT compression optimization. See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
+
+
+
+# JWT Compression in Microservices - Master's Thesis Project
+
+> **Note**: This is a modified version of [Google's microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 
+> extended for academic research on JWT compression optimization. See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
 
 ## Overview
 
-This repository extends Google's microservices demo with:
+This repository demonstrates JWT compression techniques in a microservices architecture:
 - **JWT Authentication**: Token-based authentication across services
 - **JWT Compression**: Optional compression feature that splits JWT into multiple headers for better HTTP/2 HPACK caching
+- **Performance Testing**: Comprehensive benchmarking tools to measure compression benefits
 
-## Test Environment
+## Research Focus
 
-- **Platform**: GitHub Codespaces (Ubuntu 24.04.2 LTS)
-- **Orchestration**: Kubernetes with Skaffold
-- **Load Testing**: k6
-- **Network Analysis**: tcpdump, tshark, Wireshark
+This project investigates the performance impact of JWT compression in microservices environments, specifically:
+- Network bandwidth reduction through header optimization
+- HTTP/2 HPACK caching efficiency with split JWT headers
+- Latency improvements under high concurrent load
+- Scalability characteristics with compressed vs. uncompressed tokens
 
-## Prerequisites
+## Quick Start
+
+For detailed testing instructions, see [JWT-COMPRESSION-TEST-GUIDE.md](JWT-COMPRESSION-TEST-GUIDE.md).
+
+### Prerequisites
 
 The following tools should already be available in your Codespace:
 - `kubectl` - Kubernetes CLI
@@ -24,18 +41,47 @@ The following tools should already be available in your Codespace:
 - `jq` - JSON processor
 - `tshark` - Network analysis
 - `git` - Version control
-- `minikube` - Kubernetes
 
-## Test Workflow
+### Quick Test Workflow
 
-The complete test involves 5 main steps:
+```bash
+# 1. Enable JWT compression and deploy
+./enable_jwt_compression.sh
 
+# 2. Verify pods are healthy
+kubectl get pods
+
+# 3. Run performance test
+./run-jwt-compression-test.sh
+
+# 4. Disable JWT compression and deploy
+./disable_jwt_compression.sh
+
+# 5. Verify pods again
+kubectl get pods
+
+# 6. Run comparison test
+./run-jwt-compression-test.sh
+
+# 7. Compare results
+./compare-jwt-compression-enhanced.sh
 ```
-1. Enable JWT Compression → Deploy → Verify pods are healthy → Test → Capture Results
-2. Disable JWT Compression → Deploy → Verify pods are healthy → Test → Capture Results  
-3. Compare results from both tests
 
-```
+## License and Attribution
+
+This project is based on Google's microservices-demo and is licensed under the Apache License 2.0.
+
+- **Original Work**: Copyright Google LLC - https://github.com/GoogleCloudPlatform/microservices-demo
+- **Modifications**: Master's Thesis Research - See [ATTRIBUTION.md](ATTRIBUTION.md)
+- **License**: [Apache License 2.0](LICENSE)
+
+All modifications are clearly documented in the [NOTICE](NOTICE) file as required by the Apache License.
+
+---
+
+## Original Project Information
+
+Below is information from the original Google microservices-demo project:
 
 ---
 
