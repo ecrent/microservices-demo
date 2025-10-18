@@ -1,4 +1,4 @@
-# JWT Compression in Microservices - Master's Thesis Project
+# Optimizing network traffic by reducing metadata in microservices that use JWT and GRPC - Master's Thesis Project
 
 > **Note**: This is a modified version of [Google's microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) 
 > extended for academic research on JWT compression optimization. See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
