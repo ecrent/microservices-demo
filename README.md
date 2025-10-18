@@ -67,23 +67,6 @@ Before running the test, confirm all pods are healthy:
 kubectl get pods
 ```
 
-**Wait until all pods show:**
-- `READY`: `1/1`
-- `STATUS`: `Running`
-- `RESTARTS`: Low count (0-2)
-
-**Example healthy output:**
-```
-NAME                                     READY   STATUS    RESTARTS   AGE
-adservice-76bdd69666-ckc5j               1/1     Running   0          2m
-cartservice-66d497c6b7-dp5jr             1/1     Running   0          2m
-checkoutservice-666c784bd6-4jd22         1/1     Running   0          2m
-currencyservice-5d5d496984-4jmd7         1/1     Running   0          2m
-emailservice-667457d9d6-75jcq            1/1     Running   0          2m
-frontend-6b8d69b9fb-wjqdg                1/1     Running   0          2m
-...
-```
-
 If pods are not ready, wait a few more minutes and check again.
 
 ### Step 3: Run JWT Compression Test (Enabled)
@@ -233,77 +216,4 @@ cat jwt-compression-on-results-*/k6-summary.json | jq .
 
 ---
 
-## Advanced Analysis
-
-### View Packet Captures
-
-To analyze network traffic in detail:
-
-```bash
-# Install Wireshark (if not available)
-sudo apt-get install wireshark
-
-# Open pcap files
-wireshark jwt-compression-on-results-*/frontend-cart-traffic.pcap &
-wireshark jwt-compression-off-results-*/frontend-cart-traffic.pcap &
-```
-
-### Manual Metrics Extraction
-
-```bash
-# View k6 summary
-cat jwt-compression-on-results-*/k6-summary.json | jq .
-
-# Extract specific metrics
-cat jwt-compression-on-results-*/k6-summary.json | jq '.metrics.http_req_duration.avg'
-
-# Analyze PCAP with tshark
-tshark -r jwt-compression-on-results-*/frontend-cart-traffic.pcap \
-  -d tcp.port==7070,http2 \
-  -Y 'http2.header.name contains "jwt"'
-```
-
-### Verify Environment Variables
-
-```bash
-# Check JWT compression setting for a service
-kubectl get deployment frontend -o jsonpath='{.spec.template.spec.containers[0].env[?(@.name=="ENABLE_JWT_COMPRESSION")].value}' && echo
-
-# Check all services
-for svc in frontend checkoutservice cartservice shippingservice paymentservice emailservice; do
-  echo -n "$svc: "
-  kubectl get deployment $svc -o jsonpath='{.spec.template.spec.containers[0].env[?(@.name=="ENABLE_JWT_COMPRESSION")].value}' && echo
-done
-```
-
----
-
-## Quick Reference
-
-### Essential Commands
-
-```bash
-# 1. Enable compression
-./enable_jwt_compression.sh
-
-# 2. Check pods
-kubectl get pods
-
-# 3. Run test
-./run-jwt-compression-test.sh
-
-# 4. Disable compression
-./disable_jwt_compression.sh
-
-# 5. Check pods again
-kubectl get pods
-
-# 6. Run test again
-./run-jwt-compression-test.sh
-
-# 7. Compare results
-./compare-jwt-compression-enhanced.sh
-```
-
-
-*Last updated: October 17, 2025*
+*Last updated: October 18, 2025*
