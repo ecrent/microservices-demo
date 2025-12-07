@@ -29,8 +29,8 @@ export const options = {
       executor: 'ramping-vus',
       startVUs: 0,
       stages: [
-        { duration: '60s', target: 150 },  // Ramp up to 150 users over 60s
-        { duration: '240s', target: 150 }, // Stay at 150 users for 240s
+        { duration: '60s', target: 150 },  // Ramp up to 250 users over 60s
+        { duration: '300s', target: 150 }, // Stay at 250 users for 300s
       ],
       startTime: '20s', // Start after warmup completes
       exec: 'mainTest',

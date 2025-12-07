@@ -49,7 +49,7 @@ spec:
         - name: PORT
           value: "50051"
         - name: ENABLE_JWT_COMPRESSION
-          value: "false"
+          value: "true"
         - name: DISABLE_PROFILER
           value: "1"
         readinessProbe:
