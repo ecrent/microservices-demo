@@ -81,3 +81,13 @@ Cartservice	x-jwt-payload + x-jwt-sig	1 reassemble	(leaf - no forward)
 Paymentservice	x-jwt-payload + x-jwt-sig	1 reassemble	(leaf - no forward)
 Shippingservice	x-jwt-payload + x-jwt-sig	1 reassemble	(leaf - no forward)
 Emailservice	x-jwt-payload + x-jwt-sig	1 reassemble	(leaf - no forward)
+
+
+ervice	File	Setting	New Value
+Frontend	main.go	grpc.WithMaxHeaderListSize	65536
+Checkout Service	main.go	grpc.MaxHeaderListSize (server)	65536
+Checkout Service	main.go	grpc.WithMaxHeaderListSize (client)	65536
+Cart Service	Startup.cs	MaxRequestHeadersTotalSize	65536
+Email Service	email_server.py	grpc.max_metadata_size	65536
+Shipping Service	main.go	grpc.MaxHeaderListSize (both branches)	65536
+Payment Service	server.js	grpc.max_metadata_size	65536
