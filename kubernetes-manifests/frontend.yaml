@@ -89,7 +89,7 @@ spec:
           - name: ENABLE_PROFILER
             value: "0"
           - name: ENABLE_JWT_COMPRESSION
-            value: "true"
+            value: "false"
           # - name: CYMBAL_BRANDING
           #   value: "true"
           # - name: ENABLE_ASSISTANT

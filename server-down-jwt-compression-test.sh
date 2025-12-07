@@ -4,11 +4,12 @@ set -e
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 RESULTS_DIR="./jwt-compression-results-${TIMESTAMP}"
+ERROR_RATE=${1:-0.1}  # Default 10% error rate
 mkdir -p "${RESULTS_DIR}"
 
 echo "======================================================================"
-echo "  JWT Compression Performance Test"
-echo "  Testing HPACK efficiency with JWT renewal scenario"
+echo "  JWT Compression Performance Test with Error Injection"
+echo "  Testing HPACK efficiency with ${ERROR_RATE} ($(echo "$ERROR_RATE * 100" | bc)%) error rate"
 echo "======================================================================"
 echo ""
 echo "Results will be saved to: ${RESULTS_DIR}"
@@ -41,6 +42,44 @@ fi
 
 echo ""
 
+# ====================================================================
+# Enable error injection
+# ====================================================================
+echo "======================================================================"
+echo "  Enabling Error Injection (${ERROR_RATE} rate)"
+echo "======================================================================"
+echo ""
+
+kubectl set env deployment/frontend \
+    ENABLE_ERROR_INJECTION=true \
+    ERROR_INJECTION_RATE=${ERROR_RATE} \
+    ERROR_INJECTION_TYPE=unavailable \
+    ERROR_INJECTION_TARGET=CartService
+
+echo "Waiting for deployment to roll out..."
+kubectl rollout status deployment/frontend
+echo ""
+
+# Refresh pod names after rollout
+FRONTEND_POD=$(kubectl get pods -l app=frontend -o jsonpath='{.items[0].metadata.name}')
+echo "New frontend pod: ${FRONTEND_POD}"
+
+# Kill old port-forward and restart it (rollout killed the old connection)
+echo "Restarting port-forward after rollout..."
+pkill -f "kubectl.*port-forward.*8080:80" 2>/dev/null || true
+sleep 2
+kubectl port-forward service/frontend 8080:80 > /dev/null 2>&1 &
+PORT_FORWARD_PID=$!
+sleep 3
+
+# Verify port-forward is working
+if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/_healthz 2>/dev/null | grep -q "200"; then
+    echo "Port-forward is working (PID: ${PORT_FORWARD_PID})"
+else
+    echo "Warning: Port-forward may not be working properly"
+fi
+echo ""
+
 # Function to cleanup on exit
 cleanup() {
     echo ""
@@ -67,6 +106,11 @@ cleanup() {
     # Clean up on minikube
     minikube ssh "sudo rm -f /tmp/frontend-cart-traffic.pcap /tmp/tcpdump.log" 2>/dev/null || true
     
+    # Disable error injection (no wait for rollout to complete)
+    echo "Disabling error injection (will rollout in background)..."
+    kubectl set env deployment/frontend ENABLE_ERROR_INJECTION=false 2>/dev/null || true
+    # Don't wait for rollout - let it happen in background
+    
     # Stop port-forward if we started it
     if [ ! -z "${PORT_FORWARD_PID}" ]; then
         echo "Stopping port-forward (PID: ${PORT_FORWARD_PID})..."
@@ -74,6 +118,7 @@ cleanup() {
     fi
     
     echo "Cleanup complete"
+    echo "Note: Error injection will be disabled after deployment rollout completes."
 }
 
 trap cleanup EXIT
@@ -167,17 +212,14 @@ echo ""
 # ====================================================================
 echo ""
 echo "======================================================================"
-echo "  Running k6 load test (200 users, ~4 minutes)"
+echo "  Running k6 load test with ${ERROR_RATE} error rate + scheduled outage"
 echo "======================================================================"
 echo ""
 echo "Test scenario:"
-echo "  1. User visits frontpage → Gets JWT #1"
-echo "  2. User adds 2 items to cart → Uses JWT #1"
-echo "  3. User waits 125 seconds → JWT expires"
-echo "  4. User returns to shopping → Gets JWT #2"
-echo "  5. User adds 1 item to cart → Uses JWT #2"
-echo "  6. User places order → Uses JWT #2"
-echo "  7. User continues shopping"
+echo "  1. User visits frontpage → Gets JWT"
+echo "  2. User adds items to cart → Uses JWT"
+echo "  3. User places order → Uses JWT"
+echo "  4. ${ERROR_RATE} ($(echo "$ERROR_RATE * 100" | bc)%) of cart service calls will fail"
 echo ""
 echo "Scheduled service outage:"
 echo "  - Timing: 130s after test start (70s into steady state)"
@@ -219,24 +261,18 @@ echo "======================================================================"
 echo ""
 echo "To analyze HTTP/2 HPACK compression:"
 echo ""
-echo "1. Open pcap files in Wireshark:"
-echo "   wireshark ${RESULTS_DIR}/frontend-to-cart.pcap"
+echo "1. Open pcap file in Wireshark:"
+echo "   wireshark ${RESULTS_DIR}/frontend-cart-traffic.pcap"
 echo ""
 echo "2. Apply display filter:"
 echo "   http2"
 echo ""
 echo "3. Look for HEADERS frames containing JWT headers:"
-echo "   - x-jwt-static (should use 'Indexed Header Field' after first request)"
-echo "   - x-jwt-session (should use 'Indexed Header Field' after first request)"
-echo "   - x-jwt-dynamic (should use 'Literal without Indexing' always)"
-echo "   - x-jwt-sig (should use 'Literal without Indexing' always)"
+echo "   - x-jwt-header (HPACK indexed after first request)"
+echo "   - x-jwt-payload (raw JSON payload)"
+echo "   - x-jwt-sig (base64url signature)"
 echo ""
-echo "4. Compare frame sizes:"
-echo "   - First request (cold cache): HEADERS frame ~750+ bytes"
-echo "   - Subsequent requests (warm cache): HEADERS frame ~450-500 bytes"
-echo "   - After JWT renewal (125s wait): New session, partial cache hit"
-echo ""
-echo "5. Or use tshark for quick analysis:"
-echo "   tshark -r ${RESULTS_DIR}/frontend-to-cart.pcap -Y 'http2.type==1' -T fields -e frame.number -e frame.len -e http2.header.length"
+echo "4. Or use tshark for quick analysis:"
+echo "   tshark -r ${RESULTS_DIR}/frontend-cart-traffic.pcap -Y 'http2.type==1' -T fields -e frame.number -e frame.len -e http2.header.length"
 echo ""
 echo "======================================================================"
