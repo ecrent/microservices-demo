@@ -1,0 +1,2053 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6-user-journey-test.js
+     output: json (./jwt-compression-results-20251208_082548/k6-results.json)
+
+  scenarios: (100.00%) 2 scenarios, 400 max VUs, 6m50s max duration (incl. graceful stop):
+           * warmup: 20 looping VUs for 20s (exec: warmupTest, gracefulStop: 30s)
+           * main_test: Up to 400 looping VUs for 6m0s over 2 stages (gracefulRampDown: 30s, exec: mainTest, startTime: 20s, gracefulStop: 30s)
+
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:25:56+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+
+running (0m01.0s), 020/400 VUs, 0 complete and 0 interrupted iterations
+warmup      [   5% ] 20 VUs   01.0s/20s
+main_test • [   0% ] waiting  19.0s
+
+running (0m02.0s), 020/400 VUs, 0 complete and 0 interrupted iterations
+warmup      [  10% ] 20 VUs   02.0s/20s
+main_test • [   0% ] waiting  18.0s
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:25:58+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+
+running (0m03.0s), 020/400 VUs, 0 complete and 0 interrupted iterations
+warmup      [  15% ] 20 VUs   03.0s/20s
+main_test • [   0% ] waiting  17.0s
+time="2025-12-08T08:25:59+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:00+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+
+running (0m04.0s), 020/400 VUs, 0 complete and 0 interrupted iterations
+warmup      [  20% ] 20 VUs   04.0s/20s
+main_test • [   0% ] waiting  16.0s
+
+running (0m05.0s), 020/400 VUs, 0 complete and 0 interrupted iterations
+warmup      [  25% ] 20 VUs   05.0s/20s
+main_test • [   0% ] waiting  15.0s
+time="2025-12-08T08:26:01+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:26:01+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:02+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+
+running (0m06.0s), 020/400 VUs, 20 complete and 0 interrupted iterations
+warmup      [  30% ] 20 VUs   06.0s/20s
+main_test • [   0% ] waiting  14.0s
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+
+running (0m07.0s), 020/400 VUs, 20 complete and 0 interrupted iterations
+warmup      [  35% ] 20 VUs   07.0s/20s
+main_test • [   0% ] waiting  13.0s
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:03+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+
+running (0m08.0s), 020/400 VUs, 20 complete and 0 interrupted iterations
+warmup      [  40% ] 20 VUs   08.0s/20s
+main_test • [   0% ] waiting  12.0s
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+
+running (0m09.0s), 020/400 VUs, 38 complete and 0 interrupted iterations
+warmup      [  45% ] 20 VUs   09.0s/20s
+main_test • [   0% ] waiting  11.0s
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:05+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+
+running (0m10.0s), 020/400 VUs, 40 complete and 0 interrupted iterations
+warmup      [  50% ] 20 VUs   10.0s/20s
+main_test • [   0% ] waiting  10.0s
+time="2025-12-08T08:26:06+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:07+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+
+running (0m11.0s), 020/400 VUs, 40 complete and 0 interrupted iterations
+warmup      [  55% ] 20 VUs   11.0s/20s
+main_test • [   0% ] waiting  09.0s
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+
+running (0m12.0s), 020/400 VUs, 50 complete and 0 interrupted iterations
+warmup      [  60% ] 20 VUs   12.0s/20s
+main_test • [   0% ] waiting  08.0s
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:08+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+
+running (0m13.0s), 020/400 VUs, 60 complete and 0 interrupted iterations
+warmup      [  65% ] 20 VUs   13.0s/20s
+main_test • [   0% ] waiting  07.0s
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:09+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:10+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+
+running (0m14.0s), 020/400 VUs, 60 complete and 0 interrupted iterations
+warmup      [  70% ] 20 VUs   14.0s/20s
+main_test • [   0% ] waiting  06.0s
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+
+running (0m15.0s), 020/400 VUs, 67 complete and 0 interrupted iterations
+warmup      [  75% ] 20 VUs   15.0s/20s
+main_test • [   0% ] waiting  05.0s
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+time="2025-12-08T08:26:11+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+
+running (0m16.0s), 020/400 VUs, 80 complete and 0 interrupted iterations
+warmup      [  80% ] 20 VUs   16.0s/20s
+main_test • [   0% ] waiting  04.0s
+time="2025-12-08T08:26:12+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:13+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+
+running (0m17.0s), 020/400 VUs, 80 complete and 0 interrupted iterations
+warmup      [  85% ] 20 VUs   17.0s/20s
+main_test • [   0% ] waiting  03.0s
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 15] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 15] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 8] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 14] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 14] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 8] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 6] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 16] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 4] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 6] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+
+running (0m18.0s), 020/400 VUs, 86 complete and 0 interrupted iterations
+warmup      [  90% ] 20 VUs   18.0s/20s
+main_test • [   0% ] waiting  02.0s
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 16] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 4] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 11] Starting warmup iteration" source=console
+time="2025-12-08T08:26:14+03:00" level=info msg="[WARMUP VU 11] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 1] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 1] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 24] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 9] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 24] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 9] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 10] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 10] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 12] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 22] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 12] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 22] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 2] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 25] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 2] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 25] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 15] Cart add status: 200" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 23] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 23] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 19] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 18] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 26] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 13] Starting warmup iteration" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 19] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 18] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 26] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 13] Got JWT: eyJhbGciOiJSUzI1NiIs..." source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 14] Cart add status: 200" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 8] Cart add status: 200" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 6] Cart add status: 200" source=console
+
+running (0m19.0s), 020/400 VUs, 100 complete and 0 interrupted iterations
+warmup      [  95% ] 20 VUs   19.0s/20s
+main_test • [   0% ] waiting  01.0s
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 4] Cart add status: 200" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 16] Cart add status: 200" source=console
+time="2025-12-08T08:26:15+03:00" level=info msg="[WARMUP VU 11] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 1] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 24] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 9] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 10] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 12] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 22] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 2] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 25] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 23] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 19] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 26] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 18] Cart add status: 200" source=console
+time="2025-12-08T08:26:16+03:00" level=info msg="[WARMUP VU 13] Cart add status: 200" source=console
+
+running (0m20.0s), 020/400 VUs, 100 complete and 0 interrupted iterations
+warmup      [ 100% ] 20 VUs   20.0s/20s
+main_test • [   0% ] waiting  00.0s
+
+running (0m21.0s), 022/400 VUs, 104 complete and 0 interrupted iterations
+warmup    ↓ [ 100% ] 20 VUs       20s
+main_test   [   0% ] 006/400 VUs  0m01.0s/6m00.0s
+
+running (0m22.0s), 013/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   1% ] 013/400 VUs  0m02.0s/6m00.0s
+
+running (0m23.0s), 019/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   1% ] 019/400 VUs  0m03.0s/6m00.0s
+
+running (0m24.0s), 026/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   1% ] 026/400 VUs  0m04.0s/6m00.0s
+
+running (0m25.6s), 033/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   1% ] 033/400 VUs  0m05.0s/6m00.0s
+
+running (0m27.1s), 039/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   2% ] 039/400 VUs  0m06.0s/6m00.0s
+
+running (0m28.1s), 046/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   2% ] 046/400 VUs  0m07.0s/6m00.0s
+
+running (0m29.1s), 053/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   2% ] 053/400 VUs  0m08.0s/6m00.0s
+
+running (0m30.1s), 059/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   2% ] 059/400 VUs  0m09.0s/6m00.0s
+
+running (0m31.1s), 066/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   3% ] 066/400 VUs  0m10.0s/6m00.0s
+
+running (0m32.1s), 073/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   3% ] 073/400 VUs  0m11.0s/6m00.0s
+
+running (0m33.1s), 079/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   3% ] 079/400 VUs  0m12.0s/6m00.0s
+
+running (0m34.1s), 086/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   4% ] 086/400 VUs  0m13.0s/6m00.0s
+
+running (0m35.1s), 093/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   4% ] 093/400 VUs  0m14.0s/6m00.0s
+
+running (0m36.1s), 099/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   4% ] 099/400 VUs  0m15.0s/6m00.0s
+
+running (0m37.1s), 106/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   4% ] 106/400 VUs  0m16.0s/6m00.0s
+
+running (0m38.1s), 113/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   5% ] 113/400 VUs  0m17.0s/6m00.0s
+
+running (0m39.1s), 119/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   5% ] 119/400 VUs  0m18.0s/6m00.0s
+
+running (0m40.1s), 126/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   5% ] 126/400 VUs  0m19.0s/6m00.0s
+
+running (0m41.1s), 133/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   6% ] 133/400 VUs  0m20.0s/6m00.0s
+
+running (0m42.1s), 139/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   6% ] 139/400 VUs  0m21.0s/6m00.0s
+
+running (0m43.1s), 146/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   6% ] 146/400 VUs  0m22.0s/6m00.0s
+
+running (0m44.1s), 153/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   6% ] 153/400 VUs  0m23.0s/6m00.0s
+
+running (0m45.1s), 159/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   7% ] 159/400 VUs  0m24.0s/6m00.0s
+
+running (0m46.1s), 166/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   7% ] 166/400 VUs  0m25.0s/6m00.0s
+
+running (0m47.1s), 173/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   7% ] 173/400 VUs  0m26.0s/6m00.0s
+
+running (0m48.1s), 179/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   7% ] 179/400 VUs  0m27.0s/6m00.0s
+
+running (0m49.1s), 186/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   8% ] 186/400 VUs  0m28.0s/6m00.0s
+
+running (0m50.1s), 193/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   8% ] 193/400 VUs  0m29.0s/6m00.0s
+
+running (0m51.1s), 199/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   8% ] 199/400 VUs  0m30.0s/6m00.0s
+
+running (0m52.1s), 206/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   9% ] 206/400 VUs  0m31.0s/6m00.0s
+
+running (0m53.1s), 213/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   9% ] 213/400 VUs  0m32.0s/6m00.0s
+
+running (0m54.1s), 219/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   9% ] 219/400 VUs  0m33.0s/6m00.0s
+
+running (0m55.1s), 226/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [   9% ] 226/400 VUs  0m34.0s/6m00.0s
+
+running (0m56.7s), 233/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  10% ] 233/400 VUs  0m35.0s/6m00.0s
+
+running (0m58.1s), 239/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  10% ] 239/400 VUs  0m36.0s/6m00.0s
+
+running (0m59.1s), 246/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  10% ] 246/400 VUs  0m37.0s/6m00.0s
+
+running (1m00.1s), 253/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  11% ] 253/400 VUs  0m38.0s/6m00.0s
+
+running (1m01.1s), 259/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  11% ] 259/400 VUs  0m39.0s/6m00.0s
+
+running (1m02.1s), 266/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  11% ] 266/400 VUs  0m40.0s/6m00.0s
+
+running (1m03.1s), 273/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  11% ] 273/400 VUs  0m41.0s/6m00.0s
+
+running (1m04.1s), 279/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  12% ] 279/400 VUs  0m42.0s/6m00.0s
+
+running (1m05.1s), 286/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  12% ] 286/400 VUs  0m43.0s/6m00.0s
+
+running (1m06.1s), 293/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  12% ] 293/400 VUs  0m44.0s/6m00.0s
+
+running (1m07.1s), 299/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  12% ] 299/400 VUs  0m45.0s/6m00.0s
+
+running (1m08.1s), 306/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  13% ] 306/400 VUs  0m46.0s/6m00.0s
+
+running (1m09.1s), 313/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  13% ] 313/400 VUs  0m47.0s/6m00.0s
+
+running (1m10.1s), 319/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  13% ] 319/400 VUs  0m48.0s/6m00.0s
+
+running (1m11.1s), 326/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  14% ] 326/400 VUs  0m49.0s/6m00.0s
+
+running (1m12.1s), 333/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  14% ] 333/400 VUs  0m50.0s/6m00.0s
+
+running (1m13.1s), 339/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  14% ] 339/400 VUs  0m51.0s/6m00.0s
+
+running (1m14.1s), 346/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  14% ] 346/400 VUs  0m52.0s/6m00.0s
+
+running (1m15.1s), 353/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  15% ] 353/400 VUs  0m53.0s/6m00.0s
+
+running (1m16.1s), 359/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  15% ] 359/400 VUs  0m54.0s/6m00.0s
+
+running (1m17.1s), 366/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  15% ] 366/400 VUs  0m55.0s/6m00.0s
+
+running (1m18.1s), 373/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  16% ] 373/400 VUs  0m56.0s/6m00.0s
+
+running (1m19.1s), 379/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  16% ] 379/400 VUs  0m57.0s/6m00.0s
+
+running (1m20.1s), 386/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  16% ] 386/400 VUs  0m58.0s/6m00.0s
+
+running (1m21.1s), 393/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  16% ] 393/400 VUs  0m59.0s/6m00.0s
+
+running (1m22.1s), 399/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  17% ] 399/400 VUs  1m00.0s/6m00.0s
+
+running (1m23.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  17% ] 400/400 VUs  1m01.0s/6m00.0s
+
+running (1m24.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  17% ] 400/400 VUs  1m02.0s/6m00.0s
+
+running (1m25.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  17% ] 400/400 VUs  1m03.0s/6m00.0s
+
+running (1m26.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  18% ] 400/400 VUs  1m04.0s/6m00.0s
+
+running (1m27.6s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  18% ] 400/400 VUs  1m05.0s/6m00.0s
+
+running (1m29.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  18% ] 400/400 VUs  1m06.0s/6m00.0s
+
+running (1m30.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  19% ] 400/400 VUs  1m07.0s/6m00.0s
+
+running (1m31.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  19% ] 400/400 VUs  1m08.0s/6m00.0s
+
+running (1m32.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  19% ] 400/400 VUs  1m09.0s/6m00.0s
+
+running (1m33.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  19% ] 400/400 VUs  1m10.0s/6m00.0s
+
+running (1m34.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  20% ] 400/400 VUs  1m11.0s/6m00.0s
+
+running (1m35.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  20% ] 400/400 VUs  1m12.0s/6m00.0s
+
+running (1m36.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  20% ] 400/400 VUs  1m13.0s/6m00.0s
+
+running (1m37.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  21% ] 400/400 VUs  1m14.0s/6m00.0s
+
+running (1m38.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  21% ] 400/400 VUs  1m15.0s/6m00.0s
+
+running (1m39.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  21% ] 400/400 VUs  1m16.0s/6m00.0s
+
+running (1m40.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  21% ] 400/400 VUs  1m17.0s/6m00.0s
+
+running (1m41.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  22% ] 400/400 VUs  1m18.0s/6m00.0s
+
+running (1m42.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  22% ] 400/400 VUs  1m19.0s/6m00.0s
+
+running (1m43.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  22% ] 400/400 VUs  1m20.0s/6m00.0s
+
+running (1m44.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  22% ] 400/400 VUs  1m21.0s/6m00.0s
+
+running (1m45.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  23% ] 400/400 VUs  1m22.0s/6m00.0s
+
+running (1m46.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  23% ] 400/400 VUs  1m23.0s/6m00.0s
+
+running (1m47.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  23% ] 400/400 VUs  1m24.0s/6m00.0s
+
+running (1m48.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  24% ] 400/400 VUs  1m25.0s/6m00.0s
+
+running (1m49.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  24% ] 400/400 VUs  1m26.0s/6m00.0s
+
+running (1m50.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  24% ] 400/400 VUs  1m27.0s/6m00.0s
+
+running (1m51.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  24% ] 400/400 VUs  1m28.0s/6m00.0s
+
+running (1m52.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  25% ] 400/400 VUs  1m29.0s/6m00.0s
+
+running (1m53.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  25% ] 400/400 VUs  1m30.0s/6m00.0s
+
+running (1m54.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  25% ] 400/400 VUs  1m31.0s/6m00.0s
+
+running (1m55.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  26% ] 400/400 VUs  1m32.0s/6m00.0s
+
+running (1m56.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  26% ] 400/400 VUs  1m33.0s/6m00.0s
+
+running (1m57.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  26% ] 400/400 VUs  1m34.0s/6m00.0s
+
+running (1m58.7s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  26% ] 400/400 VUs  1m35.0s/6m00.0s
+
+running (2m00.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  27% ] 400/400 VUs  1m36.0s/6m00.0s
+
+running (2m01.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  27% ] 400/400 VUs  1m37.0s/6m00.0s
+
+running (2m02.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  27% ] 400/400 VUs  1m38.0s/6m00.0s
+
+running (2m03.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  27% ] 400/400 VUs  1m39.0s/6m00.0s
+
+running (2m04.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  28% ] 400/400 VUs  1m40.0s/6m00.0s
+
+running (2m05.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  28% ] 400/400 VUs  1m41.0s/6m00.0s
+
+running (2m06.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  28% ] 400/400 VUs  1m42.0s/6m00.0s
+
+running (2m07.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  29% ] 400/400 VUs  1m43.0s/6m00.0s
+
+running (2m08.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  29% ] 400/400 VUs  1m44.0s/6m00.0s
+
+running (2m09.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  29% ] 400/400 VUs  1m45.0s/6m00.0s
+
+running (2m10.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  29% ] 400/400 VUs  1m46.0s/6m00.0s
+
+running (2m11.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  30% ] 400/400 VUs  1m47.0s/6m00.0s
+
+running (2m12.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  30% ] 400/400 VUs  1m48.0s/6m00.0s
+
+running (2m13.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  30% ] 400/400 VUs  1m49.0s/6m00.0s
+
+running (2m14.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  31% ] 400/400 VUs  1m50.0s/6m00.0s
+
+running (2m15.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  31% ] 400/400 VUs  1m51.0s/6m00.0s
+
+running (2m16.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  31% ] 400/400 VUs  1m52.0s/6m00.0s
+
+running (2m17.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  31% ] 400/400 VUs  1m53.0s/6m00.0s
+
+running (2m18.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  32% ] 400/400 VUs  1m54.0s/6m00.0s
+
+running (2m19.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  32% ] 400/400 VUs  1m55.0s/6m00.0s
+
+running (2m20.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  32% ] 400/400 VUs  1m56.0s/6m00.0s
+
+running (2m21.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  32% ] 400/400 VUs  1m57.0s/6m00.0s
+
+running (2m22.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  33% ] 400/400 VUs  1m58.0s/6m00.0s
+
+running (2m23.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  33% ] 400/400 VUs  1m59.0s/6m00.0s
+
+running (2m24.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  33% ] 400/400 VUs  2m00.0s/6m00.0s
+
+running (2m25.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  34% ] 400/400 VUs  2m01.0s/6m00.0s
+
+running (2m26.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  34% ] 400/400 VUs  2m02.0s/6m00.0s
+
+running (2m27.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  34% ] 400/400 VUs  2m03.0s/6m00.0s
+
+running (2m28.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  34% ] 400/400 VUs  2m04.0s/6m00.0s
+
+running (2m29.7s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  35% ] 400/400 VUs  2m05.0s/6m00.0s
+
+running (2m31.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  35% ] 400/400 VUs  2m06.0s/6m00.0s
+
+running (2m32.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  35% ] 400/400 VUs  2m07.0s/6m00.0s
+
+running (2m33.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  36% ] 400/400 VUs  2m08.0s/6m00.0s
+
+running (2m34.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  36% ] 400/400 VUs  2m09.0s/6m00.0s
+
+running (2m35.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  36% ] 400/400 VUs  2m10.0s/6m00.0s
+
+running (2m36.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  36% ] 400/400 VUs  2m11.0s/6m00.0s
+
+running (2m37.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  37% ] 400/400 VUs  2m12.0s/6m00.0s
+
+running (2m38.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  37% ] 400/400 VUs  2m13.0s/6m00.0s
+
+running (2m39.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  37% ] 400/400 VUs  2m14.0s/6m00.0s
+
+running (2m40.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  37% ] 400/400 VUs  2m15.0s/6m00.0s
+
+running (2m41.1s), 400/400 VUs, 120 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  38% ] 400/400 VUs  2m16.0s/6m00.0s
+
+running (2m42.1s), 400/400 VUs, 124 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  38% ] 400/400 VUs  2m17.0s/6m00.0s
+
+running (2m43.1s), 400/400 VUs, 129 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  38% ] 400/400 VUs  2m18.0s/6m00.0s
+
+running (2m44.1s), 400/400 VUs, 136 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  39% ] 400/400 VUs  2m19.0s/6m00.0s
+
+running (2m45.1s), 400/400 VUs, 143 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  39% ] 400/400 VUs  2m20.0s/6m00.0s
+
+running (2m46.1s), 400/400 VUs, 148 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  39% ] 400/400 VUs  2m21.0s/6m00.0s
+
+running (2m47.1s), 400/400 VUs, 148 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  39% ] 400/400 VUs  2m22.0s/6m00.0s
+
+running (2m48.1s), 400/400 VUs, 157 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  40% ] 400/400 VUs  2m23.0s/6m00.0s
+
+running (2m49.1s), 400/400 VUs, 163 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  40% ] 400/400 VUs  2m24.0s/6m00.0s
+
+running (2m50.1s), 400/400 VUs, 169 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  40% ] 400/400 VUs  2m25.0s/6m00.0s
+
+running (2m51.1s), 400/400 VUs, 174 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  41% ] 400/400 VUs  2m26.0s/6m00.0s
+
+running (2m52.1s), 400/400 VUs, 181 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  41% ] 400/400 VUs  2m27.0s/6m00.0s
+
+running (2m53.1s), 400/400 VUs, 189 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  41% ] 400/400 VUs  2m28.0s/6m00.0s
+
+running (2m54.1s), 400/400 VUs, 191 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  41% ] 400/400 VUs  2m29.0s/6m00.0s
+
+running (2m55.1s), 400/400 VUs, 199 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  42% ] 400/400 VUs  2m30.0s/6m00.0s
+
+running (2m56.1s), 400/400 VUs, 208 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  42% ] 400/400 VUs  2m31.0s/6m00.0s
+
+running (2m57.1s), 400/400 VUs, 216 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  42% ] 400/400 VUs  2m32.0s/6m00.0s
+
+running (2m58.1s), 400/400 VUs, 224 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  42% ] 400/400 VUs  2m33.0s/6m00.0s
+
+running (2m59.1s), 400/400 VUs, 230 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  43% ] 400/400 VUs  2m34.0s/6m00.0s
+
+running (3m00.7s), 400/400 VUs, 238 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  43% ] 400/400 VUs  2m35.0s/6m00.0s
+
+running (3m02.1s), 400/400 VUs, 246 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  43% ] 400/400 VUs  2m36.0s/6m00.0s
+
+running (3m03.1s), 400/400 VUs, 250 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  44% ] 400/400 VUs  2m37.0s/6m00.0s
+
+running (3m04.1s), 400/400 VUs, 256 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  44% ] 400/400 VUs  2m38.0s/6m00.0s
+
+running (3m05.1s), 400/400 VUs, 267 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  44% ] 400/400 VUs  2m39.0s/6m00.0s
+
+running (3m06.1s), 400/400 VUs, 273 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  44% ] 400/400 VUs  2m40.0s/6m00.0s
+
+running (3m07.1s), 400/400 VUs, 278 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  45% ] 400/400 VUs  2m41.0s/6m00.0s
+
+running (3m08.1s), 400/400 VUs, 285 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  45% ] 400/400 VUs  2m42.0s/6m00.0s
+
+running (3m09.1s), 400/400 VUs, 293 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  45% ] 400/400 VUs  2m43.0s/6m00.0s
+
+running (3m10.1s), 400/400 VUs, 300 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  46% ] 400/400 VUs  2m44.0s/6m00.0s
+
+running (3m11.1s), 400/400 VUs, 301 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  46% ] 400/400 VUs  2m45.0s/6m00.0s
+
+running (3m12.1s), 400/400 VUs, 309 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  46% ] 400/400 VUs  2m46.0s/6m00.0s
+
+running (3m13.1s), 400/400 VUs, 317 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  46% ] 400/400 VUs  2m47.0s/6m00.0s
+
+running (3m14.1s), 400/400 VUs, 319 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  47% ] 400/400 VUs  2m48.0s/6m00.0s
+
+running (3m15.1s), 400/400 VUs, 330 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  47% ] 400/400 VUs  2m49.0s/6m00.0s
+
+running (3m16.1s), 400/400 VUs, 334 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  47% ] 400/400 VUs  2m50.0s/6m00.0s
+
+running (3m17.1s), 400/400 VUs, 339 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  47% ] 400/400 VUs  2m51.0s/6m00.0s
+
+running (3m18.1s), 400/400 VUs, 347 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  48% ] 400/400 VUs  2m52.0s/6m00.0s
+
+running (3m19.1s), 400/400 VUs, 354 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  48% ] 400/400 VUs  2m53.0s/6m00.0s
+
+running (3m20.1s), 400/400 VUs, 362 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  48% ] 400/400 VUs  2m54.0s/6m00.0s
+
+running (3m21.1s), 400/400 VUs, 370 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  49% ] 400/400 VUs  2m55.0s/6m00.0s
+
+running (3m22.1s), 400/400 VUs, 377 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  49% ] 400/400 VUs  2m56.0s/6m00.0s
+
+running (3m23.1s), 400/400 VUs, 382 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  49% ] 400/400 VUs  2m57.0s/6m00.0s
+
+running (3m24.1s), 400/400 VUs, 392 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  49% ] 400/400 VUs  2m58.0s/6m00.0s
+
+running (3m25.1s), 400/400 VUs, 397 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  50% ] 400/400 VUs  2m59.0s/6m00.0s
+
+running (3m26.1s), 400/400 VUs, 406 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  50% ] 400/400 VUs  3m00.0s/6m00.0s
+
+running (3m27.1s), 400/400 VUs, 414 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  50% ] 400/400 VUs  3m01.0s/6m00.0s
+
+running (3m28.1s), 400/400 VUs, 416 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  51% ] 400/400 VUs  3m02.0s/6m00.0s
+
+running (3m29.1s), 400/400 VUs, 424 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  51% ] 400/400 VUs  3m03.0s/6m00.0s
+
+running (3m30.1s), 400/400 VUs, 430 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  51% ] 400/400 VUs  3m04.0s/6m00.0s
+
+running (3m31.7s), 400/400 VUs, 433 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  51% ] 400/400 VUs  3m05.0s/6m00.0s
+
+running (3m33.1s), 400/400 VUs, 444 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  52% ] 400/400 VUs  3m06.0s/6m00.0s
+
+running (3m34.1s), 400/400 VUs, 450 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  52% ] 400/400 VUs  3m07.0s/6m00.0s
+
+running (3m35.1s), 400/400 VUs, 458 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  52% ] 400/400 VUs  3m08.0s/6m00.0s
+
+running (3m36.1s), 400/400 VUs, 460 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  52% ] 400/400 VUs  3m09.0s/6m00.0s
+
+running (3m37.1s), 400/400 VUs, 470 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  53% ] 400/400 VUs  3m10.0s/6m00.0s
+
+running (3m38.1s), 400/400 VUs, 482 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  53% ] 400/400 VUs  3m11.0s/6m00.0s
+
+running (3m39.1s), 400/400 VUs, 487 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  53% ] 400/400 VUs  3m12.0s/6m00.0s
+
+running (3m40.1s), 400/400 VUs, 494 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  54% ] 400/400 VUs  3m13.0s/6m00.0s
+
+running (3m41.1s), 400/400 VUs, 502 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  54% ] 400/400 VUs  3m14.0s/6m00.0s
+
+running (3m42.1s), 400/400 VUs, 508 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  54% ] 400/400 VUs  3m15.0s/6m00.0s
+
+running (3m43.1s), 400/400 VUs, 516 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  54% ] 400/400 VUs  3m16.0s/6m00.0s
+
+running (3m44.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  55% ] 400/400 VUs  3m17.0s/6m00.0s
+
+running (3m45.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  55% ] 400/400 VUs  3m18.0s/6m00.0s
+
+running (3m46.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  55% ] 400/400 VUs  3m19.0s/6m00.0s
+
+running (3m47.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  56% ] 400/400 VUs  3m20.0s/6m00.0s
+
+running (3m48.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  56% ] 400/400 VUs  3m21.0s/6m00.0s
+
+running (3m49.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  56% ] 400/400 VUs  3m22.0s/6m00.0s
+
+running (3m50.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  56% ] 400/400 VUs  3m23.0s/6m00.0s
+
+running (3m51.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  57% ] 400/400 VUs  3m24.0s/6m00.0s
+
+running (3m52.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  57% ] 400/400 VUs  3m25.0s/6m00.0s
+
+running (3m53.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  57% ] 400/400 VUs  3m26.0s/6m00.0s
+
+running (3m54.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  57% ] 400/400 VUs  3m27.0s/6m00.0s
+
+running (3m55.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  58% ] 400/400 VUs  3m28.0s/6m00.0s
+
+running (3m56.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  58% ] 400/400 VUs  3m29.0s/6m00.0s
+
+running (3m57.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  58% ] 400/400 VUs  3m30.0s/6m00.0s
+
+running (3m58.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  59% ] 400/400 VUs  3m31.0s/6m00.0s
+
+running (3m59.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  59% ] 400/400 VUs  3m32.0s/6m00.0s
+
+running (4m00.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  59% ] 400/400 VUs  3m33.0s/6m00.0s
+
+running (4m01.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  59% ] 400/400 VUs  3m34.0s/6m00.0s
+
+running (4m02.7s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  60% ] 400/400 VUs  3m35.0s/6m00.0s
+
+running (4m04.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  60% ] 400/400 VUs  3m36.0s/6m00.0s
+
+running (4m05.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  60% ] 400/400 VUs  3m37.0s/6m00.0s
+
+running (4m06.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  61% ] 400/400 VUs  3m38.0s/6m00.0s
+
+running (4m07.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  61% ] 400/400 VUs  3m39.0s/6m00.0s
+
+running (4m08.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  61% ] 400/400 VUs  3m40.0s/6m00.0s
+
+running (4m09.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  61% ] 400/400 VUs  3m41.0s/6m00.0s
+
+running (4m10.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  62% ] 400/400 VUs  3m42.0s/6m00.0s
+
+running (4m11.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  62% ] 400/400 VUs  3m43.0s/6m00.0s
+
+running (4m12.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  62% ] 400/400 VUs  3m44.0s/6m00.0s
+
+running (4m13.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  62% ] 400/400 VUs  3m45.0s/6m00.0s
+
+running (4m14.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  63% ] 400/400 VUs  3m46.0s/6m00.0s
+
+running (4m15.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  63% ] 400/400 VUs  3m47.0s/6m00.0s
+
+running (4m16.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  63% ] 400/400 VUs  3m48.0s/6m00.0s
+
+running (4m17.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  64% ] 400/400 VUs  3m49.0s/6m00.0s
+
+running (4m18.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  64% ] 400/400 VUs  3m50.0s/6m00.0s
+
+running (4m19.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  64% ] 400/400 VUs  3m51.0s/6m00.0s
+
+running (4m20.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  64% ] 400/400 VUs  3m52.0s/6m00.0s
+
+running (4m21.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  65% ] 400/400 VUs  3m53.0s/6m00.0s
+
+running (4m22.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  65% ] 400/400 VUs  3m54.0s/6m00.0s
+
+running (4m23.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  65% ] 400/400 VUs  3m55.0s/6m00.0s
+
+running (4m24.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  66% ] 400/400 VUs  3m56.0s/6m00.0s
+
+running (4m25.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  66% ] 400/400 VUs  3m57.0s/6m00.0s
+
+running (4m26.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  66% ] 400/400 VUs  3m58.0s/6m00.0s
+
+running (4m27.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  66% ] 400/400 VUs  3m59.0s/6m00.0s
+
+running (4m28.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  67% ] 400/400 VUs  4m00.0s/6m00.0s
+
+running (4m29.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  67% ] 400/400 VUs  4m01.0s/6m00.0s
+
+running (4m30.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  67% ] 400/400 VUs  4m02.0s/6m00.0s
+
+running (4m31.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  67% ] 400/400 VUs  4m03.0s/6m00.0s
+
+running (4m32.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  68% ] 400/400 VUs  4m04.0s/6m00.0s
+
+running (4m33.7s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  68% ] 400/400 VUs  4m05.0s/6m00.0s
+
+running (4m35.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  68% ] 400/400 VUs  4m06.0s/6m00.0s
+
+running (4m36.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  69% ] 400/400 VUs  4m07.0s/6m00.0s
+
+running (4m37.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  69% ] 400/400 VUs  4m08.0s/6m00.0s
+
+running (4m38.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  69% ] 400/400 VUs  4m09.0s/6m00.0s
+
+running (4m39.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  69% ] 400/400 VUs  4m10.0s/6m00.0s
+
+running (4m40.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  70% ] 400/400 VUs  4m11.0s/6m00.0s
+
+running (4m41.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  70% ] 400/400 VUs  4m12.0s/6m00.0s
+
+running (4m42.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  70% ] 400/400 VUs  4m13.0s/6m00.0s
+
+running (4m43.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  71% ] 400/400 VUs  4m14.0s/6m00.0s
+
+running (4m44.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  71% ] 400/400 VUs  4m15.0s/6m00.0s
+
+running (4m45.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  71% ] 400/400 VUs  4m16.0s/6m00.0s
+
+running (4m46.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  71% ] 400/400 VUs  4m17.0s/6m00.0s
+
+running (4m47.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  72% ] 400/400 VUs  4m18.0s/6m00.0s
+
+running (4m48.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  72% ] 400/400 VUs  4m19.0s/6m00.0s
+
+running (4m49.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  72% ] 400/400 VUs  4m20.0s/6m00.0s
+
+running (4m50.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  72% ] 400/400 VUs  4m21.0s/6m00.0s
+
+running (4m51.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  73% ] 400/400 VUs  4m22.0s/6m00.0s
+
+running (4m52.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  73% ] 400/400 VUs  4m23.0s/6m00.0s
+
+running (4m53.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  73% ] 400/400 VUs  4m24.0s/6m00.0s
+
+running (4m54.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  74% ] 400/400 VUs  4m25.0s/6m00.0s
+
+running (4m55.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  74% ] 400/400 VUs  4m26.0s/6m00.0s
+
+running (4m56.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  74% ] 400/400 VUs  4m27.0s/6m00.0s
+
+running (4m57.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  74% ] 400/400 VUs  4m28.0s/6m00.0s
+
+running (4m58.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  75% ] 400/400 VUs  4m29.0s/6m00.0s
+
+running (4m59.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  75% ] 400/400 VUs  4m30.0s/6m00.0s
+
+running (5m00.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  75% ] 400/400 VUs  4m31.0s/6m00.0s
+
+running (5m01.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  76% ] 400/400 VUs  4m32.0s/6m00.0s
+
+running (5m02.1s), 400/400 VUs, 520 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  76% ] 400/400 VUs  4m33.0s/6m00.0s
+
+running (5m03.1s), 400/400 VUs, 523 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  76% ] 400/400 VUs  4m34.0s/6m00.0s
+
+running (5m04.7s), 400/400 VUs, 527 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  76% ] 400/400 VUs  4m35.0s/6m00.0s
+
+running (5m06.1s), 400/400 VUs, 532 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  77% ] 400/400 VUs  4m36.0s/6m00.0s
+
+running (5m07.1s), 400/400 VUs, 538 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  77% ] 400/400 VUs  4m37.0s/6m00.0s
+
+running (5m08.1s), 400/400 VUs, 545 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  77% ] 400/400 VUs  4m38.0s/6m00.0s
+
+running (5m09.1s), 400/400 VUs, 545 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  77% ] 400/400 VUs  4m39.0s/6m00.0s
+
+running (5m10.1s), 400/400 VUs, 554 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  78% ] 400/400 VUs  4m40.0s/6m00.0s
+
+running (5m11.1s), 400/400 VUs, 562 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  78% ] 400/400 VUs  4m41.0s/6m00.0s
+
+running (5m12.1s), 400/400 VUs, 566 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  78% ] 400/400 VUs  4m42.0s/6m00.0s
+
+running (5m13.1s), 400/400 VUs, 568 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  79% ] 400/400 VUs  4m43.0s/6m00.0s
+
+running (5m14.1s), 400/400 VUs, 576 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  79% ] 400/400 VUs  4m44.0s/6m00.0s
+
+running (5m15.1s), 400/400 VUs, 578 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  79% ] 400/400 VUs  4m45.0s/6m00.0s
+
+running (5m16.1s), 400/400 VUs, 584 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  79% ] 400/400 VUs  4m46.0s/6m00.0s
+
+running (5m17.1s), 400/400 VUs, 592 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  80% ] 400/400 VUs  4m47.0s/6m00.0s
+
+running (5m18.1s), 400/400 VUs, 594 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  80% ] 400/400 VUs  4m48.0s/6m00.0s
+
+running (5m19.1s), 400/400 VUs, 599 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  80% ] 400/400 VUs  4m49.0s/6m00.0s
+
+running (5m20.1s), 400/400 VUs, 610 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  81% ] 400/400 VUs  4m50.0s/6m00.0s
+
+running (5m21.1s), 400/400 VUs, 621 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  81% ] 400/400 VUs  4m51.0s/6m00.0s
+
+running (5m22.1s), 400/400 VUs, 621 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  81% ] 400/400 VUs  4m52.0s/6m00.0s
+
+running (5m23.1s), 400/400 VUs, 634 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  81% ] 400/400 VUs  4m53.0s/6m00.0s
+
+running (5m24.1s), 400/400 VUs, 635 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  82% ] 400/400 VUs  4m54.0s/6m00.0s
+
+running (5m25.1s), 400/400 VUs, 649 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  82% ] 400/400 VUs  4m55.0s/6m00.0s
+
+running (5m26.1s), 400/400 VUs, 653 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  82% ] 400/400 VUs  4m56.0s/6m00.0s
+
+running (5m27.1s), 400/400 VUs, 661 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  82% ] 400/400 VUs  4m57.0s/6m00.0s
+
+running (5m28.1s), 400/400 VUs, 669 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  83% ] 400/400 VUs  4m58.0s/6m00.0s
+
+running (5m29.1s), 400/400 VUs, 677 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  83% ] 400/400 VUs  4m59.0s/6m00.0s
+
+running (5m30.1s), 400/400 VUs, 682 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  83% ] 400/400 VUs  5m00.0s/6m00.0s
+
+running (5m31.1s), 400/400 VUs, 683 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  84% ] 400/400 VUs  5m01.0s/6m00.0s
+
+running (5m32.1s), 400/400 VUs, 697 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  84% ] 400/400 VUs  5m02.0s/6m00.0s
+
+running (5m33.1s), 400/400 VUs, 701 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  84% ] 400/400 VUs  5m03.0s/6m00.0s
+
+running (5m34.1s), 400/400 VUs, 701 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  84% ] 400/400 VUs  5m04.0s/6m00.0s
+
+running (5m35.1s), 400/400 VUs, 707 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  85% ] 400/400 VUs  5m05.0s/6m00.0s
+
+running (5m37.1s), 400/400 VUs, 717 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  85% ] 400/400 VUs  5m06.0s/6m00.0s
+
+running (5m38.1s), 400/400 VUs, 721 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  85% ] 400/400 VUs  5m07.0s/6m00.0s
+
+running (5m39.1s), 400/400 VUs, 721 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  86% ] 400/400 VUs  5m08.0s/6m00.0s
+
+running (5m40.1s), 400/400 VUs, 739 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  86% ] 400/400 VUs  5m09.0s/6m00.0s
+
+running (5m41.1s), 400/400 VUs, 746 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  86% ] 400/400 VUs  5m10.0s/6m00.0s
+
+running (5m42.1s), 400/400 VUs, 754 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  86% ] 400/400 VUs  5m11.0s/6m00.0s
+
+running (5m43.1s), 400/400 VUs, 760 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  87% ] 400/400 VUs  5m12.0s/6m00.0s
+
+running (5m44.1s), 400/400 VUs, 770 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  87% ] 400/400 VUs  5m13.0s/6m00.0s
+
+running (5m45.1s), 400/400 VUs, 770 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  87% ] 400/400 VUs  5m14.0s/6m00.0s
+
+running (5m46.1s), 400/400 VUs, 778 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  87% ] 400/400 VUs  5m15.0s/6m00.0s
+
+running (5m47.1s), 400/400 VUs, 788 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  88% ] 400/400 VUs  5m16.0s/6m00.0s
+
+running (5m48.1s), 400/400 VUs, 796 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  88% ] 400/400 VUs  5m17.0s/6m00.0s
+
+running (5m49.1s), 400/400 VUs, 798 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  88% ] 400/400 VUs  5m18.0s/6m00.0s
+
+running (5m50.1s), 400/400 VUs, 806 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  89% ] 400/400 VUs  5m19.0s/6m00.0s
+
+running (5m51.1s), 400/400 VUs, 815 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  89% ] 400/400 VUs  5m20.0s/6m00.0s
+
+running (5m52.1s), 400/400 VUs, 822 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  89% ] 400/400 VUs  5m21.0s/6m00.0s
+
+running (5m53.1s), 400/400 VUs, 825 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  89% ] 400/400 VUs  5m22.0s/6m00.0s
+
+running (5m54.1s), 400/400 VUs, 825 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  90% ] 400/400 VUs  5m23.0s/6m00.0s
+
+running (5m55.1s), 400/400 VUs, 837 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  90% ] 400/400 VUs  5m24.0s/6m00.0s
+
+running (5m56.1s), 400/400 VUs, 842 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  90% ] 400/400 VUs  5m25.0s/6m00.0s
+
+running (5m57.1s), 400/400 VUs, 853 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  91% ] 400/400 VUs  5m26.0s/6m00.0s
+
+running (5m58.1s), 400/400 VUs, 859 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  91% ] 400/400 VUs  5m27.0s/6m00.0s
+
+running (5m59.1s), 400/400 VUs, 862 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  91% ] 400/400 VUs  5m28.0s/6m00.0s
+
+running (6m00.1s), 400/400 VUs, 873 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  91% ] 400/400 VUs  5m29.0s/6m00.0s
+
+running (6m01.1s), 400/400 VUs, 874 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  92% ] 400/400 VUs  5m30.0s/6m00.0s
+
+running (6m02.1s), 400/400 VUs, 892 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  92% ] 400/400 VUs  5m31.0s/6m00.0s
+
+running (6m03.1s), 400/400 VUs, 896 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  92% ] 400/400 VUs  5m32.0s/6m00.0s
+
+running (6m04.1s), 400/400 VUs, 914 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  92% ] 400/400 VUs  5m33.0s/6m00.0s
+
+running (6m05.1s), 400/400 VUs, 914 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  93% ] 400/400 VUs  5m34.0s/6m00.0s
+
+running (6m06.1s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  93% ] 400/400 VUs  5m35.0s/6m00.0s
+
+running (6m07.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  93% ] 400/400 VUs  5m36.0s/6m00.0s
+
+running (6m08.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  94% ] 400/400 VUs  5m37.0s/6m00.0s
+
+running (6m09.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  94% ] 400/400 VUs  5m38.0s/6m00.0s
+
+running (6m10.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  94% ] 400/400 VUs  5m39.0s/6m00.0s
+
+running (6m11.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  94% ] 400/400 VUs  5m40.0s/6m00.0s
+
+running (6m12.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  95% ] 400/400 VUs  5m41.0s/6m00.0s
+
+running (6m13.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  95% ] 400/400 VUs  5m42.0s/6m00.0s
+
+running (6m14.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  95% ] 400/400 VUs  5m43.0s/6m00.0s
+
+running (6m15.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  96% ] 400/400 VUs  5m44.0s/6m00.0s
+
+running (6m16.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  96% ] 400/400 VUs  5m45.0s/6m00.0s
+
+running (6m17.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  96% ] 400/400 VUs  5m46.0s/6m00.0s
+
+running (6m18.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  96% ] 400/400 VUs  5m47.0s/6m00.0s
+
+running (6m19.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  97% ] 400/400 VUs  5m48.0s/6m00.0s
+
+running (6m20.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  97% ] 400/400 VUs  5m49.0s/6m00.0s
+
+running (6m21.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  97% ] 400/400 VUs  5m50.0s/6m00.0s
+
+running (6m22.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  97% ] 400/400 VUs  5m51.0s/6m00.0s
+
+running (6m23.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  98% ] 400/400 VUs  5m52.0s/6m00.0s
+
+running (6m24.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  98% ] 400/400 VUs  5m53.0s/6m00.0s
+
+running (6m25.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  98% ] 400/400 VUs  5m54.0s/6m00.0s
+
+running (6m26.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  99% ] 400/400 VUs  5m55.0s/6m00.0s
+
+running (6m27.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  99% ] 400/400 VUs  5m56.0s/6m00.0s
+
+running (6m28.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  99% ] 400/400 VUs  5m57.0s/6m00.0s
+
+running (6m29.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [  99% ] 400/400 VUs  5m58.0s/6m00.0s
+
+running (6m30.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [ 100% ] 400/400 VUs  5m59.0s/6m00.0s
+
+running (6m31.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test   [ 100% ] 400/400 VUs  6m00.0s/6m00.0s
+
+running (6m32.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m33.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m34.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m35.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m36.7s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m38.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m39.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m40.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m41.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m42.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m43.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m44.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m45.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m46.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m47.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m48.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m49.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m50.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m51.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m52.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m53.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m54.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m55.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m56.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m57.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m58.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (6m59.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (7m00.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (7m01.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+running (7m02.3s), 400/400 VUs, 920 complete and 0 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ↓ [ 100% ] 400/400 VUs  6m0s
+
+     ✓ initial visit successful
+     ✓ add item 1 successful
+     ✓ add item 2 successful
+     ✓ view cart successful
+     ✓ return to shopping successful
+     ✓ JWT renewed with different token
+     ✓ add item 3 with new JWT successful
+     ✓ checkout successful
+     ✓ continue shopping successful
+
+     cart_operations................: 3200    7.576636/s
+     checks.........................: 100.00% ✓ 8800      ✗ 0    
+     data_received..................: 120 MB  285 kB/s
+     data_sent......................: 18 MB   43 kB/s
+     http_req_blocked...............: avg=65.72µs  min=252ns  med=3.33µs  max=589.23ms p(90)=5.21µs   p(95)=7.1µs   
+     http_req_connecting............: avg=60.18µs  min=0s     med=0s      max=589.17ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=188.25ms min=2.23ms med=96.48ms max=2.06s    p(90)=498.15ms p(95)=699.55ms
+       { expected_response:true }...: avg=188.25ms min=2.23ms med=96.48ms max=2.06s    p(90)=498.15ms p(95)=699.55ms
+     ✓ { scenario:main_test }.......: avg=188.44ms min=2.23ms med=97.64ms max=1.7s     p(90)=499.05ms p(95)=699.39ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 11560
+     ✓ { scenario:main_test }.......: 0.00%   ✓ 0         ✗ 11200
+     http_req_receiving.............: avg=2.7ms    min=8.3µs  med=82.57µs max=483.59ms p(90)=476.82µs p(95)=1.04ms  
+     http_req_sending...............: avg=22.14µs  min=2.08µs med=17.62µs max=501.93µs p(90)=38.4µs   p(95)=49.82µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s     med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=185.53ms min=2.12ms med=96.25ms max=2.06s    p(90)=497.21ms p(95)=698.2ms 
+     http_reqs......................: 11560   27.370597/s
+     iteration_duration.............: avg=2m0s     min=3.02s  med=2m17s   max=2m20s    p(90)=2m18s    p(95)=2m19s   
+     iterations.....................: 920     2.178283/s
+     jwt_renewal_successes..........: 800     1.894159/s
+     jwt_renewals...................: 2000    4.735397/s
+     vus............................: 400     min=13      max=400
+     vus_max........................: 400     min=400     max=400
+
+
+running (7m02.4s), 000/400 VUs, 920 complete and 400 interrupted iterations
+warmup    ✓ [ 100% ] 20 VUs       20s
+main_test ✓ [ 100% ] 000/400 VUs  6m0s
