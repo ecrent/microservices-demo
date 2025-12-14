@@ -35,16 +35,9 @@ All testing scripts and tools are original contributions for this research:
 - `enable_jwt_compression.sh`
 - `disable_jwt_compression.sh`
 - `run-jwt-compression-test.sh`
-- `wsl-run-jwt-compression-test.sh`
 - `compare-jwt-compression-enhanced.sh`
 - `k6-user-journey-test.js`
-- `JWT-COMPRESSION-TEST-GUIDE.md`
 
-### Documentation (New)
-Research-specific documentation:
-- `JWT-COMPRESSION-TEST-GUIDE.md` - Complete testing guide
-- `results.md` - Performance analysis results
-- `forme.md` - Research notes and findings
 
 ## Preserved Original Code
 
@@ -74,7 +67,6 @@ If you use this work in academic research, please cite:
 Google LLC. (2024). microservices-demo: Sample cloud-first application with 10 microservices.
 GitHub repository. https://github.com/GoogleCloudPlatform/microservices-demo
 ```
-
 
 ## Disclaimer
 
