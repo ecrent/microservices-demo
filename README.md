@@ -231,4 +231,4 @@ cat jwt-compression-on-results-*/k6-summary.json | jq .
 
 ---
 
-*Last updated: October 18, 2025*
+*Last updated: December 14, 2025*

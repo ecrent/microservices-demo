@@ -87,4 +87,4 @@ work is not endorsed by or affiliated with Google LLC.
 
 ---
 
-*Last Updated: October 18, 2025*
+*Last Updated: December 14, 2025*
