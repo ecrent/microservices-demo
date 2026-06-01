@@ -10,6 +10,10 @@ This repository demonstrates JWT compression techniques in a microservices archi
 - **JWT Compression**: Optional compression feature that splits JWT into multiple headers for better HTTP/2 HPACK caching
 - **Performance Testing**: Comprehensive benchmarking tools to measure compression benefits
 
+## Thesis
+
+https://drive.google.com/file/d/1-XV4jaQVmPBwuCBY1Ptp1T7-40PoG3x-/view?usp=sharing
+
 ## Research Focus
 
 This project investigates the performance impact of JWT compression in microservices environments, specifically:
