@@ -12,7 +12,7 @@ This repository demonstrates JWT compression techniques in a microservices archi
 
 ## Thesis
 
-https://drive.google.com/file/d/1-XV4jaQVmPBwuCBY1Ptp1T7-40PoG3x-/view?usp=sharing
+[Thesis is publicly available here](https://doi.org/10.5281/zenodo.20688308)
 
 ## Research Focus
 
